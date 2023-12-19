@@ -8,7 +8,7 @@ terraform {
 
   backend "s3" {
     bucket  = "webmasters-solutions-llc-tf-state"
-    key     = "webmasters-solutions-llc.-statefile"
+    key     = "webmasters-solutions-llc-statefile"
     region  = "us-east-2"
     encrypt = true
   }
