@@ -45,3 +45,27 @@ variable "branch" {
   description = "Version Control Git Branch to watch for changes to run pipeline."
   default = "main"
 }
+
+variable "fargate_cpu" {
+  type        = string
+  description = "CPU to provision for Fargate instances."
+  default     = "1024"
+}
+
+variable "fargate_memory" {
+  type        = string
+  description = "Fargate instance memory to provision."
+  default     = "2048"
+}
+
+variable "docker_tag" {
+  type        = string
+  description = "Image tag for docker."
+  default     = "wmsllc"
+}
+
+variable "app_count" {
+  type        = number
+  description = "Number of Containers to run."
+  default     = 1
+}
