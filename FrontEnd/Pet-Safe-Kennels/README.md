@@ -4,7 +4,7 @@
 
 ### [Website](https:petsafekennels.com)
 
-[![](https://github.com/shalkauskas/media/blob/main/tete-gif.gif)](https://tete-a-tete.vercel.app/ "Visit website")
+[![](https://github.com/web-dev-one/webmasterssolutionsllc_admin/tree/main/FrontEnd)](https://petsafekennels.com/ "Visit website")
 
 ### Features
 
@@ -62,4 +62,3 @@ Team member data is in `components/Team/members.js`
 ### License
 MIT License
 ### Credits
-*Thanks to [**Daria Khudiakova**](https://daria-in-design.com/) design!*
