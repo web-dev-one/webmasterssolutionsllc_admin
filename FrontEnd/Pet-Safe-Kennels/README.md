@@ -2,7 +2,7 @@
 
 **Website for a welding company.**
 
-### [Website](https:petsafekennels.com)
+### [Website](https://petsafekennels.com)
 
 [![](https://github.com/web-dev-one/webmasterssolutionsllc_admin/tree/main/FrontEnd)](https://petsafekennels.com/ "Visit website")
 
