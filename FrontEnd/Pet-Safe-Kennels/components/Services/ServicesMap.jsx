@@ -59,7 +59,7 @@ export default function ServicesMap(props) {
         ref={node}
         key={index}
         className={`max-w-90 mx-auto grid ${
-          props.showSkinCare ? "grid-flow-row" : "grid-flow-col grid-cols-6"
+          props.showBoxOptions ? "grid-flow-row" : "grid-flow-col grid-cols-6"
         } mb-4`}
       >
         <p

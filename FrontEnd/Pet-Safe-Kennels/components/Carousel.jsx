@@ -9,10 +9,10 @@ import Fly from '../public/Flying-Dog-Kennel-med.jpg';
 import ScottsdaleKennel from '../public/WrapAroundKennel.jpg'
 import TucsonKennel from '../public/Tucson-DogRun-Large.jpg'
 
-const images = [ TucsonKennel, CuteDogKennel, DogKennel , ScottsdaleKennel, CustomRoof, Fly];
+const images = [ TucsonKennel, DogKennel, ScottsdaleKennel, CustomRoof, CuteDogKennel, Fly];
 
 export default function WelcomeCarousel() {
-  const createCarouselItemImage = images.reverse().map( index => (<div key={index} style={{ width: "max-content", height: "400px" }}>
+  const createCarouselItemImage = images.map( index => (<div key={index} style={{ width: "max-content", height: "400px" }}>
       <Image
         src={index}
         width={562}

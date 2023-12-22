@@ -49,7 +49,9 @@ export default function Service(props) {
     <ServicesMap
       key={index}
       list={item}
-      showSkinCare={props.title === "Skin care"}
+      showBoxOptions={props.title === "Box Kennels"}
+      // showBoxOptions={props.title === "Skin care"}
+
       showMobile={isMobile}
       mapNav={mapNavButtons}
       renderNav={props.service.length <= 1 ? "hidden" : "block"}

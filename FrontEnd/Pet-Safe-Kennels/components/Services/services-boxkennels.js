@@ -3,77 +3,44 @@ const servicesBoxKennels = [
       {
         title: "Low Rise Box Kennels",
         image:
-          "https://res.cloudinary.com/dyj6lkekg/image/upload/tete/haircuts.png",
+          "/Loomis-Kennel-1.jpg",
       },
       {
         id: 10,
-        service: "Women’s haircut, shampoo & blowdry",
-        price: "$75 & Up",
+        service: "Wire Top Box Kennel",
+        price: "$2300 & Up",
+        info: "Roof in open wire frame."
       },
       {
         id: 11,
-        service: "Men’s haircut, shampoo & blowdry",
-        price: "$60 & Up",
+        service: "1/2 Wire 1/2 Hard top Kennel",
+        price: "$2500 & Up",
+        info: "Part Open Wire Part Hard Top Cover."
       },
       {
         id: 12,
-        service: "Shampoo & Blow Dry Style",
-        price: "$60 & Up",
-      },
-      {
-        id: 13,
-        service: "Permanent wave",
-        price: "$185 & Up",
-      },
-      {
-        id: 14,
-        service: "Updo",
-        price: "$85 & Up",
-      },
-      {
-        id: 15,
-        service: "Bridal updo",
-        price: "$150 & Up",
-      },
+        service: "Custom Wooden Door top",
+        price: "$3000 & Up",
+        info: "Treated with Wood sealers and painted in the color of your choice."
+      }
     ],
     [
       {
-        title: "Hair color",
+        title: "Custom Fix Box Kennel",
         image:
-          "https://res.cloudinary.com/dyj6lkekg/image/upload/tete/haircolor.png",
+          "/CustomFitBoxKennel.jpg",
       },
       {
         id: 20,
-        service: "Color application & Gloss",
-        price: "$120 & Up",
-      },
-      {
-        id: 21,
-        service: "Organic Color Application",
-        price: "$120 & Up",
-        info: "Color lines we use - Wella, O&M, All-nutrient.",
-      },
-      {
-        id: 22,
-        service: "Double Process (color+highlights)",
-        price: "$250 & Up",
-      },
-      {
-        id: 23,
-        service: "Foil Highlighting or Balayage",
-        price: "$200 & Up",
-      },
-      {
-        id: 24,
-        service: "Gloss with any Color service",
-        price: "$35",
-      },
+        service: "Mirrors the Contours of Your house",
+        price: "$2800 & Up",
+      }
     ],
     [
       {
-        title: "Straightening & treatments",
+        title: "Tall Box Kennel",
         image:
-          "https://res.cloudinary.com/dyj6lkekg/image/upload/tete/treatments.png",
+          "/TallBox.jpg",
       },
       {
         id: 30,
