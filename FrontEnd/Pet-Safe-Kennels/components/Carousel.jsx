@@ -6,10 +6,11 @@ import DogKennel from '../public/galvanized-dog-run-inside-Large.jpg';
 import CuteDogKennel from '../public/cute_dog_in_kennel-Large.jpg'
 import CustomRoof from '../public/custom_roof_2.jpg';
 import Fly from '../public/Flying-Dog-Kennel-med.jpg';
-import ScottsdaleKennel from '../public/WrapAroundKennel.jpg'
-import TucsonKennel from '../public/Tucson-DogRun-Large.jpg'
+import ScottsdaleKennel from '../public/WrapAroundKennel.jpg';
+import TucsonKennel from '../public/Tucson-DogRun-Large.jpg';
+import CopperKennel from '../public/copper_kennel.jpg';
 
-const images = [ TucsonKennel, DogKennel, ScottsdaleKennel, CustomRoof, CuteDogKennel, Fly];
+const images = [ TucsonKennel, DogKennel, ScottsdaleKennel, CustomRoof, CuteDogKennel, CopperKennel, Fly];
 
 export default function WelcomeCarousel() {
   const createCarouselItemImage = images.map( index => (<div key={index} style={{ width: "max-content", height: "400px" }}>

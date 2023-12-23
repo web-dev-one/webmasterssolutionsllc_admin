@@ -12,6 +12,7 @@ export default function ServicesMap(props) {
     id: "",
   });
   const node = React.useRef();
+ 
   // Info popup container
   function InfoNote(props) {
     let infoText = null;
@@ -19,7 +20,8 @@ export default function ServicesMap(props) {
       // matching id of clicked service with corresponding object id
       if (item.id === showInfo.id) {
         infoText = item.info;
-      }
+      } 
+     
     });
     return (
       <div
@@ -71,15 +73,16 @@ export default function ServicesMap(props) {
             color: check ? "#895B4A" : "normal",
           }}
           className={`text-black ${
-            props.showSkinCare ? "" : "col-start-1 col-end-5"
+            props.showBoxOptions ? "" : "col-start-1 col-end-5"
           } mr-auto ${check ? "cursor-pointer hover:opacity-75" : ""}`}
         >
           {item.service}
+          &nbsp;&nbsp;<a className="text-xl text-red-400 font-bold" href={item.link}>{item.linktext}</a>
         </p>
         <p
           style={{ fontSize: "16px" }}
           className={`${
-            props.showSkinCare ? "mr-auto" : "col-end-7 col-span-2 ml-auto"
+            props.showBoxOptions ? "mr-auto" : "col-end-7 col-span-2 ml-auto"
           }`}
         >
           {item.price}

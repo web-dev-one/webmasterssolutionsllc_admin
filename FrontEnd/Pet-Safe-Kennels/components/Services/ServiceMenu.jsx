@@ -7,24 +7,24 @@ export default function Services() {
     <div className="mx-auto">
       <SectionTitle title={"Our Services"} />
       <div className="grid lg:grid-rows-2 grid-rows-1 lg:grid-flow-col justify-center gap-6">
-        <Link href="/haircare" passHref>
+        <Link href="/boxkennel" passHref>
           
-            <Service service={"Hair care"} background={"haircare"} />
-          
-        </Link>
-        <Link href="/skincare" passHref>
-          
-            <Service service={"Skin care"} background={"skincare"} />
+           <Service service={"Box Kennels"} background={"custom_roof_2"} />
           
         </Link>
-        <Link href="/nails" passHref>
+        <Link href="/dogpark" passHref>
+          
+            <Service service={"Dog Parks"} background={"Tucson-DogRun-Large"} />
+          
+        </Link>
+        <Link href="/dogrun" passHref>
         
-            <Service service={"Nails"} background={"nails"} />
+            <Service service={"Dog Runs"} background={"Large-Wall-Kennel-Glendale-entrance"} />
           
         </Link>
-        <Link href="/waxing" passHref>
+        <Link href="/aviary" passHref>
         
-            <Service service={"Waxing"} background={"waxing"} />
+            <Service service={"Aviaries"} background={"aviary"} />
           
         </Link>
       </div>

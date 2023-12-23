@@ -49,7 +49,8 @@ export default function Service(props) {
     <ServicesMap
       key={index}
       list={item}
-      showBoxOptions={props.title === "Box Kennels"}
+      link={item}
+      showBoxOptions={props.title === "zBox Kennels"}
       // showBoxOptions={props.title === "Skin care"}
 
       showMobile={isMobile}
