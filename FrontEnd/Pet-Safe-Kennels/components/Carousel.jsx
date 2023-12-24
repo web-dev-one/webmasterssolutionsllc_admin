@@ -4,10 +4,10 @@ import { Carousel } from "react-responsive-carousel";
 import Image from "next/image";
 import DogKennel from '../public/galvanized-dog-run-inside-Large.jpg';
 import CuteDogKennel from '../public/cute_dog_in_kennel-Large.jpg'
-import CustomRoof from '../public/custom_roof_2.jpg';
-import Fly from '../public/Flying-Dog-Kennel-med.jpg';
-import ScottsdaleKennel from '../public/WrapAroundKennel.jpg';
-import TucsonKennel from '../public/Tucson-DogRun-Large.jpg';
+import CustomRoof from '../public/custom_roof_phoenix_dog_kennel.jpg';
+import Fly from '../public/Flying-Dog-Kennel-thin.jpg';
+import ScottsdaleKennel from '../public/WrapAroundKennel-thin.jpg';
+import TucsonKennel from '../public/Tucson-Cox-DogRun-Large-square.jpg';
 import CopperKennel from '../public/copper_kennel.jpg';
 
 const images = [ TucsonKennel, DogKennel, ScottsdaleKennel, CustomRoof, CuteDogKennel, CopperKennel, Fly];
@@ -16,8 +16,8 @@ export default function WelcomeCarousel() {
   const createCarouselItemImage = images.map( index => (<div key={index} style={{ width: "max-content", height: "400px" }}>
       <Image
         src={index}
-        width={562}
-        height={400}
+        width={450}
+        height={580}
         alt="Carousel welcome image"
         quality={75}
         loading={"eager"}

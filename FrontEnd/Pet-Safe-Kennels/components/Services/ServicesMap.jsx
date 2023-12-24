@@ -4,7 +4,7 @@ import Image from "next/image";
 import Backdrop from "../Backdrop";
 import React from "react";
 export default function ServicesMap(props) {
-  // importing data
+ 
   const list = props.list;
   // state of popup and id of item clicked to show relevant popup info
   const [showInfo, setShowInfo] = React.useState({
@@ -12,7 +12,18 @@ export default function ServicesMap(props) {
     id: "",
   });
   const node = React.useRef();
- 
+
+ function Description(props){
+    
+  debugger
+
+    let {des} = props.list.filter(e=>e.des)[0]
+
+      return(<div className="flex justify-center">
+                <br/>
+                <p className="text-red-400 font-bold">{des}</p>
+              </div>)
+ }
   // Info popup container
   function InfoNote(props) {
     let infoText = null;
@@ -56,11 +67,12 @@ export default function ServicesMap(props) {
   const mapServices = list.map((item, index) => {
     // checking if service has additional info data
     let check = `info` in item;
-    return (
+
+    return (<>
       <div
         ref={node}
         key={index}
-        className={`max-w-90 mx-auto grid ${
+        className={`flex-col max-w-90 mx-auto grid ${
           props.showBoxOptions ? "grid-flow-row" : "grid-flow-col grid-cols-6"
         } mb-4`}
       >
@@ -81,42 +93,41 @@ export default function ServicesMap(props) {
         </p>
         <p
           style={{ fontSize: "16px" }}
-          className={`${
-            props.showBoxOptions ? "mr-auto" : "col-end-7 col-span-2 ml-auto"
-          }`}
+          className={`${"mr-auto"}`}
         >
           {item.price}
         </p>
       </div>
+        </>
     );
   });
   // shows additional logo for skin care services
-  const skinCareLogo = (
-    <div
-      className={`${props.showMobile ? "flex" : ""} ${
-        props.showSkinCare ? "block" : "hidden"
-      } max-w-90 mx-auto text-left justify-evenly`}
-    >
-      <p className="mb-3 mt-auto">We Use The Rezâge Skin Care Line</p>
-      <picture>
-        <source type="image/webp" srcSet="rezage-logo.webp" />
-        <source type="image/png" srcSet="rezage-logo.png" />
-        <img
-          src="rezage-logo.png"
-          style={{ width: "60px", height: "60px" }}
-          alt="We Use The Rezâge Skin Care Line"
-        />
-      </picture>
-    </div>
-  );
+  // const skinCareLogo = (
+  //   <div
+  //     className={`${props.showMobile ? "flex" : ""} ${
+  //       props.showSkinCare ? "block" : "hidden"
+  //     } max-w-90 mx-auto text-left justify-evenly`}
+  //   >
+  //     <p className="mb-3 mt-auto">We Use The Rezâge Skin Care Line</p>
+  //     <picture>
+  //       <source type="image/webp" srcSet="rezage-logo.webp" />
+  //       <source type="image/png" srcSet="rezage-logo.png" />
+  //       <img
+  //         src="rezage-logo.png"
+  //         style={{ width: "60px", height: "60px" }}
+  //         alt="We Use The Rezâge Skin Care Line"
+  //       />
+  //     </picture>
+  //   </div>
+  // );
   // handle width of image
   const width = () => {
     if (props.showSkinCare == true) {
       return props.showMobile ? 190 : 670;
     } else if (props.showMobile == true) {
-      return 210;
+      return 238;
     } else {
-      return 820;
+      return 550;
     }
   };
   return (
@@ -152,7 +163,11 @@ export default function ServicesMap(props) {
       <div className={`w-full ${props.showMobile ? "my-8" : "my-auto"}`}>
         {mapServices}
         <InfoNote showMobile={props.showMobile} />
-        {skinCareLogo}
+      { !!props.list.filter(x=>x.des).length &&
+        <Description {...props} /> 
+      }
+        {/* {skinCareLogo} */}
+        
         {props.showMobile ? (
           <Buttons mobile={props.showMobile} />
         ) : (

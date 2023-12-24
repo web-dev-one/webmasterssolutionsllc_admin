@@ -3,7 +3,7 @@ const servicesBoxKennels = [
       {
         title: "Low Rise Box Kennels",
         image:
-          "/Loomis-Kennel-1.jpg",
+          "/Loomis-Kennel-Box.jpg",
       },
       {
         id: 10,

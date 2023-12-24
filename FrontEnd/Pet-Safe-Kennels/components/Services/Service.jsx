@@ -49,7 +49,7 @@ export default function Service(props) {
     <ServicesMap
       key={index}
       list={item}
-      link={item}
+      link={item.link}
       showBoxOptions={props.title === "zBox Kennels"}
       // showBoxOptions={props.title === "Skin care"}
 
