@@ -11,40 +11,38 @@ export default function HandyInfo() {
         {/* Blowdry */}
         <div className="grid grid-flow-col grid-cols-5 mb-5 leading-snug">
           <picture className="w-10 h-10 mx-auto inline">
-            <source type="image/webp" srcSet="blowdry.webp" />
-            <source type="image/png" srcSet="blowdry.png" />
-            <img src="blowdry.png" alt="Schedule blowdry" />
+            <source type="image/png" srcSet="welding-kennel.png" />
+            <img src="/welding-kennel.png" alt="Welding Kennel" />
           </picture>
           <div className="col-span-4">
             <p className="inline">
-              Schedule blowdry along with your color appoitment.
+              Welding at the jobsite is common.
             </p>
           </div>
         </div>
         {/* Kids */}
         <div className="grid grid-flow-col grid-cols-5 mb-5 leading-snug">
-          <picture className="w-8 h-8 mx-auto inline">
-            <source type="image/webp" srcSet="baby.webp" />
-            <source type="image/png" srcSet="baby.png" />
-            <img src="baby.png" alt="Children" />
+          <picture className="w-10 h-10 mx-auto inline">
+            <source type="image/png" srcSet="construction.png" />
+            <img src="construction.png" alt="construction" />
           </picture>
           <div className="col-span-4">
             <p className="inline">
-              Kids must be under adult supervision at all times.
+              Installation includes a construction crew.
             </p>
           </div>
         </div>
         <div className="grid grid-flow-col grid-cols-5 mb-5 leading-snug">
           <picture className="w-8 h-8 mx-auto inline my-auto">
-            <source type="image/webp" srcSet="phone-contact.webp" />
-            <source type="image/png" srcSet="phone-contact.png" />
-            <img src="phone-contact.png" alt="Contact" />
+            <source type="image/webp" srcSet="callus.webp" />
+            <source type="image/png" srcSet="callus.png" />
+            <img src="callus.png" alt="Contact" />
           </picture>
           {/* Contact */}
           <div className="col-span-4">
             <p className="inline">
               To schedule, change or cancel your appointmet please call us at
-              617-559-0660.
+              520-730-7020.
             </p>
           </div>
         </div>
@@ -64,15 +62,12 @@ export default function HandyInfo() {
         {/* Payment */}
         <div className="grid grid-flow-col grid-cols-5 mb-5 leading-snug">
           <picture className="w-10 h-10 mx-auto inline">
-            <source type="image/webp" srcSet="payment.webp" />
-            <source type="image/png" srcSet="payment.png" />
-            <img src="payment.png" alt="Payment" />
+            <source type="image/png" srcSet="pets.png" />
+            <img src="pets.png" alt="pets" />
           </picture>
           <div className="col-span-4">
             <p className="inline">
-              Visa, Mastercard and Сash are accepted payment methods.
-              <br />
-              (regretfully gratuity cannot be charged to the credit card).
+              Secure your pets prior to our arrival at your home.
             </p>
           </div>
         </div>
