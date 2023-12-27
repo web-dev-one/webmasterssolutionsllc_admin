@@ -13,9 +13,11 @@ const servicesDogRuns = [
       },
       {
         id: 11,
-        service: "1/2 Wire 1/2 Hard top Kennel",
-        price: "$2700 & Up",
-        info: "Part Open Wire Part Hard Top Cover."
+        service: "Box Kennel opening into Dog Run",
+        price: "$2900 & Up",
+        link: "/combo_kennel",
+        info: "Part Open Wire Part Hard Top Cover.",
+        linktext: "info"
       },
       {
         id: 12,

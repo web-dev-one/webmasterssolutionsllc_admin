@@ -48,9 +48,9 @@ export default function HandyInfo() {
         </div>
         <div className="grid grid-flow-col grid-cols-5 mb-5 leading-snug">
           <picture className="w-8 mx-auto inline my-auto">
-            <source type="image/webp" srcSet="schedule.webp" />
-            <source type="image/png" srcSet="schedule.png" />
-            <img src="schedule.png" alt="Schedule" />
+            <source type="image/webp" srcSet="info.webp" />
+            <source type="image/png" srcSet="info.png" />
+            <img src="info.png" alt="info" />
           </picture>
           {/* Cancellations */}
           <div className="col-span-4">

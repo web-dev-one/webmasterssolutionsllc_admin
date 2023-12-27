@@ -15,7 +15,6 @@ export default function ServicesMap(props) {
 
  function Description(props){
     
-  debugger
 
     let {des} = props.list.filter(e=>e.des)[0]
 

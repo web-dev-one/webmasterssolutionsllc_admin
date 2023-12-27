@@ -25,6 +25,10 @@ module.exports = {
     },
   ],
   theme: {
+    // colors:{
+    //   beige: "#ede6dd",
+    //   pskpurple: "#800080",
+    // },
     inset: {
       0: 0,
       auto: "auto",

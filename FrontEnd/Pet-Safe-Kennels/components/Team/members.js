@@ -1,17 +1,17 @@
 const members = [
   {
     id: 1,
-    name: "Katya Bababekov",
+    name: "Jack Taylor",
     title: "Owner",
     description:
-      "A salon owner and a stylist for over 20 years. Haircut and blow dry expert with a unique approach to each client.",
-    photo: "https://res.cloudinary.com/dyj6lkekg/image/upload/tete/katya.png",
+      "I started building kennels that are safe for pets in 2006 after my daughter's dachshund was killed by a coyote. Ten years and over 2,500 predator proof dog & cat enclosures later, we have been called the Michelangelo of dog kennels. It's our years of experience that makes us better than other dog kennels companies because with each kennel we research and develop new techniques, methods, and proprietary designs that other comapnies can not duplicate.",
+    photo: "/jack.jpg",
     link: "https://www.instagram.com/stories/highlights/18162872782046022/",
   },
   {
     id: 2,
-    name: "Lilia Kravchuk",
-    title: "Senior stylist and colorist",
+    name: "Raul",
+    title: "Foreman",
     description:
       "Creates fresh and natural styles using the best coloring techniques.",
     photo: "https://res.cloudinary.com/dyj6lkekg/image/upload/tete/lilia.png",
