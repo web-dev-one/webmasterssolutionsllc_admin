@@ -20,7 +20,7 @@ export default function ServiceDirect(props){
             style={{background: "#ede6dd"}}
             className="grid items-center place-content-center pt-40 mx-auto sm:max-w-90">
             <SectionTitle title={props.title} showLink={true} isMobile={isMobile}/>
-            <h1 className="flex place-content-center w-90 font-bold text-xl text-blue-600">Pet-Safe-Kennels 10x3 Box Kennel</h1>
+            <h1 className="flex place-content-center w-90 font-bold text-xl text-blue-600">Pet-Safe-Kennels Box Kennel</h1>
                       <Image
                     src={`${props.service[0].image}`}
                     width={width()}
@@ -32,11 +32,13 @@ export default function ServiceDirect(props){
                   />
        
         </div>
-        <div className="flex-col max-w-90 mx-auto grid-flow-col grid-cols-6">
+        <div className="flex-col max-w-90 mx-auto grid-flow-col grid-cols-6 mr-6 mt-5">
        
-<p>Pet-Safe-Kennels introduces a versatile one-size-fits-all dog kennel designed to provide a secure and comfortable space for your furry companions.</p>
+          <p className="text-xl font-bold text-blue-500">Pet-Safe-Kennels introduces a versatile one-size-fits-all dog kennel designed to provide a secure and comfortable space for your furry companions.</p>
+          <p className="text-xl font-bold text-blue-500">Order one of our online options that does not require a customization and installation.</p>
+          <p className="text-xl font-bold text-blue-500">These kennels are non-refundable and do not offer the 100% pet safety guarentee like our Custom models</p>
 
-<p className="text-wrap">With options for two different sizes, a choice between a wire top or a solid roof with c-panel, and an array of 12 vibrant colors, our kennels cater to various dog breeds and owner preferences.</p>
+          <p className="text-wrap">With options for two different sizes, a choice between a wire top or a solid roof with c-panel, and an array of 12 vibrant colors, our kennels cater to various dog breeds and owner preferences.</p>
 
 <h2>Key Features:</h2>
 
