@@ -3,12 +3,17 @@ import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a lo
 import { Carousel } from "react-responsive-carousel";
 import ServicesMap from "./ServicesMap";
 import HandyInfo from "./HandyInfo";
+import ShippingInfo from "./ShippingInfo";
 import Buttons from "../Buttons";
 import Refferal from "./Refferal";
 import NavMap from "./ServicesNavMap";
-import React from "react";
+import React, {useState} from "react";
+
 export default function Service(props) {
+  console.log("props.title",props.title === 'Options')
+  const [css, setCss] = useState({})
   // responsive carousel
+ 
   const [isMobile, setIsMobile] = React.useState(false);
   function mqChange(mq) {
     setIsMobile(mq.matches);
@@ -33,7 +38,7 @@ export default function Service(props) {
   const prev = () => setCurrentSlide(currentSlide - 1);
   // mapping nav buttons
   const renderNav = props.service.length <= 1 || isMobile ? "hidden" : "block";
-  const mapNavButtons = props.service.map((item, index) => (
+  const mapNavButtons = props?.service.map((item, index) => (
     <NavMap
       key={index}
       title={item[0].title}
@@ -60,7 +65,7 @@ export default function Service(props) {
   ));
   return (
     <div>
-      <div className="pt-40 mx-auto sm:max-w-90">
+      <div className={`pt-${ (props.title === 'Options') ? `0` : '40'} mx-auto sm:max-w-90`}>
         <SectionTitle title={props.title} showLink={true} isMobile={isMobile} />
         <div className={`${renderNav} mb-12 xl:ml-32 lg:ml-24 buttons`}>
           {mapNavButtons}
@@ -109,7 +114,9 @@ export default function Service(props) {
             </div>
             {isMobile ? <Refferal mobile={isMobile} /> : <Buttons />}
           </div>
-          <HandyInfo />
+          {
+          (props.title === "Options") ? <ShippingInfo /> : <HandyInfo />
+          }
         </div>
       </div>
       <style jsx>{`

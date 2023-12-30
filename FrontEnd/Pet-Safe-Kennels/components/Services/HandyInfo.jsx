@@ -8,7 +8,7 @@ export default function HandyInfo() {
         <h2 className="text-center font-bold text-black mt-10 mb-8">
           Handy info
         </h2>
-        {/* Blowdry */}
+       
         <div className="grid grid-flow-col grid-cols-5 mb-5 leading-snug">
           <picture className="w-10 h-10 mx-auto inline">
             <source type="image/png" srcSet="welding-kennel.png" />
@@ -20,7 +20,7 @@ export default function HandyInfo() {
             </p>
           </div>
         </div>
-        {/* Kids */}
+        
         <div className="grid grid-flow-col grid-cols-5 mb-5 leading-snug">
           <picture className="w-10 h-10 mx-auto inline">
             <source type="image/png" srcSet="construction.png" />
@@ -38,7 +38,7 @@ export default function HandyInfo() {
             <source type="image/png" srcSet="callus.png" />
             <img src="callus.png" alt="Contact" />
           </picture>
-          {/* Contact */}
+        
           <div className="col-span-4">
             <p className="inline">
               To schedule, change or cancel your appointmet please call us at
@@ -52,14 +52,14 @@ export default function HandyInfo() {
             <source type="image/png" srcSet="info.png" />
             <img src="info.png" alt="info" />
           </picture>
-          {/* Cancellations */}
+         
           <div className="col-span-4">
             <p className="inline">
               Cancellations less than 24 hours in advance may result in a fee.
             </p>
           </div>
         </div>
-        {/* Payment */}
+     
         <div className="grid grid-flow-col grid-cols-5 mb-5 leading-snug">
           <picture className="w-10 h-10 mx-auto inline">
             <source type="image/png" srcSet="pets.png" />

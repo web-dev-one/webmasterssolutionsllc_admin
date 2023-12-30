@@ -7,7 +7,7 @@ export default function DirectSale() {
   
   return (
     <Layout>
-      <ServiceDirect service={readymade} title="Ready-Made" />
+      <ServiceDirect service={readymade} title="Buy Online" />
     </Layout>
   );
 }

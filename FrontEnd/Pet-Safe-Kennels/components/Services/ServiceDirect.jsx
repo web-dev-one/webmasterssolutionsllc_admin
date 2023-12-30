@@ -2,6 +2,8 @@ import React from "react";
 import Image from "next/image";
 import ServicesMap from "./ServicesMap";
 import SectionTitle from "../SectionTitle";
+import Service from "./Service";
+import servicesoptions from './services-options'
 
 export default function ServiceDirect(props){
 
@@ -32,14 +34,13 @@ export default function ServiceDirect(props){
                   />
        
         </div>
-        <div className="flex-col max-w-90 mx-auto grid-flow-col grid-cols-6 mr-6 mt-5">
+        <div className="flex-col max-w-90 mx-auto grid-flow-col grid-cols-6 mr-6 mt-5 mb-0">
        
           <p className="text-xl font-bold text-blue-500">Pet-Safe-Kennels introduces a versatile one-size-fits-all dog kennel designed to provide a secure and comfortable space for your furry companions.</p>
           <p className="text-xl font-bold text-blue-500">Order one of our online options that does not require a customization and installation.</p>
           <p className="text-xl font-bold text-blue-500">These kennels are non-refundable and do not offer the 100% pet safety guarentee like our Custom models</p>
 
-          <p className="text-wrap">With options for two different sizes, a choice between a wire top or a solid roof with c-panel, and an array of 12 vibrant colors, our kennels cater to various dog breeds and owner preferences.</p>
-
+<Service style={{"padding-top" : "0 !important"}} service={servicesoptions} title="Options" />
 <h2>Key Features:</h2>
 
 <ul>

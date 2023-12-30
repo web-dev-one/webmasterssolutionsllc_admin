@@ -1,68 +1,83 @@
 const servicesBoxKennels = [
     [
       {
-        title: "Options",
+        title: "Roofs",
         image:
-          "/Loomis-Kennel-Box.jpg",
-      },
-      {
-        id: 10,
-        service: "Wire Top Box Kennel",
-        price: "$2300 & Up",
-        info: "Roof in open wire frame."
-      },
-      {
-        id: 11,
-        service: "1/2 Wire 1/2 Hard top",
-        price: "$2500 & Up",
-        info: "Part Open Wire Part Hard Top Cover.",
-        link: "/partial-cover-top",
-        linktext: "info"
-      },
-      {
-        id: 11,
-        service: "Hard top Kennel",
-        price: "$2500 & Up",
-        info: "Does not let sun in through roof."
+          "/Cpanel.jpg",
       },
       {
         id: 12,
-        service: "Custom Wooden Door top",
-        price: "$3000 & Up",
-        info: "Treated with Wood sealers and painted in the color of your choice."
+        service: "C Panel",
+        info: "Roof comes in any of the factory colors.",
+        img: "/Cpanel.jpg"
+      },
+      {
+        id: 13,
+        service: "PBR",
+        info: "Roof comes in any of the factory colors.",
+        img: "/PBR.jpg"
+      },
+      {
+        id: 11,
+        service: "Wire Top",
+        info: "Wire is painted Kennel color.",
+        img: "/delmar.jpg"
       }
     ],
     [
       {
-        title: "Custom Fix Box Kennel",
+        title: "Colors",
         image:
-          "/CustomFitBoxKennel.jpg",
+          "/Factory-Shade-Colors.jpg",
+      },
+      {
+        id: 14,
+        service: "Polar White",
+      },
+      {
+        id: 15,
+        service: "Bright White",
+      },
+      {
+        id: 16,
+        service: "Hawaiian Blue",
+      },
+      {
+        id: 17,
+        service: "Desert Beige",
+      },
+      { id: 18,
+        service: "Light Stone"
+      },
+      {
+        id: 19,
+        service: "Sahara Tan",
       },
       {
         id: 20,
-        service: "Mirrors the Contours of Your house",
-        price: "$2800 & Up",
-      }
-    ],
-    [
-      {
-        title: "Tall Box Kennel",
-        image:
-          "/TallBox.jpg",
+        service: "Ash Gray",
       },
       {
-        id: 30,
-        service: "Tall Pre-Fabricated",
-        price: "$3000 & Up",
-        info: "4'-5' Tall",
+        id: 21,
+        service: "Koko Brown",
       },
       {
-        id: 31,
-        service: "Taller and Fabrication on site",
-        price: "$4000 & Up",
-        info: "Walls welded onsite.",
-      }
-    ],
+        id: 22,
+        service: "Emerald Green",
+      },  
+      {
+        id: 23,
+        service: "Charcoal",
+      },
+      {
+        id: 24,
+        service: "Country Red",
+      },
+      {
+        id: 25,
+        service: "Copper Penney",
+      },
+    ]
   ];
   export default servicesBoxKennels;
   

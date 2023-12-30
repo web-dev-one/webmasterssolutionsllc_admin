@@ -26,10 +26,14 @@ export default function ServicesMap(props) {
   // Info popup container
   function InfoNote(props) {
     let infoText = null;
+    let infoPic = null;
     list.filter((item) => {
       // matching id of clicked service with corresponding object id
       if (item.id === showInfo.id) {
         infoText = item.info;
+        if (item.img){
+          infoPic = <img src={item.img} alt="options" />
+        }
       } 
      
     });
@@ -53,6 +57,7 @@ export default function ServicesMap(props) {
           className={`${props.showMobile ? "mx-auto mb-3" : "mr-6 mb-auto"}  `}
         />
         <p className="text-black lg:text-left text-center">{infoText}</p>
+        {infoPic}
       </div>
     );
   }
@@ -165,7 +170,7 @@ export default function ServicesMap(props) {
       { !!props.list.filter(x=>x.des).length &&
         <Description {...props} /> 
       }
-        {/* {skinCareLogo} */}
+      
         
         {props.showMobile ? (
           <Buttons mobile={props.showMobile} />
