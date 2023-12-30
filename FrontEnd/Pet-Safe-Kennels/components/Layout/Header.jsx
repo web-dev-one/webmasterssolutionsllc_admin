@@ -62,7 +62,7 @@ export default function Header(props) {
             id="example-navbar-danger"
           >
             <ul className="flex flex-col lg:flex-row list-none lg:ml-auto">
-              <li className="nav-item font-bold text-red-400">
+              <li className="nav-item font-extrabold text-red-400 mx-1">
                 <Link
                   passHref={true}
                   scroll={false}
@@ -72,14 +72,14 @@ export default function Header(props) {
                   }}
                 >
                   
-                    Services&nbsp;
+                    Services
                   
                 </Link>
 
                 <hr />
               </li>
 
-              <li className="nav-item font-bold text-red-400">
+              <li className="nav-item font-extrabold text-red-400 mx-1">
                 <Link
                   passHref={true}
                   scroll={false}
@@ -88,14 +88,14 @@ export default function Header(props) {
                     query: { id: "team" },
                   }}
                 >
-                    Team&nbsp;
+                    Team
                   
                 </Link>
 
                 <hr />
               </li>
 
-              <li className="nav-item font-bold text-red-400">
+              <li className="nav-item font-extrabold text-red-400 mx-1">
                 <Link
                   passHref={true}
                   scroll={false}
@@ -104,13 +104,13 @@ export default function Header(props) {
                     query: { id: "products" },
                   }}
                 >
-                    &nbsp;Products
+                    Products
                 </Link>
 
                 <hr />
               </li>
 
-              <li className="nav-item font-bold text-red-400">
+              <li className="nav-item font-extrabold text-red-400 mx-1">
                 <Link
                   passHref={true}
                   scroll={false}
@@ -119,13 +119,26 @@ export default function Header(props) {
                     query: { id: "contact" },
                   }}
                 >
-                    &nbsp;Contact 
+                    Contact 
                 </Link>
               </li>
               <li className="nav-item font-bold text-red-400 bookingItem" onClick={() => props.onClick(true)}>
-               
-                  &nbsp;BookConsultation
-                
+                  BookConsultation
+              </li>
+              <li className="nav-item font-extrabold text-red-400 mx-1">
+                <Link
+                  passHref={true}
+                  scroll={false}
+                  href={{
+                    pathname: "/shoppingcart"
+                  }}
+                >
+                  
+                  MyCart
+                  
+                </Link>
+
+                <hr />
               </li>
             </ul>
           </div>
