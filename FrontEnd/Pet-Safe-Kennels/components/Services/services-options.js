@@ -77,7 +77,35 @@ const servicesBoxKennels = [
         id: 25,
         service: "Copper Penney",
       },
-    ]
+
+    ],[
+    {
+      title: "Sizes",
+      image:
+        "/Cpanel.jpg",
+    },
+    {
+      id: 12,
+      service: "3'W x 8'L x 3'H",
+      info: "Roof comes in any of the factory colors.",
+      img: "/Cpanel.jpg",
+      price: 2300.00
+    },
+    {
+      id: 13,
+      service: "4'W x8'L x 3'H",
+      info: "Roof comes in any of the factory colors.",
+      price: 2600.00,
+      img: "/PBR.jpg"
+    },
+    {
+      id: 11,
+      service: "4'W x 10'L x 3'H",
+      price: 3000.00,
+      img: "/delmar.jpg"
+    }
+  ]
+    
   ];
   export default servicesBoxKennels;
   

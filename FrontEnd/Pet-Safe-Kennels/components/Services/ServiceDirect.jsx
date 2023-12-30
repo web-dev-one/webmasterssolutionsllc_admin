@@ -37,10 +37,9 @@ export default function ServiceDirect(props){
         <div className="flex-col max-w-90 mx-auto grid-flow-col grid-cols-6 mr-6 mt-5 mb-0">
        
           <p className="text-xl font-bold text-blue-500">Pet-Safe-Kennels introduces a versatile one-size-fits-all dog kennel designed to provide a secure and comfortable space for your furry companions.</p>
-          <p className="text-xl font-bold text-blue-500">Order one of our online options that does not require a customization and installation.</p>
-          <p className="text-xl font-bold text-blue-500">These kennels are non-refundable and do not offer the 100% pet safety guarentee like our Custom models</p>
+          <p className="text-xl font-bold text-blue-500">We offer Three online options that does not require a customization and installation.</p>
 
-<Service style={{"padding-top" : "0 !important"}} service={servicesoptions} title="Options" />
+<Service service={servicesoptions} title="Options" />
 <h2>Key Features:</h2>
 
 <ul>

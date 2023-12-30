@@ -69,7 +69,7 @@ export default function ShippingInfo() {
             <div className="col-span-4">
               <p className="inline">
                 You may update your order one week after is has been placed.
-                If your kennel has been built you cannot cancel you order.
+                If your kennel has been built you cannot alter options or cancel your order.
               </p>
             </div>
           </div>
