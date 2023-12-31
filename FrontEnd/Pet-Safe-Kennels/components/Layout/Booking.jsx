@@ -61,13 +61,6 @@ export default function Booking(props) {
             </p>
           </div>
           <div className="border-t-2">
-            {/* <a
-              className="contents "
-              target="_blank"
-              rel="noopener noreferrer"
-              // href="https://login.meevo.com/teteatete/ob?locationId=106145"
-              href="https://calendly.com/petsafekennels"
-            > */}
                <Link
                   passHref={true}
                   scroll={false}
@@ -83,7 +76,7 @@ export default function Booking(props) {
                 Book Apointment{" "}
               </button>
               </Link>
-            {/* </a> */}
+          
           </div>
         </div>
       </div>

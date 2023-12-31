@@ -28,7 +28,7 @@ export default function Services() {
           
         </Link>
       </div>
-      <Hairdreams />
+      {/* <Hairdreams /> */}
     </div>
   );
 }

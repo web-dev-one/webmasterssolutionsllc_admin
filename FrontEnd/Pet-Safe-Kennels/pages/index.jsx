@@ -11,6 +11,8 @@ import smoothscroll from "smoothscroll-polyfill";
 import { useRouter } from "next/router";
 import Giftcard from "@/components/Layout/Giftcard";
 import useDocumentScrollThrottled from "@/components/Hooks/useDocumentScrollThrottled";
+import { CartProvider } from "./Context/context.js";
+
 
 export default function Home() {
   const [giftcardFixed, setGiftcardFixed] = React.useState(false);
@@ -53,6 +55,7 @@ export default function Home() {
     setGiftcardFixed(currentScrollTop > 600);
   });
   return (
+    <CartProvider value={{items: []}}>
     <Layout>
       <WelcomeCarousel />
       <div className="content relative">
@@ -69,14 +72,14 @@ export default function Home() {
           <div ref={teamRef} className="absolute" style={{ top: "-170px" }} />
           <Team />
         </div>
-        <div className="relative">
+        {/* <div className="relative">
           <div
             ref={productsRef}
             className="absolute"
             style={{ top: "-170px" }}
           />
           <Products />
-        </div>
+        </div> */}
         <div className="relative">
           <div
             ref={contactRef}
@@ -86,9 +89,10 @@ export default function Home() {
           <Contact />
         </div>
         <ContactForm />
-        <Giftcard position={giftcardFixed} />
+        {/* <Giftcard position={giftcardFixed} /> */}
       </div>
       <ScrollButton />
     </Layout>
+    </CartProvider>
   );
 }

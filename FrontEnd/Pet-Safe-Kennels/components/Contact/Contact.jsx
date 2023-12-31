@@ -118,7 +118,7 @@ export default function Contact() {
         </div>
         {/* map */}
         <div className="w-screen md:w-full map md:max-w-full sm:max-w-3/4 sm:mx-auto text-center sm:max-w-90">
-          <Map />
+          {/* <Map /> */}
         </div>
       </div>
       <style jsx>{`

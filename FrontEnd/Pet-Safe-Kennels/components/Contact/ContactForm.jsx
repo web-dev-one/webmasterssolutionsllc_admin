@@ -4,29 +4,34 @@ import emailjs from "emailjs-com";
 import ContactFormResponse from "./ContactFormResponse";
 import { useForm } from "../Hooks/useForm";
 import Button from "../Button";
+
 export default function ContactForm() {
   const [showResponse, setShowResponse] = React.useState({
     display: false,
     code: null,
   });
   const { values, handleChange, reset } = useForm({
-    name: "",
-    email: "",
+    to_name: "",
+    reply_to: "",
     phone: "",
     message: "",
+    from_name: "Pet-Safe-Kennels"
   });
-  function sendEmail(e) {
-    e.preventDefault();
-    emailjs
+  function sendEmail(event) {
+   let e = event;
+   
+   emailjs
       .sendForm(
         "default_service",
         process.env.NEXT_PUBLIC_templateid,
         e.target,
-        process.env.NEXT_PUBLIC_userid
+        process.env.NEXT_PUBLIC_userid,
+        process.env.NEXT_PUBLIC_publickey
       )
       .then(
         (result) => {
-          // console.log(result.text);
+          debugger
+          console.log("res", result.text);
           handleSubmit(200);
         },
         (error) => {
@@ -36,6 +41,8 @@ export default function ContactForm() {
       );
   }
   const handleSubmit = (code) => {
+    debugger
+   console.log("code",code)
     setShowResponse(() => ({ display: true, code: code }));
     reset();
   };
@@ -47,7 +54,7 @@ export default function ContactForm() {
       <div className="mx-auto lg:w-1/2 sm:w-3/4 w-11/12">
         <p className="italic text-gray-500 text-sm mb-4">
           Please do not change or cancel appointments over email. To modify your
-          appointment call salon directly at 617-559-0660
+          appointment call salon directly at 520-730-7020
         </p>
         <form
           action="sumbit"
@@ -62,11 +69,11 @@ export default function ContactForm() {
             <input
               className="w-full py-1 px-4"
               type="text"
-              id="name"
-              name="name"
+              id="to_name"
+              name="to_name"
               placeholder="Joe Doe"
               required
-              value={values.name}
+              value={values.to_name}
               onChange={handleChange}
             />
           </div>
@@ -78,11 +85,11 @@ export default function ContactForm() {
             <input
               className="w-full py-1 px-4"
               type="text"
-              id="email"
-              name="email"
+              id="reply_to"
+              name="reply_to"
               placeholder="example@smth.com"
               required
-              value={values.email}
+              value={values.reply_to}
               onChange={handleChange}
             />
           </div>
@@ -118,7 +125,9 @@ export default function ContactForm() {
               onChange={handleChange}
             />
           </div>
-          <Button type="submit" className="px-24 mx-auto">
+          <Button
+            type="submit" className="px-24 mx-auto"
+            >
             Send
           </Button>
         </form>
@@ -145,3 +154,5 @@ export default function ContactForm() {
     </div>
   );
 }
+
+// emailjs id service_0g854z1

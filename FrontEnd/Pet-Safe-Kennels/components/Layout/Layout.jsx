@@ -5,10 +5,14 @@ import Footer from "./Footer";
 import useDocumentScrollThrottled from "../Hooks/useDocumentScrollThrottled";
 import BookingMobile from "./BookingMobile";
 import Booking from "./Booking";
+import { config } from '@fortawesome/fontawesome-svg-core'
+import '@fortawesome/fontawesome-svg-core/styles.css'
+config.autoAddCss = false
+
 export default function Layout({ children, props }) {
   const [footerFixed, setFooterFixed] = React.useState(true);
   const [showBooking, setShowBooking] = React.useState(false);
-  const [showCal, setShowCal] = React.useState(false);
+  
 
   const number = "520.730.7020"
   let cost = 2500
@@ -28,14 +32,14 @@ export default function Layout({ children, props }) {
           content="Coyote Proof Kennels shipped Nationwide, Free Shipping, Snake Proof Dog Kennels for sale, Dog Kennel Company Ships To All United States, Nationwide Kennel Shipping, Dog Kennel Manufacturing Company, Predator Proof Dog Kennels for sale, Delivered To Your Front Door, Pet Kennel Manufacturers,  Safest Dog Kennels For Sale, Shipped and Delivered,  Custom Made Snake Proof Kennels, Custom Pet Kennels Keep Coyotes Out, Quality Made Pet Kennels Shipped Nationwide."
         />
         <link rel="preconnect" href="https://fonts.gstatic.com" />
-        <link
+        {/* <link
           href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap"
           rel="stylesheet"
         />
         <link
           href="https://fonts.googleapis.com/css2?family=News+Cycle&display=swap"
           rel="stylesheet"
-        ></link>
+        ></link> */}
         <link
           rel="apple-touch-icon"
           sizes="180x180"
@@ -59,6 +63,7 @@ export default function Layout({ children, props }) {
         <meta name="msapplication-TileColor" content="#da532c" />
         <meta name="msapplication-config" content="/browserconfig.xml" />
         <meta name="theme-color" content="#f0eae7" />
+        
       </Head>
       <Header onClick={() => setShowBooking(true)} />
       <BookingMobile
@@ -67,7 +72,7 @@ export default function Layout({ children, props }) {
         number={number}
       />
       {showBooking && (
-        <Booking showCal={showCal} setShowCal={setShowCal} showBooking={showBooking} setShowBooking={setShowBooking} number={number} cost={cost}/>
+        <Booking  showBooking={showBooking} setShowBooking={setShowBooking} number={number} cost={cost}/>
       )}
       {children}
       <Footer />

@@ -4,14 +4,14 @@ export default function Buttons(props) {
   const router = useRouter();
   return (
     <div className="lg:mb-12">
-      <a href="https://swipeit.com/product/1218/tete-a-tete">
+      {/* <a href="https://swipeit.com/product/1218/tete-a-tete">
         <button
           className="shadow-lg text-white py-2 px-6 ml-80 hover:opacity-75"
           style={{ backgroundColor: "#895b4a" }}
         >
           Buy a gift card
         </button>
-      </a>
+      </a> */}
       <Link
         passHref={true}
         scroll={false}
