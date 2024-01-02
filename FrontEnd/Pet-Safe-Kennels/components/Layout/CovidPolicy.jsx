@@ -1,4 +1,5 @@
 import Image from "next/image";
+import ExportedImage from "next-image-export-optimizer";
 import Backdrop from "../Backdrop";
 import React from "react";
 export default function CovidPolicy() {
@@ -31,7 +32,7 @@ export default function CovidPolicy() {
         <>
           <div className={`absolute sm:w-max z-50`}>
             <div className="relative text-center">
-              <Image
+              <ExportedImage
                 src="https://res.cloudinary.com/dyj6lkekg/image/upload/tete/covid-policy.png"
                 alt="COVID-19 Policy"
                 width={597}

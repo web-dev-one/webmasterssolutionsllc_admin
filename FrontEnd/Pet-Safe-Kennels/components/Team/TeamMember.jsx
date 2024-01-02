@@ -1,4 +1,5 @@
 import Image from "next/image";
+import ExportedImage from "next-image-export-optimizer";
 export default function TeamMember(props) {
   return (
     <div
@@ -6,7 +7,7 @@ export default function TeamMember(props) {
       style={{ padding: 55, height: 400, background: "white", width: "272px" }}
     >
       <div style={{ marginLeft: "-20px" }}>
-        <Image
+        <ExportedImage
           src={props.photo}
           alt="Team member"
           quality={75}

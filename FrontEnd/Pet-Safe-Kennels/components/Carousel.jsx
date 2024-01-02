@@ -2,6 +2,7 @@ import React from "react";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { Carousel } from "react-responsive-carousel";
 import Image from "next/image";
+import ExportedImage from "next-image-export-optimizer";
 import DogKennel from '../public/galvanized-dog-run-inside-Large.jpg';
 import CuteDogKennel from '../public/cute_dog_in_kennel-Large.jpg'
 import CustomRoof from '../public/custom_roof_phoenix_dog_kennel.jpg';
@@ -14,7 +15,7 @@ const images = [ TucsonKennel, DogKennel, ScottsdaleKennel, CustomRoof, CuteDogK
 
 export default function WelcomeCarousel() {
   const createCarouselItemImage = images.map( index => (<div key={index} style={{ width: "max-content", height: "400px" }}>
-      <Image
+      <ExportedImage
         src={index}
         width={450}
         height={580}

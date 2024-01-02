@@ -11,7 +11,7 @@ import smoothscroll from "smoothscroll-polyfill";
 import { useRouter } from "next/router";
 import Giftcard from "@/components/Layout/Giftcard";
 import useDocumentScrollThrottled from "@/components/Hooks/useDocumentScrollThrottled";
-import { CartProvider } from "./Context/context.js";
+// import { CartProvider } from "./Context/context.js";
 
 
 export default function Home() {
@@ -29,10 +29,10 @@ export default function Home() {
       scroll(servicesRef);
       router.replace("/", undefined, { shallow: true });
     }
-    if (id === "products") {
-      scroll(productsRef);
-      router.replace("/", undefined, { shallow: true });
-    }
+    // if (id === "products") {
+    //   scroll(productsRef);
+    //   router.replace("/", undefined, { shallow: true });
+    // }
     if (id === "team") {
       scroll(teamRef);
       router.replace("/", undefined, { shallow: true });
@@ -55,7 +55,7 @@ export default function Home() {
     setGiftcardFixed(currentScrollTop > 600);
   });
   return (
-    <CartProvider value={{items: []}}>
+    // <CartProvider value={{items: []}}>
     <Layout>
       <WelcomeCarousel />
       <div className="content relative">
@@ -93,6 +93,6 @@ export default function Home() {
       </div>
       <ScrollButton />
     </Layout>
-    </CartProvider>
+    // </CartProvider>
   );
 }

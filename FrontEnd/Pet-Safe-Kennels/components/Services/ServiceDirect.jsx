@@ -1,5 +1,6 @@
 import React from "react";
 import Image from "next/image";
+import ExportedImage from "next-image-export-optimizer";
 import ServicesMap from "./ServicesMap";
 import SectionTitle from "../SectionTitle";
 import Service from "./Service";
@@ -23,7 +24,7 @@ export default function ServiceDirect(props){
             className="grid items-center place-content-center pt-40 mx-auto sm:max-w-90">
             <SectionTitle title={props.title} showLink={true} isMobile={isMobile}/>
             <h1 className="flex place-content-center w-90 font-bold text-xl text-blue-600">Pet-Safe-Kennels Box Kennel</h1>
-                      <Image
+                      <ExportedImage
                     src={`${props.service[0].image}`}
                     width={width()}
                     height={props.showMobile ? 320 : 1250}

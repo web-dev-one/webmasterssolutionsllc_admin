@@ -95,7 +95,7 @@ export default function Header(props) {
                 <hr />
               </li>
 
-              <li className="nav-item font-extrabold text-red-400 mx-1">
+              {/* <li className="nav-item font-extrabold text-red-400 mx-1">
                 <Link
                   passHref={true}
                   scroll={false}
@@ -108,7 +108,7 @@ export default function Header(props) {
                 </Link>
 
                 <hr />
-              </li>
+              </li> */}
 
               <li className="nav-item font-extrabold text-red-400 mx-1">
                 <Link

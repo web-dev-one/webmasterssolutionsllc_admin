@@ -5,7 +5,9 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "generate": "next build && next export && next-image-export-optimizer",
+    "export": "next build && next export && next-image-export-optimizer"
   },
   "dependencies": {
     "@emailjs/browser": "^3.11.0",
@@ -13,6 +15,7 @@
     "emailjs-com": "^2.6.4",
     "lodash": "^4.17.20",
     "next": "^14.0.4",
+    "next-image-export-optimizer": "^1.11.0",
     "postcss": "^8.4.32",
     "postcss-flexbugs-fixes": "^5.0.2",
     "postcss-preset-env": "^8.5.1",

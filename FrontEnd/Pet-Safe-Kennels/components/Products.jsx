@@ -1,5 +1,6 @@
 import React from "react";
 import Image from "next/image";
+import ExportedImage from "next-image-export-optimizer";
 import SectionTitle from "./SectionTitle";
 export default function Products() {
   const [brand, setBrandOpen] = React.useState(false);
@@ -40,7 +41,7 @@ export default function Products() {
           <div
             className={"lg:block md:block " + (brand ? "block mb-6" : "hidden")}
           >
-            <Image
+            <ExportedImage
               src="https://res.cloudinary.com/dyj6lkekg/image/upload/tete/top-brands.png"
               alt="Top brands"
               width={604}
