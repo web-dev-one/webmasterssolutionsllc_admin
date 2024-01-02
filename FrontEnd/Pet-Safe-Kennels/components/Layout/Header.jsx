@@ -125,7 +125,7 @@ export default function Header(props) {
               <li className="nav-item font-bold text-red-400 bookingItem" onClick={() => props.onClick(true)}>
                   BookConsultation
               </li>
-              <li className="nav-item font-extrabold text-red-400 mx-1">
+              {/* <li className="nav-item font-extrabold text-red-400 mx-1">
                 <Link
                   passHref={true}
                   scroll={false}
@@ -139,7 +139,7 @@ export default function Header(props) {
                 </Link>
 
                 <hr />
-              </li>
+              </li> */}
             </ul>
           </div>
         </div>

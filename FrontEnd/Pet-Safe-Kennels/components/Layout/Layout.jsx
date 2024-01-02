@@ -1,15 +1,23 @@
-import React from "react";
+import React, {useEffect} from "react";
 import Head from "next/head";
 import Header from "./Header";
 import Footer from "./Footer";
 import useDocumentScrollThrottled from "../Hooks/useDocumentScrollThrottled";
 import BookingMobile from "./BookingMobile";
 import Booking from "./Booking";
-import { config } from '@fortawesome/fontawesome-svg-core'
-import '@fortawesome/fontawesome-svg-core/styles.css'
-config.autoAddCss = false
+import Script from 'next/script';
+import emailjs from '@emailjs/browser';
+
+
 
 export default function Layout({ children, props }) {
+
+  useEffect(()=>{
+    (function() {
+      emailjs.init(process.env.NEXT_PUBLIC_publickey)
+    })();
+
+  },[])
   const [footerFixed, setFooterFixed] = React.useState(true);
   const [showBooking, setShowBooking] = React.useState(false);
   
@@ -31,6 +39,13 @@ export default function Layout({ children, props }) {
           name="description"
           content="Coyote Proof Kennels shipped Nationwide, Free Shipping, Snake Proof Dog Kennels for sale, Dog Kennel Company Ships To All United States, Nationwide Kennel Shipping, Dog Kennel Manufacturing Company, Predator Proof Dog Kennels for sale, Delivered To Your Front Door, Pet Kennel Manufacturers,  Safest Dog Kennels For Sale, Shipped and Delivered,  Custom Made Snake Proof Kennels, Custom Pet Kennels Keep Coyotes Out, Quality Made Pet Kennels Shipped Nationwide."
         />
+        {/* <Script>
+        <script type="text/javascript">
+            (function() {
+            emailjs.init(process.env.NEXT_PUBLIC_publickey)
+          })();
+        </script>
+        </Script> */}
         <link rel="preconnect" href="https://fonts.gstatic.com" />
         {/* <link
           href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap"

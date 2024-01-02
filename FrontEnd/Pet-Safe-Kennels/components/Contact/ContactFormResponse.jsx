@@ -15,7 +15,7 @@ const ContactFormResponse = (params) => {
             style={{ color: "rgba(77, 73, 73, 1)" }}
           >
             {params.responseCode === 200
-              ? "Thank you for contacting Tete-A-Tete!"
+              ? "Thank you for contacting Pet-Safe-Kennels!"
               : "Ooops! Something went wrong!"}
           </h2>
           <p>
