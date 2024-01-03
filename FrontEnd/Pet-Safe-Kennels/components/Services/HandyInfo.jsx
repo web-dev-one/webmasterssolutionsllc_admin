@@ -11,7 +11,7 @@ export default function HandyInfo() {
        
         <div className="grid grid-flow-col grid-cols-5 mb-5 leading-snug">
           <picture className="w-10 h-10 mx-auto inline">
-            <source type="image/png" srcSet="welding-kennel.png" />
+            <source type="image/png" srcSet="/welding-kennel.png" />
             <img src="/welding-kennel.png" alt="Welding Kennel" />
           </picture>
           <div className="col-span-4">
@@ -23,7 +23,7 @@ export default function HandyInfo() {
         
         <div className="grid grid-flow-col grid-cols-5 mb-5 leading-snug">
           <picture className="w-10 h-10 mx-auto inline">
-            <source type="image/png" srcSet="construction.png" />
+            <source type="image/png" srcSet="/construction.png" />
             <img src="construction.png" alt="construction" />
           </picture>
           <div className="col-span-4">
@@ -34,8 +34,8 @@ export default function HandyInfo() {
         </div>
         <div className="grid grid-flow-col grid-cols-5 mb-5 leading-snug">
           <picture className="w-8 h-8 mx-auto inline my-auto">
-            <source type="image/webp" srcSet="callus.webp" />
-            <source type="image/png" srcSet="callus.png" />
+            <source type="image/webp" srcSet="/callus.webp" />
+            <source type="image/png" srcSet="/callus.png" />
             <img src="callus.png" alt="Contact" />
           </picture>
         
@@ -48,8 +48,8 @@ export default function HandyInfo() {
         </div>
         <div className="grid grid-flow-col grid-cols-5 mb-5 leading-snug">
           <picture className="w-8 mx-auto inline my-auto">
-            <source type="image/webp" srcSet="info.webp" />
-            <source type="image/png" srcSet="info.png" />
+            <source type="image/webp" srcSet="/info.webp" />
+            <source type="image/png" srcSet="/info.png" />
             <img src="info.png" alt="info" />
           </picture>
          
@@ -62,7 +62,7 @@ export default function HandyInfo() {
      
         <div className="grid grid-flow-col grid-cols-5 mb-5 leading-snug">
           <picture className="w-10 h-10 mx-auto inline">
-            <source type="image/png" srcSet="pets.png" />
+            <source type="image/png" srcSet="/pets.png" />
             <img src="pets.png" alt="pets" />
           </picture>
           <div className="col-span-4">

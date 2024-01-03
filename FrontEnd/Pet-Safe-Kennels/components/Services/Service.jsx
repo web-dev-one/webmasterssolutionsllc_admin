@@ -107,7 +107,7 @@ export default function Service(props) {
                       ? "invisible"
                       : "inline-block"
                   }`}
-                  src="right.png"
+                  src="/right.png"
                   alt="Next service"
                 ></img>
               </div>

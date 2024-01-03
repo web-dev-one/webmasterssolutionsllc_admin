@@ -4,6 +4,7 @@ import Image from "next/image";
 import ExportedImage from "next-image-export-optimizer";
 import Backdrop from "../Backdrop";
 import React from "react";
+import Link from "next/link";
 export default function ServicesMap(props) {
  
   const list = props.list;
@@ -94,7 +95,7 @@ export default function ServicesMap(props) {
           } mr-auto ${check ? "cursor-pointer hover:opacity-75" : ""}`}
         >
           {item.service}
-          &nbsp;&nbsp;<a className="text-xl text-red-400 font-bold" href={item.link}>{item.linktext}</a>
+          &nbsp;&nbsp;<Link className="flex-col justify-center font-bold text-red-500" href={`${item.link}`}><h3>{item.linktext}</h3></Link>
         </p>
         <p
           style={{ fontSize: "16px" }}

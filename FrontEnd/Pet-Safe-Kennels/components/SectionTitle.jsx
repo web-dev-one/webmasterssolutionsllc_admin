@@ -18,7 +18,7 @@ export default function SectionTitle(props) {
       >
         
           <img
-            src="left.png"
+            src="/left.png"
             className="w-3 inline-block mr-2"
             alt="Go back to services"
           />

@@ -1,0 +1,9 @@
+{
+  "/_app": "pages/_app.js",
+  "/_error": "pages/_error.js",
+  "/_document": "pages/_document.js",
+  "/boxkennel": "pages/boxkennel.js",
+  "/": "pages/index.js",
+  "/aviary": "pages/aviary.js",
+  "/partial-cover-top": "pages/partial-cover-top.js"
+}

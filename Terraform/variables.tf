@@ -69,3 +69,9 @@ variable "app_count" {
   description = "Number of Containers to run."
   default     = 1
 }
+
+variable "domainName" {
+  type = string
+  description = "Registered Domain name."
+  default = "petsafekennels.com"
+}
