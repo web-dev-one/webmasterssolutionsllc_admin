@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  installation_address: MyString
+  installation_date: 2024-02-16 20:04:42
+  kennel: one
+  buyer: one
+  worker_count: 1
+
+two:
+  installation_address: MyString
+  installation_date: 2024-02-16 20:04:42
+  kennel: two
+  buyer: two
+  worker_count: 1
