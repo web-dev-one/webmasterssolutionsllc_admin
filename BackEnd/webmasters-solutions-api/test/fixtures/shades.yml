@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  cost: 1
+  roof: MyString
+  h: 1
+  w: 1
+  l: 1
+
+two:
+  cost: 1
+  roof: MyString
+  h: 1
+  w: 1
+  l: 1

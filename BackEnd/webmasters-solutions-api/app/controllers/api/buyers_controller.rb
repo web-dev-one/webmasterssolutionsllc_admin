@@ -8,18 +8,16 @@ class Api::BuyersController < ApplicationController
   end
 
   def create
-    binding.pry
-    buyer = Buyer.new(
-      name: params[:name],
-      address: params[:address],
-      phone: params[:phone],
-      email: params[:email],
-      install: params[:install],
-     
-      price: params[:price]
-    )
+    buyer = Buyer.create!(buyer_params)
+    render json: buyer, status: 200
   end
 
   def delete
+  end
+
+  private
+
+  def buyer_params
+    params.permit(:phone, :name, :address, :email, :price, :model)
   end
 end
