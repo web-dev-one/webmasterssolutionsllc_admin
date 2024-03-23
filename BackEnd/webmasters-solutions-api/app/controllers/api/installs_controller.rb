@@ -8,6 +8,8 @@ class Api::InstallsController < ApplicationController
   end
 
   def create
+  buyer = Buyer.find_or_create_by(email: params[:email])
+  binding.pry
   install = Install.create!(install_params)
   render json: install, status: 200
   end

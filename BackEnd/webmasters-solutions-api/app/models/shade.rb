@@ -1,4 +1,8 @@
 class Shade < ApplicationRecord
     belongs_to :buyer
-    belongs_to :install, optional: true
+    has_many :installs
+    has_many :kennels, through: :installs
+    has_many :shades, through: :installs
+    has_many :barns, through: :installs
+
 end

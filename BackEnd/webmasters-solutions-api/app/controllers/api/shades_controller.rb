@@ -8,6 +8,9 @@ class Api::ShadesController < ApplicationController
   end
 
   def create
+    buyer = Buyer.find_or_create_by(email: params[:email])
+    binding.pry
+    params[:buyer_id] = buyer.id
     shade = Shade.create!(shade_params)
     render json: shade, status:200
   end

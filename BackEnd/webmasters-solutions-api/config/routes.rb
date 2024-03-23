@@ -18,7 +18,7 @@ Rails.application.routes.draw do
     # get 'buyers/delete'
     resources :buyers, only: [:index, :show, :create, :delete]
     resources :kennels, only: [:index, :show, :create, :delete]
-    resources :shades, only: [:index, :show, :create, :delete]
+    resources :shades, only: [:index, :show, :create, :update, :delete]
     resources :installs, only: [:index, :show, :create, :delete]
   end
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html

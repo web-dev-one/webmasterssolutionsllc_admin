@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2024_03_21_032549) do
+ActiveRecord::Schema[7.0].define(version: 2024_03_22_232206) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -50,6 +50,8 @@ ActiveRecord::Schema[7.0].define(version: 2024_03_21_032549) do
     t.integer "h"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "buyer_id", null: false
+    t.index ["buyer_id"], name: "index_barns_on_buyer_id"
   end
 
   create_table "buyers", force: :cascade do |t|
@@ -57,10 +59,15 @@ ActiveRecord::Schema[7.0].define(version: 2024_03_21_032549) do
     t.string "address"
     t.string "phone"
     t.string "email"
-    t.string "model"
-    t.integer "price"
+    t.string "occupation"
+    t.integer "amount_paid"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "amount_owed"
+    t.string "animals", default: [], array: true
+    t.string "products", default: [], array: true
+    t.string "status", default: "pending"
+    t.string "origin", default: "google"
   end
 
   create_table "installs", force: :cascade do |t|
@@ -72,6 +79,8 @@ ActiveRecord::Schema[7.0].define(version: 2024_03_21_032549) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "shade_id", null: false
+    t.bigint "barn_id"
+    t.index ["barn_id"], name: "index_installs_on_barn_id"
     t.index ["buyer_id"], name: "index_installs_on_buyer_id"
     t.index ["kennel_id"], name: "index_installs_on_kennel_id"
     t.index ["shade_id"], name: "index_installs_on_shade_id"
@@ -99,6 +108,8 @@ ActiveRecord::Schema[7.0].define(version: 2024_03_21_032549) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "barns", "buyers"
+  add_foreign_key "installs", "barns"
   add_foreign_key "installs", "buyers"
   add_foreign_key "installs", "kennels"
   add_foreign_key "installs", "shades"
