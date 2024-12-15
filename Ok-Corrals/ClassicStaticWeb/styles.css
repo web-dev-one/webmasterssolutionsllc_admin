@@ -25,7 +25,7 @@ nav ul li {
     margin: 0 1rem;
 }
 
-nav ul li a {
+nav ul li {
     color: #fff;
     text-decoration: none;
     font-family: "Rye", serif;
@@ -56,8 +56,8 @@ footer {
     flex-direction: column;
   }
 
-  .w-45{
-    width: 45%;
+  .w-25{
+    width: 25%;
   }
 
   .rr {
@@ -77,4 +77,11 @@ a{
 
 a:hover{
    color: white;
+}
+
+.xl{
+    font-size: xx-large;
+}
+.w-80{
+    
 }
