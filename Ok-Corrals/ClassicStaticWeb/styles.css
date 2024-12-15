@@ -28,6 +28,9 @@ nav ul li {
 nav ul li a {
     color: #fff;
     text-decoration: none;
+    font-family: "Rye", serif;
+    font-style: normal;
+    font-size: larger;
 }
 
 main {
@@ -53,6 +56,25 @@ footer {
     flex-direction: column;
   }
 
-  .w-50{
-    width: 50%;
+  .w-45{
+    width: 45%;
   }
+
+  .rr {
+    font-family: "Rye", serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+  
+.main{
+    padding-bottom: 10px !important;
+    align-items: top;
+}
+
+a{
+ color: rgb(215, 194, 58);
+}
+
+a:hover{
+   color: white;
+}
