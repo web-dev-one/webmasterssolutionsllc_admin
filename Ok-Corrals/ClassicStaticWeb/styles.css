@@ -82,6 +82,55 @@ a:hover{
 .xl{
     font-size: xx-large;
 }
-.w-80{
-    
+.w-40{
+    width: 40vw;
+}
+
+.mx-a {
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
+
+/* .quote {
+    justify-content: center;
+   
+    height: 100px;
+    width: 530px;
+    margin-top: 0% !important;
+    margin-bottom: 0% !important;
+    padding-top: 0% !important;
+    padding-bottom: 0% !important;
+    padding-left: 5em;
+    padding-right: 5em;
+} */
+
+.nowrap {
+    text-wrap: nowrap;
+}
+
+.speech-bubble {
+	position: relative;
+	background: #00aabb;
+	border-radius: .4em;
+}
+
+.speech-bubble:after {
+	content: '';
+	position: absolute;
+	bottom: 0;
+	left: 50%;
+	width: 0;
+	height: 0;
+	border: 27px solid transparent;
+	border-top-color: #00aabb;
+	border-bottom: 0;
+	border-left: 0;
+	margin-left: -13.5px;
+	margin-bottom: -27px;
+}
+.fixed {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    width: 100vw;
 }
