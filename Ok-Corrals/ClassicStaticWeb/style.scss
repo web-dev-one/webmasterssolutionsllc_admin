@@ -42,8 +42,11 @@ footer {
 
 /* Media Queries */
 /* Tablet screens: 768px and up */
-@media (min-width: 768px) {
+@media only screen and (min-width: 308px) and (max-width: 850px){
+
+
   header {
+   
     ul {
       flex-direction: row; // Nav items inline
       justify-content: flex-start;
@@ -52,7 +55,23 @@ footer {
         margin-right: 1rem;
       }
     }
+    
   }
+  header{
+    width: 100vw !important;
+  }
+  nav ul li {
+    text-decoration: none;
+    font-family: "Rye", serif;
+    font-style: normal;
+    font-size: smaller;
+} 
+li {
+  margin-right:1% !important;
+  margin-left: 0% !important;
+  transform: rotateZ(40deg)
+}
+a {color: rgb(215, 194, 58) !important;}
 
   main {
     padding: 2rem;
