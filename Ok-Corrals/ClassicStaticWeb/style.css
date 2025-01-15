@@ -37,6 +37,9 @@ footer {
 /* Media Queries */
 /* Tablet screens: 768px and up */
 @media only screen and (min-width: 308px) and (max-width: 850px) {
+  body {
+    width: 100vw !important;
+  }
   header ul {
     flex-direction: row;
     justify-content: flex-start;
@@ -63,6 +66,44 @@ footer {
   }
   main {
     padding: 2rem;
+  }
+  .largescreenquote {
+    width: 50% !important;
+    margin-right: 10px;
+    margin-left: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .w-30 {
+    width: 55vw !important;
+  }
+  .quote {
+    font-size: small !important;
+    transform: rotateZ(3deg);
+  }
+  .smr {
+    font-size: x-small;
+  }
+  .sm {
+    font-size: small;
+  }
+  .nmy {
+    margin-top: 0% !important;
+    margin-bottom: 0% !important;
+  }
+  .npy {
+    padding-top: 0% !important;
+    padding-bottom: 0% !important;
+  }
+  .fsuc {
+    font-stretch: ultra-condensed;
+  }
+  .w-100 {
+    width: 100vw !important;
+  }
+  .h-20 {
+    height: 200px !important;
   }
 }
 /* Desktop screens: 1024px and up */

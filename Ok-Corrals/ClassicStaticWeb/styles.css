@@ -52,8 +52,8 @@ footer {
     justify-content: center;
   }
   .flex-c{
-    flex: auto;
-    flex-direction: column;
+    display: flex;
+    flex-direction: column !important;
   }
 
   .w-25{
@@ -128,12 +128,20 @@ a:hover{
 	margin-left: -13.5px;
 	margin-bottom: -27px;
 }
+
 .fixed {
     display: flex;
     flex-direction: column;
     position: fixed;
     width: 100vw;
 }
+
 .w-30 {
     width: 30vw;
+}
+.largescreenquote{
+    width: 30%; margin: auto; display: flex; flex-direction: column; justify-content: center;
+}
+.IIId {
+    box-shadow: 6px 3px 3px red;
 }
