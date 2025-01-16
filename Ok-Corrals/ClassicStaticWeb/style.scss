@@ -116,8 +116,14 @@ a {color: rgb(215, 194, 58) !important;}
 .w-100 {
   width: 100vw !important;
 }
-.h-20 {
-  height: 200px !important;
+.h-550px {
+  height: 550px !important;
+}
+.wider {
+  width: 60vw !important;
+}
+.pb-10 {
+  padding-bottom: 10px !important;
 }
 //  end of mobile
 }
@@ -135,5 +141,8 @@ a {color: rgb(215, 194, 58) !important;}
   main {
     max-width: 800px;
     margin: 0 auto;
-  }
+  } 
+
+ 
+
 }
