@@ -1,0 +1,160 @@
+/* Base Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 1rem;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+#hero {
+    text-align: center;
+    padding: 2rem;
+    background: linear-gradient(to bottom, #4a90e2, #50e3c2);
+    color: #fff;
+}
+
+#features {
+    display: flex;
+    justify-content: space-around;
+    padding: 2rem;
+    background-color: #fff;
+}
+
+.feature {
+    max-width: 300px;
+    text-align: center;
+}
+
+footer {
+    text-align: center;
+    padding: 1rem;
+    background-color: #333;
+    color: #fff;
+}
+
+/* Buttons */
+.btn {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    color: #fff;
+    background-color: #007BFF;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.btn:hover {
+    background-color: #0056b3;
+}
+
+/* About Page Styles */
+#about, #crosses {
+    background-color: #f0f8ff;
+    padding: 2rem;
+    text-align: center;
+    color: #2c3e50;
+    border-radius: 10px;
+    margin: 1rem auto;
+    max-width: 800px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#about h1, #crosses h1 {
+    font-size: 2.5rem;
+    color: #2980b9;
+}
+
+#team, #process {
+    background-color: #ecf0f1;
+    padding: 2rem;
+    border-radius: 10px;
+    margin: 1rem auto;
+    max-width: 800px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#team h2, #process h2 {
+    font-size: 2rem;
+    color: #27ae60;
+}
+
+#team p, #process p {
+    color: #34495e;
+}
+
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5rem;
+    padding: 1rem 0;
+}
+
+.gallery-item {
+    background-color: #ecf0f1;
+    padding: 1rem;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 250px;
+}
+
+.gallery-item img {
+    width: 100%;
+    border-radius: 5px;
+}
+
+.gallery-item h3 {
+    font-size: 1.25rem;
+    color: #2980b9;
+    margin: 0.5rem 0;
+}
+
+.gallery-item p {
+    color: #2c3e50;
+    font-weight: bold;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    #features {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav ul {
+        flex-direction: column;
+    }
+
+    #about, #team, #process, #crosses {
+        padding: 1.5rem;
+        margin: 1rem;
+    }
+
+    .gallery {
+        flex-direction: column;
+        gap: 1rem;
+    }
+}
