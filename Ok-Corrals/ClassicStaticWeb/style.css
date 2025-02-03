@@ -56,7 +56,7 @@ footer {
     font-style: normal;
     font-size: smaller;
   }
-  li {
+  .rotate {
     margin-right: 1% !important;
     margin-left: 0% !important;
     transform: rotateZ(40deg);
