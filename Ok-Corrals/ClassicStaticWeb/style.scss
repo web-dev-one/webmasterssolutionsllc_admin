@@ -43,7 +43,14 @@ footer {
 /* Media Queries */
 /* Tablet screens: 768px and up */
 @media only screen and (min-width: 308px) and (max-width: 850px){
- 
+  
+  .w-60 { 
+    width: 60vw !important;
+  }
+  .l-0 {
+    padding-left: 0% !important;
+    margin-left: -25% !important;
+  }
   body{
     width: 100vw !important;
   }

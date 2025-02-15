@@ -186,3 +186,18 @@ a:hover{
     font-size: medium;
     font-weight: bolder;
 }
+.nowrap {
+    text-wrap: nowrap !important;
+}
+.mb-0 {
+    margin-bottom: 0% !important;
+}
+.mt-0{
+    margin-top: 0% !important;
+}
+.notilt {
+    transform: rotateZ(0deg) !important;
+}
+.mt-10 {
+    margin-top: 10px !important;
+}
