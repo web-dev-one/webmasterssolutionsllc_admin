@@ -110,7 +110,7 @@ footer {
     width: 100vw !important;
   }
   .h-550px {
-    height: 550px !important;
+    height: 300px !important;
   }
   .wider {
     width: 60vw !important;
@@ -118,8 +118,29 @@ footer {
   .pb-10 {
     padding-bottom: 10px !important;
   }
+  .pt-10 {
+    padding-top: 10% !important;
+  }
+  .mt-10 {
+    margin-top: 10% !important;
+  }
   .nolarge {
     display: none;
+  }
+  .w-50 {
+    width: 50vw !important;
+  }
+  .mobile-large {
+    height: 120vh !important;
+  }
+  .mobile-larger {
+    height: 155vh !important;
+  }
+  .mt-40 {
+    margin-top: 40px !important;
+  }
+  .ml-10 {
+    margin-left: 10px !important;
   }
 }
 /* Desktop screens: 1024px and up */
@@ -133,5 +154,11 @@ footer {
   main {
     max-width: 800px;
     margin: 0 auto;
+  }
+}
+@media screen and (min-width: 1400px) {
+  img {
+    height: 500px !important;
+    width: 500px !important;
   }
 }/*# sourceMappingURL=style.css.map */

@@ -1,6 +1,9 @@
 /* styles.css */
 
 /* Reset and base styles */
+html {
+    position: relative !important;
+}
 body {
     margin: 0;
     font-family: Arial, sans-serif;
