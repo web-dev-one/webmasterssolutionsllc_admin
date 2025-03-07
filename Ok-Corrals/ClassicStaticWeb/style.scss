@@ -158,6 +158,10 @@ a {color: rgb(215, 194, 58) !important;}
  margin-left: 10px !important;
 }
 
+.imgsm {
+  height: 150px !important;
+  width: 150px !important
+}
 //  end of mobile
 }
 
@@ -183,7 +187,10 @@ a {color: rgb(215, 194, 58) !important;}
 // desktop only
 @media screen and (min-width: 1400px) {
   img {
-    height: 500px !important;
-    width: 500px !important;
+    height: 500px; 
+    width: 500px; 
+  }
+  .ml-desk {
+    margin-left: 60px !important;
   }
 }
