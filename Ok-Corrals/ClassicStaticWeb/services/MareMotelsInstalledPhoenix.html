@@ -6,44 +6,175 @@
     <meta name="description" content="Professional mare motel installation in Phoenix, AZ, by Ok-Corrals. Provide safe and comfortable foaling facilities for your horses with our custom-designed mare motels.">
     <title>Mare Motels Installed in Phoenix, AZ - Ok-Corrals</title>
     <style>
+        /* General Styles */
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Arial', sans-serif;
             line-height: 1.6;
             margin: 0;
             padding: 0;
-            background-color: #ffffff;
-            color: #000000;
+            background-color: #fff8dc; /* Light yellow background */
+            color: #333;
         }
-        header, section, footer {
+
+        /* Sticky Header */
+        header {
+            position: sticky;
+            top: 0;
+            background-color: #2c5f2d; /* Rich green */
+            color: #ffffff;
             padding: 20px;
-            margin: 10px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
         }
-        h1, h2 {
-            color: #008000;
+
+        header h1 {
+            margin: 0;
+            font-size: 2rem; /* Smaller font size for mobile */
         }
-        a {
-            color: #0000ff;
-            text-decoration: none;
+
+        header p {
+            margin: 10px 0 0;
+            font-size: 1rem; /* Smaller font size for mobile */
         }
-        a:hover {
-            text-decoration: underline;
+
+        /* Navigation Buttons */
+        .nav-buttons {
+            display: flex;
+            flex-wrap: wrap; /* Allow buttons to wrap on smaller screens */
+            justify-content: center;
+            gap: 10px; /* Smaller gap for mobile */
+            margin-top: 20px;
         }
-        .highlight {
-            background-color: #ffff00;
-            padding: 5px;
-            font-weight: bold;
+
+        .nav-button {
+            background-color: #ffd700; /* Gold */
+            color: #2c5f2d; /* Rich green */
+            padding: 12px 16px; /* Adjusted padding for emojis */
+            border-radius: 25px;
+            text-align: center;
+            font-size: 1.5rem; /* Larger font size for emojis */
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            flex: 1 1 auto; /* Allow buttons to grow and shrink */
+            min-width: 60px; /* Smaller minimum width for emojis */
         }
+
+        .nav-button:hover {
+            background-color: #2c5f2d; /* Rich green */
+            color: #ffd700; /* Gold */
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Sections */
+        section {
+            padding: 20px;
+            margin: 20px;
+            background-color: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: box-shadow 0.3s ease;
+        }
+
+        section:hover {
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+        }
+
+        h2 {
+            color: #2c5f2d; /* Rich green */
+            font-size: 1.75rem; /* Smaller font size for mobile */
+            margin-bottom: 20px;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        ul li {
+            background-color: #fff8dc; /* Light yellow */
+            margin: 10px 0;
+            padding: 10px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Images */
+        .image-container {
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        .image-container img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Contact Button */
         .contact-button {
-            background-color: #A0522D;
-            color: #ffff00;
-            padding: 10px 20px;
+            background-color: #2c5f2d; /* Rich green */
+            color: #ffffff;
+            padding: 12px 24px; /* Smaller padding for mobile */
+            border-radius: 25px;
             text-align: center;
             display: inline-block;
-            margin: 10px 0;
-            border-radius: 5px;
+            margin: 20px 0;
+            text-transform: uppercase;
+            font-weight: bold;
+            font-size: 1rem; /* Smaller font size for mobile */
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
+
         .contact-button:hover {
-            background-color: #8B4513;
+            background-color: #1e3d1e; /* Darker green */
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Footer */
+        footer {
+            background-color: #2c5f2d; /* Rich green */
+            color: #ffffff;
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+            border-radius: 12px 12px 0 0;
+            box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        footer p {
+            margin: 0;
+            font-size: 1rem; /* Smaller font size for mobile */
+        }
+
+        /* Media Queries for Mobile */
+        @media (max-width: 600px) {
+            header h1 {
+                font-size: 1.75rem; /* Smaller font size for mobile */
+            }
+
+            header p {
+                font-size: 0.9rem; /* Smaller font size for mobile */
+            }
+
+            .nav-button {
+                padding: 10px 12px; /* Smaller padding for mobile */
+                font-size: 1.2rem; /* Smaller font size for mobile */
+                min-width: 50px; /* Smaller minimum width for mobile */
+            }
+
+            h2 {
+                font-size: 1.5rem; /* Smaller font size for mobile */
+            }
+
+            .contact-button {
+                padding: 10px 20px; /* Smaller padding for mobile */
+                font-size: 0.9rem; /* Smaller font size for mobile */
+            }
         }
     </style>
 </head>
@@ -52,6 +183,12 @@
 <header>
     <h1>Mare Motels Installed in Phoenix, AZ</h1>
     <p>Provide safe and comfortable foaling facilities for your horses with our custom-designed mare motels.</p>
+    <div class="nav-buttons">
+        <a href="../index.html" class="nav-button">🏠</a> <!-- Home -->
+        <a href="./services.html" class="nav-button">🔨</a> <!-- Services -->
+        <a href="../about.html" class="nav-button">📊</a> <!-- About Us -->
+        <a href="../contact.html" class="nav-button">📞</a> <!-- Contact -->
+    </div>
 </header>
 
 <section>
@@ -61,7 +198,11 @@
         <li><strong>Safety:</strong> Protects mares and foals from predators and harsh weather conditions.</li>
         <li><strong>Comfort:</strong> Provides a clean, dry, and spacious environment for foaling.</li>
         <li><strong>Convenience:</strong> Allows breeders to monitor mares closely during the foaling process.</li>
+        <li><strong>Shelter:</strong> Protect horses from the extreme heat of arizona 🔥☀️🔥</li>
     </ul>
+    <div class="image-container">
+        <img src="../pictures/MareMotel.jpg" alt="Mare and Foal in Motel">
+    </div>
 </section>
 
 <section>
@@ -74,6 +215,9 @@
         <li><strong>Professional Installation:</strong> Our experienced team handles every step, from site preparation to final installation.</li>
         <li><strong>Portable Options:</strong> Need a mobile solution? We offer portable mare motels that can be moved as needed.</li>
     </ul>
+    <div class="image-container">
+        <img src="../pictures/WeldingMareMotel.jpg" alt="Custom Mare Motel">
+    </div>
 </section>
 
 <section>
@@ -85,6 +229,9 @@
         <li><strong>Customer Satisfaction:</strong> We work closely with you to ensure your needs are met.</li>
         <li><strong>Warranty:</strong> All our mare motels come with a warranty for your peace of mind.</li>
     </ul>
+    <div class="image-container">
+        <img src="https://via.placeholder.com/800x400" alt="Happy Mare and Foal">
+    </div>
 </section>
 
 <section>
@@ -104,7 +251,7 @@
 </section>
 
 <footer>
-    <p><center><font size="+1" color="#ffff00">An Arizona Owned Business Since 2006</font></center></p>
+    <p>An Arizona Owned Business Since 2006</p>
 </footer>
 
 </body>
