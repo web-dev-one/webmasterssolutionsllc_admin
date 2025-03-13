@@ -40,6 +40,9 @@ footer {
   .w-60 {
     width: 60vw !important;
   }
+  .ml-0 {
+    margin-left: 0% !important;
+  }
   .l-0 {
     padding-left: 0% !important;
     margin-left: -25% !important;

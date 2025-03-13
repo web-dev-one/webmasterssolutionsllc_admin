@@ -15,52 +15,239 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,700;1,700&family=Rye&display=swap" rel="stylesheet">
+    <style>
+        /* General Styles */
+        body {
+            font-family: 'Rye', cursive;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f4e9d8; /* Sandy beige background */
+            color: #5a3e36; /* Dark terracotta text */
+        }
+
+        header, section, footer {
+            padding: 20px;
+            margin: 20px;
+            background-color: #ffffff; /* White */
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Subtle shadow */
+            transition: box-shadow 0.3s ease;
+        }
+
+        header:hover, section:hover, footer:hover {
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5); /* Enhanced shadow on hover */
+        }
+
+        h1, h2 {
+            color: #8b5e3c; /* Terracotta */
+            font-family: 'Rye', cursive;
+        }
+
+        a {
+            color: #5a3e36; /* Dark terracotta */
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .highlight {
+            background-color: #8b5e3c; /* Terracotta */
+            color: #f4e9d8; /* Sandy beige */
+            padding: 5px;
+            font-weight: bold;
+            border-radius: 4px;
+        }
+
+        .contact-button {
+            background-color: #5a3e36; /* Dark terracotta */
+            color: #f4e9d8; /* Sandy beige */
+            padding: 12px 24px;
+            text-align: center;
+            display: inline-block;
+            margin: 10px 0;
+            border-radius: 25px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        .contact-button:hover {
+            background-color: #4a2e26; /* Darker terracotta */
+            transform: translateY(-3px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        ul li {
+            background-color: #f4e9d8; /* Sandy beige */
+            margin: 10px 0;
+            padding: 10px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Team Section */
+        .team-section {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 40px 0;
+        }
+
+        .team-card {
+            background-color: #ffffff; /* White */
+            padding: 20px;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .team-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+        }
+
+        .team-card img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 12px;
+            margin-bottom: 15px;
+        }
+
+        .team-card h3 {
+            margin: 15px 0 10px;
+            color: #8b5e3c; /* Terracotta */
+            font-family: 'Rye', cursive;
+        }
+
+        .team-card p {
+            font-size: 0.9rem;
+            color: #5a3e36; /* Dark terracotta */
+        }
+
+        /* Mission Statement Section */
+        .mission-section {
+            background-color: #ffffff; /* White */
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            margin: 40px 0;
+        }
+
+        .mission-section h2 {
+            color: #8b5e3c; /* Terracotta */
+            margin-bottom: 20px;
+        }
+
+        .mission-section p {
+            color: #5a3e36; /* Dark terracotta */
+            line-height: 1.8;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #8b5e3c; /* Terracotta */
+            color: #f4e9d8; /* Sandy beige */
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+            border-radius: 12px 12px 0 0;
+            box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        footer p {
+            margin: 0;
+            font-size: 1.1rem;
+        }
+
+        /* Media Queries for Mobile */
+        @media (max-width: 768px) {
+            .team-section {
+                grid-template-columns: 1fr; /* Stack items on mobile */
+            }
+        }
+    </style>
 </head>
 <body>
-   
-        <header class="fixed">
-            <nav>
-                <ul>
-                    <li class="rotate"><a class="sm" href="index.html">Home</a></li>
-                    <li class="rotate"><a class="sm" href="contact.html">Contact</a></li>
-                    <li class="rotate"><a class="sm" href="services/shade.html">Shade</a></li>
-                    <li class="rotate"><a class="sm" href="services/steelbarn.html">Barns</a></li>
-                    <li class="rotate"><a class="smr" href="services/maremotel.html">Mare Motels</a></li>
-                </ul>
-            </nav>
+    <header class="fixed mt-0">
+        <nav>
+            <ul>
+                <li class="rotate"><a class="sm" href="index.html">Home</a></li>
+                <li class="rotate"><a class="sm" href="contact.html">Contact</a></li>
+                <li class="rotate"><a class="sm" href="services/shade.html">Shade</a></li>
+                <li class="rotate"><a class="sm" href="services/steelbarn.html">Barns</a></li>
+                <li class="rotate"><a class="smr" href="services/maremotel.html">Mare Motels</a></li>
+            </ul>
+        </nav>
     </header>
     <main>
-       
         <section>
             <div class="main flex-c center">
-            <h1 class="rr xl">About OK Corrals</h1>
-            <img class="w-30 center mx-a wider" src="./pictures/OK-CORRALS.jpg" alt="the ok corrals llc" />
-            <p class="xl">Your trusted source for high-quality structures, barns, and shade.</p>
+                <h1 class="rr xl">About OK Corrals</h1>
+                <img class="w-30 center mx-a wider" src="./pictures/OK-CORRALS.jpg" alt="the ok corrals llc" />
+                <p class="xl">Your trusted source for high-quality structures, barns, and shade.</p>
             </div>
-        &nbsp;
-         <div class="m-t10 p-t10">
             &nbsp;
-            &nbsp;
-            <h2 class="rr m-t10 p-t10">Our Mission</h2>
-            <p>At OK Corrals, we are dedicated to providing safe and secure enclosures for pets and livestock. Our shade, barns, and corrals are designed to protect animals from predators while ensuring they have ample space to thrive.</p>
-         </div>
+            <div class="m-t10 p-t10">
+                &nbsp;
+                &nbsp;
+                <h2 class="rr m-t10 p-t10">Our Mission</h2>
+                <p>At OK Corrals, we are dedicated to providing safe and secure enclosures for pets and livestock. Our shade, barns, and corrals are designed to protect animals from predators while ensuring they have ample space to thrive.</p>
+            </div>
         </section>
         <section>
             <h2 class="rr">Our Story</h2>
             <p>Founded with a passion for animals, OK Corrals was created to offer peace of mind. We understand the challenges of keeping animals safe in both rural and urban environments, and our products reflect our commitment to quality and security.</p>
             <p>OK Corrals was first established in Arizona and launched online in 2006 with the goal of providing high-quality horse shade, livestock fencing, riding arenas, mare motels, animal feeders, stalls, steel sheds, livestock shade, pipe corrals, dog runs, kennels, pipe fences, steel fences, bird aviaries, cattle fencing, and steel gates installation. Our company was founded to address the lack of accessible quality horse shade installation in Southern Arizona.</p>
-            <p>Every day, we build custom pipe corrals, chutes, stalls, barns, and steel fencing, all of which can be ordered online. We take pride in offering the lowest prices on welding repair, horse corrals, and pipe corrals in Arizona livestock corrals for sale, horse arenas in Arizona for sale, Phoenix portable horse corrals, and wholesale corrals in Southern Arizona.</p>
+            <p>Every day, we build custom pipe corrals, chutes, stalls, barns, and steel structures, all of which can be ordered. We take pride in offering premium welding, horse corrals, and pipe corrals in Arizona livestock corrals for sale, horse arenas in Arizona for sale, Phoenix horse corrals, and wholesale corrals in Southern Arizona.</p>
+        </section>
+        <!-- Team Section -->
+        <section>
+            <h2 class="rr">Meet Our Team</h2>
+            <div id="team" class="team-section">
+                <div class="team-card">
+                    <img src="./pictures/Ok-Corrals-Founder.jpg" alt="Jack">
+                    <h3>Jack</h3>
+                    <p>Founder</p>
+                    <p>Jack has over 20 years of experience in livestock and horse shade construction. He founded OK Corrals to provide durable and secure solutions for animal enclosures.</p>
+                </div>
+                <div class="team-card">
+                    <img src="./pictures/WeldingMareMotel.jpg" alt="Raul">
+                    <h3>Raul</h3>
+                    <p>Foreman</p>
+                    <p>Raul ensurs that every project meets our high standards of quality.</p>
+                </div>
+                <div class="team-card">
+                    <img src="./pictures/Randy.jpg" alt="Randy">
+                    <h3>Randy</h3>
+                    <p></p>
+                    <p></p>
+                </div>
+            </div>
+        </section>
+        <!-- Mission Statement Section -->
+        <section class="mission-section">
+            <h2 id="mission" class="rr">Our Mission Statement</h2>
+            <p>At OK Corrals, our mission is to provide high-quality, durable, and customizable structures that ensure the safety and comfort of your animals. We are committed to delivering exceptional service and innovative solutions that meet the unique needs of ranchers, pet owners, and farmers alike.</p>
         </section>
         <section class="m-10 p-10">
             <div class="p-b10 m-b10">
-            <h2 class="rr">Why Choose Us?</h2>
-            <ul>
-                <li>High-quality, durable materials</li>
-                <li>Designed for maximum safety and protection</li>
-                <li>Customizable</li>
-                <li>Trusted by ranchers, pet owners and farmers alike</li>
-            </ul>
-        </div>
+                <h2 class="rr">Why Choose Us?</h2>
+                <ul>
+                    <li>High-quality, durable materials</li>
+                    <li>Designed for maximum safety and protection</li>
+                    <li>Customizable</li>
+                    <li>Trusted by ranchers, pet owners, and farmers alike</li>
+                </ul>
+            </div>
         </section>
     </main>
     &nbsp;
@@ -71,7 +258,7 @@
     &nbsp;
     &nbsp;
     <footer>
-        <p class="t-0">&copy; 2025 Ok-Corrals LLC. All rights reserved 🐎</p>
+        <p class="mb-0">&copy; 2025 Ok-Corrals LLC. All rights reserved 🐎</p>
     </footer>
 </body>
 </html>
