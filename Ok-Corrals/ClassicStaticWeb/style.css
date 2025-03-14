@@ -1,3 +1,11 @@
+#products {
+  order: 1;
+}
+
+#welcome {
+  order: 2;
+}
+
 body {
   font-family: Arial, sans-serif;
   margin: 0;
@@ -71,9 +79,6 @@ footer {
     margin-left: 0% !important;
     transform: rotateZ(40deg);
   }
-  a {
-    color: rgb(215, 194, 58) !important;
-  }
   main {
     padding: 2rem;
   }
@@ -139,8 +144,8 @@ footer {
   .mobile-larger {
     height: 155vh !important;
   }
-  .mt-40 {
-    margin-top: 40px !important;
+  .mt-50 {
+    margin-top: 50px !important;
   }
   .ml-10 {
     margin-left: 10px !important;
@@ -148,6 +153,12 @@ footer {
   .imgsm {
     height: 150px !important;
     width: 150px !important;
+  }
+  .mobile-wide {
+    min-width: 50vw !important;
+  }
+  .mb-25 {
+    margin-bottom: 25px !important;
   }
 }
 /* Desktop screens: 1024px and up */
@@ -170,5 +181,8 @@ footer {
   }
   .ml-desk {
     margin-left: 60px !important;
+  }
+  .desktop-small {
+    width: 60% !important;
   }
 }/*# sourceMappingURL=style.css.map */
