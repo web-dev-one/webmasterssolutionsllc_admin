@@ -197,4 +197,7 @@ footer {
   .desktop-small {
     width: 60% !important;
   }
+  .desktop-smallest {
+    width: 50vw !important;
+  }
 }/*# sourceMappingURL=style.css.map */

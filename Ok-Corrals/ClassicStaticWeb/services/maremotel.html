@@ -19,24 +19,251 @@
     <link rel="stylesheet" href="../style.scss">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,700;1,700&family=Rye&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Rye&family=Roboto+Mono:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
+    <style>
+        /* General Styles */
+        body {
+            font-family: 'Rye', cursive;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f4e9d8; /* Sandy beige background */
+            color: #5a3e36; /* Dark terracotta text */
+        }
+
+        header, section, footer {
+            padding: 20px;
+            margin: 20px;
+            background-color: #ffffff; /* White */
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Subtle shadow */
+            transition: box-shadow 0.3s ease;
+        }
+
+        header:hover, section:hover, footer:hover {
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5); /* Enhanced shadow on hover */
+        }
+
+        h1, h2 {
+            color: #8b5e3c; /* Terracotta */
+            font-family: 'Rye', cursive;
+            text-align: center;
+        }
+
+        a {
+            color: #5a3e36; /* Dark terracotta */
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .highlight {
+            background-color: #8b5e3c; /* Terracotta */
+            color: #f4e9d8; /* Sandy beige */
+            padding: 5px;
+            font-weight: bold;
+            border-radius: 4px;
+        }
+
+        .contact-button {
+            background-color: #5a3e36; /* Dark terracotta */
+            color: #f4e9d8; /* Sandy beige */
+            padding: 12px 24px;
+            text-align: center;
+            display: inline-block;
+            margin: 10px 0;
+            border-radius: 25px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        .contact-button:hover {
+            background-color: #4a2e26; /* Darker terracotta */
+            transform: translateY(-3px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Navigation Bar Styles */
+        header.fixed {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            background-color: #ffffff; /* White */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        nav ul {
+            display: flex;
+            flex-direction: row; /* Ensure horizontal layout */
+            justify-content: center;
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        /* Updated <ul> and <li> Styles */
+        ul {
+            list-style-type: none;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        ul li {
+            background-color: #d0bb9b; /* Sandy beige */
+            margin: 10px 0;
+            padding: 10px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        .w-30 {
+            width: 30%;
+        }
+
+        .center {
+            text-align: center;
+        }
+
+        .mx-a {
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .flex-r {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+        }
+
+        .flex-c {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .m-b10 {
+            margin-bottom: 10px;
+        }
+
+        .pb-10 {
+            padding-bottom: 10px;
+        }
+
+        .m-t10 {
+            margin-top: 10px;
+        }
+
+        .mb-25 {
+            margin-bottom: 25px;
+        }
+
+        .p-b10 {
+            padding-bottom: 10px;
+        }
+
+        .t-0 {
+            margin-top: 0;
+        }
+
+        .tb {
+            text-align: center;
+        }
+
+        .rr {
+            font-family: 'Rye', cursive;
+        }
+
+        .xl {
+            font-size: 2.5rem;
+        }
+
+        .md {
+            font-size: 1.2rem;
+        }
+
+        .nowrap {
+            white-space: nowrap;
+        }
+
+        .notilt {
+            transform: none !important;
+        }
+
+        .speech-bubble {
+            background-color: #f4e9d8;
+            border: 2px solid #8b5e3c;
+            border-radius: 12px;
+            padding: 15px;
+            position: relative;
+            margin: 20px auto;
+            max-width: 300px;
+        }
+
+        .speech-bubble::after {
+            content: '';
+            position: absolute;
+            bottom: -20px;
+            left: 50%;
+            border-width: 10px;
+            border-style: solid;
+            border-color: #8b5e3c transparent transparent transparent;
+        }
+
+        .quote {
+            font-style: italic;
+            color: #5a3e36;
+        }
+
+        .main {
+            text-align: center;
+        }
+
+        .mobile-wide {
+            width: 100%;
+        }
+
+        @media (max-width: 768px) {
+            .flex-r {
+                flex-direction: column;
+            }
+
+            .w-30 {
+                width: 80%;
+            }
+
+            .speech-bubble {
+                max-width: 80%;
+            }
+
+            ul li {
+                width: 90%; /* Adjust for smaller screens */
+            }
+        }
+    </style>
 </head>
 <body>
-    <header class="fixed">
+    <header class="fixed mt-0 ml-0">
         <nav>
             <ul>
-                <li class="rotate"><a class="sm" href="../index.html">Home</a></li>
-                <li class="rotate"><a class="sm" href="../about.html">About</a></li>
-                <li class="rotate"><a class="sm" href="../contact.html">Contact</a></li>
-                <li class="rotate"><a class="sm" href="../services/shade.html">Shade</a></li>
-                <li class="rotate"><a class="smr" href="..services/maremotel.html">Mare Motels</a></li>
+                <li><a class="sm" href="../index.html">Home</a></li>
+                <li><a class="sm" href="../about.html">About</a></li>
+                <li><a class="sm" href="../contact.html">Contact</a></li>
+                <li><a class="sm" href="../services/shade.html">Shade</a></li>
+                <li><a style="text-wrap: nowrap;" class="smr" href="../services/maremotel.html">Mare Motels</a></li>
             </ul>
         </nav>
     </header>
     <main>
         <section>
-            <h1 class="rr xl" style="text-wrap: nowrap;">Mare Motels</h1>
-            <img class="w-30 center mx-a wider" src="../pictures/OK-CORRALS.jpg" alt="the ok corrals llc" />
+            <h1 class="rr xl">Mare Motels</h1>
+            <img class="w-60 center mx-a wider" src="../pictures/OK-CORRALS.jpg" alt="the ok corrals llc" />
             <h2>Our Mare Motels</h2>
             <p>At OK Corrals, we provide high-quality mare motels designed to offer safe and comfortable shelter for your horses.</p>
         </section>
@@ -47,25 +274,27 @@
         <section>
             <h2>Why Choose Our Mare Motels?</h2>
             <ul>
-                <li>Constructed with premium materials</li>
-                <li>Designed for optimal ventilation and comfort</li>
-                <li>Customizable options to fit your needs</li>
-                <li>Durable and weather-resistant</li>
+                <li class="notilt">Constructed with premium materials</li>
+                <li class="notilt">Designed for optimal ventilation and comfort</li>
+                <li class="notilt">Customizable options to fit your needs</li>
+                <li class="notilt">Durable and weather-resistant</li>
             </ul>
         </section>
+        <section>
+            <h2>Order Your Mare Motel Today</h2>
+            <p>Give your horses the comfort and safety they deserve with our premium mare motels. Contact us to find the perfect solution for your needs.</p>
+            <a href="../contact.html" class="contact-button">Get a Free Quote</a>
+        </section>
     </main>
-    <section>
-        <div class="flex-r center m-b10 pb-10">
-          <img src="../pictures/10FTX10FT-MareMotel.jpg" height="200" width="200" alt="Mare Motel Example 1"/>
-          <img src="../pictures/MareMotel.jpg" height="200" width="200" alt="Mare Motel Example 2"/>
+
+    <section class="center">
+        <div class="flex-r center mx-a">
+            <img class="mx-a" src="../pictures/10FTX10FT-MareMotel.jpg" height="200" width="200" alt="Mare Motel Example 1" />
+            <img class="mx-a" src="../pictures/MareMotel.jpg" height="200" width="200" alt="Mare Motel Example 2" />
         </div>
     </section>
-            &nbsp;
-            &nbsp;
-            &nbsp;
-            &nbsp;
-    <footer>
-        <p class="t-0">&copy; 2025 Ok-Corrals LLC. All rights reserved 🐪</p>
+    <footer class="ml-0">
+        <p class="t-0 mb-0 tb ml-0">&copy; 2025 Ok-Corrals LLC 🐪</p>
     </footer>
 </body>
 </html>
