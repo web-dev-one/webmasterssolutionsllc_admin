@@ -45,6 +45,9 @@ footer {
 /* Media Queries */
 /* Tablet screens: 768px and up */
 @media only screen and (min-width: 250px) and (max-width: 950px) {
+  header {
+    padding: 4% !important;
+  }
   .w-60 {
     width: 60vw !important;
   }
@@ -98,7 +101,7 @@ footer {
     transform: rotateZ(3deg);
   }
   .smr {
-    font-size: x-small;
+    font-size: x-small !important;
   }
   .sm {
     font-size: small;
@@ -159,6 +162,15 @@ footer {
   }
   .mb-25 {
     margin-bottom: 25px !important;
+  }
+  nav ul li a {
+    padding: 0% !important;
+  }
+  .m-smaller {
+    width: 300px !important;
+  }
+  .notilt {
+    transform: rotateZ(0deg) !important;
   }
 }
 /* Desktop screens: 1024px and up */

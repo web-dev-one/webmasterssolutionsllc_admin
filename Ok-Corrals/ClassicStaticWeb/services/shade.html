@@ -11,7 +11,7 @@
     <meta name="robots" content="index, follow">
     <meta property="og:title" content="Premium Shade Solutions for Horses | OK Corrals">
     <meta property="og:description" content="OK Corrals offers durable and effective shade solutions to keep your horses comfortable and protected from the elements.">
-    <meta property="og:image" content="https://theokcorrals.com/favicon.ico">
+    <meta property="og:image" content="https://theokcorrals.com/pictures/favicon.ico">
     <meta property="og:url" content="https://theokcorrals.com/shade">
     <meta property="og:type" content="website">
     <link rel="stylesheet" href="../style.css">
@@ -19,35 +19,292 @@
     <link rel="stylesheet" href="../style.scss">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,700;1,700&family=Rye&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Rye&family=Roboto+Mono:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
+    <style>
+        /* General Styles */
+        body {
+            font-family: 'Rye', cursive;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f4e9d8; /* Sandy beige background */
+            color: #5a3e36; /* Dark terracotta text */
+        }
+
+        header, section, footer {
+            padding: 20px;
+            margin: 20px;
+            background-color: #ffffff; /* White */
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Subtle shadow */
+            transition: box-shadow 0.3s ease;
+        }
+
+        header:hover, section:hover, footer:hover {
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5); /* Enhanced shadow on hover */
+        }
+
+        h1, h2 {
+            color: #8b5e3c; /* Terracotta */
+            font-family: 'Rye', cursive;
+            text-align: center;
+        }
+
+        a {
+            color: #5a3e36; /* Dark terracotta */
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .highlight {
+            background-color: #8b5e3c; /* Terracotta */
+            color: #f4e9d8; /* Sandy beige */
+            padding: 5px;
+            font-weight: bold;
+            border-radius: 4px;
+        }
+
+        .contact-button {
+            background-color: #5a3e36; /* Dark terracotta */
+            color: #f4e9d8; /* Sandy beige */
+            padding: 12px 24px;
+            text-align: center;
+            display: inline-block;
+            margin: 10px 0;
+            border-radius: 25px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        .contact-button:hover {
+            background-color: #4a2e26; /* Darker terracotta */
+            transform: translateY(-3px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Navigation Bar Styles (Copied from index.html) */
+        header.fixed {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            background-color: #ffffff; /* White */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        nav ul {
+            display: flex;
+            flex-direction: row; /* Ensure horizontal layout */
+            justify-content: center;
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            
+        }
+
+        /* nav ul li {
+            margin: 0 15px;
+        } */
+
+        nav ul li a {
+            /* font-family: 'Rye', cursive;
+           
+            text-decoration: none;
+            transition: all 0.3s ease;
+            padding: 10px 15px;
+            background-color: #d0bb9b; 
+            border-radius: 8px; */
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+         /* nav ul li a:hover {
+            background-color: #8b5e3c; 
+            color: #f4e9d8; 
+            transform: translateY(-3px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }  */
+        
+
+        /* Updated <ul> and <li> Styles to Match index.html */
+        ul {
+            list-style-type: none;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        ul li {
+            background-color: #d0bb9b; /* Sandy beige */
+            margin: 10px 0;
+            padding: 10px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        /* ul li:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        } */
+
+        .w-30 {
+            width: 30%;
+        }
+
+        .center {
+            text-align: center;
+        }
+
+        .mx-a {
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .flex-r {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+        }
+
+        .flex-c {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .m-b10 {
+            margin-bottom: 10px;
+        }
+
+        .pb-10 {
+            padding-bottom: 10px;
+        }
+
+        .m-t10 {
+            margin-top: 10px;
+        }
+
+        .mb-25 {
+            margin-bottom: 25px;
+        }
+
+        .p-b10 {
+            padding-bottom: 10px;
+        }
+
+        .t-0 {
+            margin-top: 0;
+        }
+
+      
+        .tb {
+            text-align: center;
+        }
+
+        .rr {
+            font-family: 'Rye', cursive;
+        }
+
+        .xl {
+            font-size: 2.5rem;
+        }
+
+        .md {
+            font-size: 1.2rem;
+        }
+
+        .nowrap {
+            white-space: nowrap;
+        }
+
+        .notilt {
+            transform: none !important;
+        }
+
+        .speech-bubble {
+            background-color: #f4e9d8;
+            border: 2px solid #8b5e3c;
+            border-radius: 12px;
+            padding: 15px;
+            position: relative;
+            margin: 20px auto;
+            max-width: 300px;
+        }
+
+        .speech-bubble::after {
+            content: '';
+            position: absolute;
+            bottom: -20px;
+            left: 50%;
+            border-width: 10px;
+            border-style: solid;
+            border-color: #8b5e3c transparent transparent transparent;
+        }
+
+        .quote {
+            font-style: italic;
+            color: #5a3e36;
+        }
+
+        .main {
+            text-align: center;
+        }
+
+        .mobile-wide {
+            width: 100%;
+        }
+
+        @media (max-width: 768px) {
+            .flex-r {
+                flex-direction: column;
+            }
+
+            .w-30 {
+                width: 80%;
+            }
+
+            .speech-bubble {
+                max-width: 80%;
+            }
+
+            ul li {
+                width: 90%; /* Adjust for smaller screens */
+            }
+        }
+    </style>
 </head>
 <body>
-    <header class="fixed">
-      <nav>
-          <ul>
-              <li class="rotate"><a class="sm" href="../index.html">Home</a></li>
-              <li class="rotate"><a class="sm" href="../about.html">About</a></li>
-              <li class="rotate"><a class="sm" href="../contact.html">Contact</a></li>
-              <li class="rotate"><a class="sm" href="../services/steelbarn.html">Barns</a></li>
-              <li class="rotate"><a class="smr" href="../services/maremotel.html">Mare Motels</a></li>
-          </ul>
-      </nav>
-  </header>
+    <header class="fixed mt-0 ml-0">
+        <nav>
+            <ul>
+                <li><a class="sm" href="../index.html">Home</a></li>
+                <li><a class="sm" href="../about.html">About</a></li>
+                <li><a class="sm" href="../contact.html">Contact</a></li>
+                <li><a class="sm" href="../services/steelbarn.html">Barns</a></li>
+                <li><a class="smr" href="../services/maremotel.html">Mare Motels</a></li>
+            </ul>
+        </nav>
+    </header>
     <main>
         <section>
-          <h1 class="rr xl">Shade Solutions</h1>
-          <img class="w-30 center mx-a wider" src="../pictures/OK-CORRALS.jpg" alt="the ok corrals llc" />
+            <h1 class="rr xl">Shade Solutions</h1>
+            <img class="w-60 center mx-a wider" src="../pictures/OK-CORRALS.jpg" alt="the ok corrals llc" />
             <h2>Quality Shade for Your Animals</h2>
             <p>At OK Corrals, we understand the importance of providing adequate shade to keep your animals comfortable and protected from the harsh sun. Our high-quality shade structures are designed to offer durable and reliable shelter for horses, livestock, and pets.</p>
         </section>
         <section>
             <h2>Our Shade Products</h2>
             <ul>
-                <li>Custom-built horse shades</li>
-                <li>Livestock shade structures</li>
-                <li>Portable shade solutions</li>
-                <li>Heavy-duty steel frame construction</li>
-                <li>Weather-resistant materials</li>
+                <li class="notilt">Custom-built horse shades</li>
+                <li class="notilt">Livestock shade structures</li>
+                <li class="notilt">Portable shade solutions</li>
+                <li class="notilt">Heavy-duty steel frame construction</li>
+                <li class="notilt">Weather-resistant materials</li>
             </ul>
         </section>
         <section>
@@ -57,31 +314,30 @@
         <section>
             <h2>Order Your Shade Today</h2>
             <p>Protect your animals from extreme weather conditions with our premium shade solutions. Contact us to find the perfect shade structure for your needs.</p>
+            <a href="./contact.html" class="contact-button">Get a Free Quote</a>
         </section>
     </main>
 
-      <section>
-        <div class="flex-r center ">
-          <img src="../pictures/10X20-Shade-4Rail-Stalls.jpg" height="200" width="200" alt="10x20 horse shade"/>
-          <img src="../pictures/open-barn-front.jpg" height="200" width="200" alt="10x20 horse shade"/>
+    <section class="center">
+        <div class="flex-r center mx-a">
+            <img class="mx-a" src="../pictures/10X20-Shade-4Rail-Stalls.jpg" height="200" width="200" alt="10x20 horse shade" />
+            <img class="mx-a" src="../pictures/open-barn-front.jpg" height="200" width="200" alt="10x20 horse shade" />
         </div>
-      </section>
-      <section>
-        <div class="flex-r center ">
-          <img src="../pictures/large_structure.jpg" height="200" width="200" alt="20x30 horse shade"/>
-          <img src="../pictures/Patio-Car-Shade-far.jfif" height="200" width="200" alt="10x10 patio shade"/>
+    </section>
+    <section>
+        <div class="flex-r center">
+            <img class="mx-a" src="../pictures/large_structure.jpg" height="200" width="200" alt="20x30 horse shade" />
+            <img class="mx-a" src="../pictures/Patio-Car-Shade-far.jfif" height="200" width="200" alt="10x10 patio shade" />
         </div>
-      </section>
-      <section>
+    </section>
+    <section>
         <div class="flex-r center m-b10 pb-10">
-          <img src="../pictures/Bullet Proof Shade.jpg" height="200" width="200" alt="Shade"/>
-          <img src="../pictures/Horse-shade-tent.jfif" height="200" width="200" alt="Open Barn"/>
+            <img class="mx-a" src="../pictures/Bullet Proof Shade.jpg" height="200" width="200" alt="Shade" />
+            <img class="mx-a" src="../pictures/Horse-shade-tent.jfif" height="200" width="200" alt="Open Barn" />
         </div>
-        &nbsp;
-        &nbsp;
-      </section>
-    <footer>
-      <p class="t-0">&copy; 2025 Ok-Corrals LLC. All rights reserved 🐎</p>
+    </section>
+    <footer class="ml-0">
+        <p class="t-0 mb-0 tb ml-0">&copy; 2025 Ok-Corrals LLC 🐎</p>
     </footer>
 </body>
 </html>
