@@ -69,7 +69,7 @@ footer {
   header {
    
     ul {
-      flex-direction: row; // Nav items inline
+      flex-direction: row !important; // Nav items inline
       justify-content: flex-start;
 
       li {

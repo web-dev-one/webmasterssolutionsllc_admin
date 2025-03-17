@@ -62,7 +62,7 @@ footer {
     width: 100vw !important;
   }
   header ul {
-    flex-direction: row;
+    flex-direction: row !important;
     justify-content: flex-start;
   }
   header ul li {
