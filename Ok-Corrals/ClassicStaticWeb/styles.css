@@ -8,6 +8,7 @@ body {
     margin: 0;
     font-family: Arial, sans-serif;
     line-height: 1.6;
+    width: 100vw;
 }
 
 header {
@@ -96,18 +97,18 @@ a:hover{
     margin-right: auto !important;
 }
 
-/* .quote {
-    justify-content: center;
-   
+.quote {
+    justify-content: left;
     height: 100px;
-    width: 530px;
+    /* width: 530px; */
     margin-top: 0% !important;
     margin-bottom: 0% !important;
     padding-top: 0% !important;
     padding-bottom: 0% !important;
-    padding-left: 5em;
+    text-align: start !important;
+    padding-left: 0em;
     padding-right: 5em;
-} */
+}
 
 .nowrap {
     text-wrap: nowrap;
@@ -120,18 +121,18 @@ a:hover{
 }
 
 .speech-bubble:after {
-	content: '';
-	position: absolute;
-	bottom: 0;
-	left: 50%;
-	width: 0;
-	height: 0;
-	border: 27px solid transparent;
-	border-top-color: #00aabb;
-	border-bottom: 0;
-	border-left: 0;
-	margin-left: -13.5px;
-	margin-bottom: -27px;
+	content: '' !important;
+	position: absolute !important;
+	bottom: 0 !important;
+	left: 50% !important;
+	width: 0 !important;
+	height: 0 !important;
+	border: 27px solid transparent !important;
+	border-top-color: #00aabb !important;
+	border-bottom: 0 !important;
+	border-left: 0 !important;
+	margin-left: -13.5px  !important;
+	margin-bottom: -27px !important;
 }
 
 .fixed {

@@ -19,7 +19,7 @@
     <link rel="stylesheet" href="../style.scss">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Rye&family=Roboto+Mono:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,700;1,700&family=Rye&display=swap" rel="stylesheet">
     <style>
         /* General Styles */
         body {
@@ -92,51 +92,13 @@
             top: 0;
             left: 0;
             width: 100%;
-            z-index: 1000;
             background-color: #ffffff; /* White */
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
         }
 
-        nav ul {
-            display: flex;
-            flex-direction: row; /* Ensure horizontal layout */
-            justify-content: center;
-            list-style-type: none;
-            padding: 0;
-            margin: 0;
-            
-        }
-
-        /* nav ul li {
-            margin: 0 15px;
-        } */
-
-        nav ul li a {
-            /* font-family: 'Rye', cursive;
-           
-            text-decoration: none;
-            transition: all 0.3s ease;
-            padding: 10px 15px;
-            background-color: #d0bb9b; 
-            border-radius: 8px; */
-            /* box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); */
-        }
-
-         /* nav ul li a:hover {
-            background-color: #8b5e3c; 
-            color: #f4e9d8; 
-            transform: translateY(-3px);
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-        }  */
-        
-
-        /* Updated <ul> and <li> Styles to Match index.html */
         ul {
             list-style-type: none;
             padding: 0;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
         }
 
         ul li {
@@ -146,11 +108,9 @@
             border-radius: 8px;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
         }
+        
 
-        /* ul li:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-        } */
+
 
         .w-30 {
             width: 30%;
@@ -275,7 +235,15 @@
             ul li {
                 width: 90%; /* Adjust for smaller screens */
             }
+           
         }
+        @media only screen and (min-width: 250px) and (max-width: 950px) {
+    .sm {
+        font-size: small !important;
+    }
+   
+}
+
     </style>
 </head>
 <body>

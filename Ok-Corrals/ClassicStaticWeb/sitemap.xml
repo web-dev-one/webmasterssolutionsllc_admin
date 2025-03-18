@@ -1,27 +1,135 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
-        <loc>https://www.theokcorrals.com/</loc>
+        <loc>https://theokcorrals.com/index.html</loc>
+        <lastmod>2025-03-17</lastmod>
+        <changefreq>weekly</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
-        <loc>https://www.theokcorrals.com/about.html</loc>
+        <loc>https://theokcorrals.com/about.html</loc>
+        <lastmod>2025-03-17</lastmod>
+        <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://www.theokcorrals.com/contact.html</loc>
+        <loc>https://theokcorrals.com/contact.html</loc>
+        <lastmod>2025-03-17</lastmod>
+        <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://www.theokcorrals.com/services/shade.html</loc>
-        <priority>0.7</priority>
+        <loc>https://theokcorrals.com/services/shade.html</loc>
+        <lastmod>2025-03-17</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://www.theokcorrals.com/services/steelbarn.html</loc>
-        <priority>0.7</priority>
+        <loc>https://theokcorrals.com/services/steelbarn.html</loc>
+        <lastmod>2025-03-17</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://www.theokcorrals.com/services/maremotel.html</loc>
-        <priority>0.7</priority>
+        <loc>https://theokcorrals.com/services/maremotel.html</loc>
+        <lastmod>2025-03-17</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://theokcorrals.com/services/PhoenixHorseShadeInstallation.html</loc>
+        <lastmod>2025-03-17</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://theokcorrals.com/services/MareMotelsInstalledPhoenix.html</loc>
+        <lastmod>2025-03-17</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://theokcorrals.com/services/PortableHorseCorralsForSale.html</loc>
+        <lastmod>2025-03-17</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://theokcorrals.com/services/HeavyweightPensandCorrals.html</loc>
+        <lastmod>2025-03-17</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://theokcorrals.com/services/EquestrianShadeWithStalls.html</loc>
+        <lastmod>2025-03-17</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://theokcorrals.com/services/GoatPensForSale.html</loc>
+        <lastmod>2025-03-17</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://theokcorrals.com/services/PipeCorrals.html</loc>
+        <lastmod>2025-03-17</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://theokcorrals.com/services/AlpacaRanchPens.html</loc>
+        <lastmod>2025-03-17</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://theokcorrals.com/services/GalvanizedCorralPanels.html</loc>
+        <lastmod>2025-03-17</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://theokcorrals.com/barns.html</loc>
+        <lastmod>2025-03-17</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://theokcorrals.com/services.html</loc>
+        <lastmod>2025-03-17</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://theokcorrals.com/services/horse-shade.html</loc>
+        <lastmod>2025-03-17</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://theokcorrals.com/services/mare-motels.html</loc>
+        <lastmod>2025-03-17</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://theokcorrals.com/services/schedule-40-corrals.html</loc>
+        <lastmod>2025-03-17</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://theokcorrals.com/services/portable-corrals.html</loc>
+        <lastmod>2025-03-17</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://theokcorrals.com/services/custom-shelters.html</loc>
+        <lastmod>2025-03-17</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
     </url>
 </urlset>

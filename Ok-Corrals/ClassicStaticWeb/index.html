@@ -40,6 +40,10 @@
             transition: box-shadow 0.3s ease;
         }
 
+        footer {
+            flex-shrink: 1 !important;
+            width: 100vw;
+        }
         header:hover, section:hover, footer:hover {
             box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5); /* Enhanced shadow on hover */
         }
@@ -93,7 +97,6 @@
             top: 0;
             left: 0;
             width: 100%;
-            z-index: 1000;
             background-color: #ffffff; /* White */
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
         }
@@ -111,12 +114,19 @@
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
         }
 
+        .pl-0 {
+            padding-left: 0% !important;
+        }
         .w-30 {
             width: 30%;
         }
 
         .center {
             text-align: center;
+        }
+
+        .left {
+           justify-content: left !important;
         }
 
         .mx-a {
@@ -206,6 +216,7 @@
 
         .quote {
             font-style: italic;
+            font-size: large;
             color: #5a3e36;
         }
 
@@ -229,20 +240,29 @@
             .speech-bubble {
                 max-width: 80%;
             }
-
+            ul li {
+                width: 90%; /* Adjust for smaller screens */
+            }
            
         }
+
+        @media only screen and (min-width: 250px) and (max-width: 950px) {
+    .sm {
+        font-size: small !important;
+    }
+}
+
     </style>
 </head>
 <body>
     <header class="fixed mt-0 ml-0">
         <nav>
             <ul>
-                <li class="rotate"><a class="sm" href="about.html">About</a></li>
-                <li class="rotate"><a class="sm" href="contact.html">Contact</a></li>
-                <li class="rotate"><a class="sm" href="services/shade.html">Shade</a></li>
-                <li class="rotate"><a class="sm" href="services/steelbarn.html">Barns</a></li>
-                <li class="rotate"><a class="smr" href="services/maremotel.html">Mare Motels</a></li>
+                <li><a class="sm" href="about.html">About</a></li>
+                <li><a class="sm" href="contact.html">Contact</a></li>
+                <li><a class="sm" href="services/shade.html">Shade</a></li>
+                <li><a class="sm" href="services/steelbarn.html">Barns</a></li>
+                <li><a style="text-wrap: nowrap;" class="smr" href="services/maremotel.html">Mare Motels</a></li>
             </ul>
         </nav>
     </header>
@@ -251,17 +271,17 @@
         <section>
             <div class="main flex-c center">
              <h1 class="rr xl">Ok Corrals LLC</h1>
-             <img class="w-30 center mx-a wider" src="./pictures/OK-CORRALS.jpg" alt="the ok corrals llc" />
+             <img class="w-60 center mx-a wider" src="./pictures/OK-CORRALS.jpg" alt="the ok corrals llc" />
              <p class="xl">Your trusted source for high-quality structures, barns, and shade.</p>
             </div>
         </section>
     </main>
     <div class="desktop-small" style="margin: auto; display: flex; flex-direction: column; justify-content: center;">
-    <section class="flex-c center">
-        <div class="main flex-c">
+    <section class="flex-c">
+        <div class="main flex-c left">
         <hgroup class="speech-bubble w-30 IIId wider">
-         <h5 class="xl quote center mx-a nowrap ">"Your shade looks bullet proof!"</h5>
-         <h6 class="xl quote center mx-a nowrap ">- real customer testimonial</h6>
+         <h5 class="xl quote left mx-a nowrap ml-0 pl-0">"Your shade looks bullet proof!"</h5>
+         <h6 class="xl quote left mx-a nowrap ml-0 pl-0">- real customer testimonial</h6>
         </hgroup>
          <img class="m-t10" 
          height="200px"

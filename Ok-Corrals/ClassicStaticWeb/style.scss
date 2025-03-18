@@ -90,7 +90,7 @@ footer {
 li {
   margin-right:1% !important;
   margin-left: 0% !important;
-  transform: rotateZ(40deg)
+ 
 }
 
   main {
@@ -191,6 +191,14 @@ nav ul li a {
 }
 .notilt {
   transform: rotateZ(0deg) !important;
+}
+nav ul li {
+  color: #fff;
+  text-decoration: none;
+  font-family: "Rye", serif;
+  font-style: normal;
+  font-size: small !important;
+  padding: 10px !important;
 }
 
 //  end of mobile
