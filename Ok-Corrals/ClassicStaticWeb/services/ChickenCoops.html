@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Western Chicken Coops - OK Corrals</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rye&display=swap" rel="stylesheet">
+    <style>
+        /* Unique Chicken Coop Styles */
+        .coop-header {
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
+                        url('./pictures/chicken-coop-barnwood.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 60vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            margin: 0;
+            border-radius: 0;
+        }
+        
+        .coop-models {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            padding: 2rem 0;
+        }
+        
+        .coop-model {
+            background: #f4e9d8;
+            border: 3px solid #8b5e3c;
+            border-radius: 8px;
+            overflow: hidden;
+            transition: transform 0.3s;
+        }
+        
+        .coop-model:hover {
+            transform: scale(1.03);
+        }
+        
+        .coop-model img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-bottom: 3px solid #8b5e3c;
+        }
+        
+        .coop-model-content {
+            padding: 1.5rem;
+        }
+        
+        .coop-model h3 {
+            color: #5a3e36;
+            margin-top: 0;
+            font-family: 'Rye', cursive;
+        }
+        
+        .coop-features {
+            background: #d0bb9b;
+            padding: 3rem 1rem;
+            margin: 2rem 0;
+        }
+        
+        .feature-list {
+            columns: 2;
+            column-gap: 2rem;
+        }
+        
+        @media (max-width: 768px) {
+            .feature-list {
+                columns: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="fixed mt-0 ml-0">
+        <nav>
+            <ul class="flex-r">
+                <li><a class="sm" href="../about.html">About</a></li>
+                <li><a class="sm" href="../contact.html">Contact</a></li>
+                <li><a class="sm" href="./services/shade.html">Shade</a></li>
+                <li><a class="sm" href="./steelbarn.html">Barns</a></li>
+                <li><a style="text-wrap: nowrap;" class="sm" href="./maremotel.html">Mare Motels</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="coop-header">
+        <div>
+            <h1 class="rr xl">Western Chicken Coops</h1>
+            <p class="xl">Handcrafted in Arizona with frontier toughness</p>
+            <a href="#models" class="btn">View Coop Models</a>
+        </div>
+    </div>
+
+    <section class="container">
+        <div class="speech-bubble mx-a">
+            <p class="xl quote notilt">"Built like a frontier fort - nothing gets in but the chickens!"</p>
+            <p>- Rancher Mary K., Tucson</p>
+        </div>
+        
+        <div class="flex-c center mt-3">
+            <img src="../pictures/Chicken Coop2.jpg" width="200" alt="coop construction detail" 
+                 style="max-width: 500px; border-radius: 8px; border: 3px solid #8b5e3c;">
+            <p class="md w-50 mx-a mt-2">Our chicken coops combine authentic western styling with Arizona-tough construction to keep your flock safe from coyotes, raccoons, and the desert sun.</p>
+        </div>
+    </section>
+
+    <section id="models" class="container">
+        <h2 class="center">Coop Models</h2>
+        <div class="coop-models">
+            <div class="coop-model">
+                <img src="./pictures/coop-small.jpg" alt="The Homesteader">
+                <div class="coop-model-content">
+                    <h3>The Homesteader</h3>
+                    <p>Perfect for urban flocks (4-6 chickens)</p>
+                    <ul>
+                        <li>4'x4' coop + 4'x8' run</li>
+                        <li>Saloon-style nesting box doors</li>
+                        <li>Predator-proof hardware cloth</li>
+                    </ul>
+                    <p class="price">$1,299</p>
+                    <a href="tel:5207307020" class="btn">Call to Order</a>
+                </div>
+            </div>
+            
+            <div class="coop-model">
+                <img src="./pictures/coop-medium.jpg" alt="The Ranch Hand">
+                <div class="coop-model-content">
+                    <h3>The Ranch Hand</h3>
+                    <p>Ideal for backyard flocks (8-12 chickens)</p>
+                    <ul>
+                        <li>6'x6' coop + 6'x12' run</li>
+                        <li>Wagon wheel ventilation</li>
+                        <li>Automatic door option</li>
+                    </ul>
+                    <p class="price">$1,899</p>
+                    <a href="tel:5207307020" class="btn">Call to Order</a>
+                </div>
+            </div>
+            
+            <div class="coop-model">
+                <img src="./pictures/coop-large.jpg" alt="The Cattle Baron">
+                <div class="coop-model-content">
+                    <h3>The Cattle Baron</h3>
+                    <p>For serious chicken ranchers (15-20 chickens)</p>
+                    <ul>
+                        <li>8'x8' coop + 8'x16' run</li>
+                        <li>Custom branding iron detailing</li>
+                        <li>Insulated for extreme temps</li>
+                    </ul>
+                    <p class="price">$2,499</p>
+                    <a href="tel:5207307020" class="btn">Call to Order</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="coop-features">
+        <div class="container">
+            <h2 class="center">Frontier-Tough Features</h2>
+            <div class="feature-list">
+                <div class="feature-item">
+                    <h4>Predator-Proof Construction</h4>
+                    <p>1/2" hardware cloth, reinforced doors, and secure latches</p>
+                </div>
+                <div class="feature-item">
+                    <h4>Authentic Western Styling</h4>
+                    <p>Barn wood siding, rustic metal accents, and optional wagon wheel decor</p>
+                </div>
+                <div class="feature-item">
+                    <h4>Arizona-Sun Resistant</h4>
+                    <p>UV-protected roofing and ventilation designed for desert climates</p>
+                </div>
+                <div class="feature-item">
+                    <h4>Easy Cleaning</h4>
+                    <p>Removable dropping trays and wide access doors</p>
+                </div>
+                <div class="feature-item">
+                    <h4>Built-In Nesting Boxes</h4>
+                    <p>Saloon-style hinged doors for easy egg collection</p>
+                </div>
+                <div class="feature-item">
+                    <h4>Optional Add-Ons</h4>
+                    <p>Automatic doors, solar lighting, and shade extensions</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="container">
+        <div class="flex-c center">
+            <h2>Ready for Your Frontier Chicken Ranch?</h2>
+            <p>Our coops are built to order with a 4-6 week lead time.</p>
+            <button onclick="window.location.href='tel:5207307020'" 
+                    class="contact-button xl">
+                Call (520) 730-7020
+            </button>
+            <p class="sm">Serving all of Southern Arizona</p>
+        </div>
+    </section>
+
+    <footer class="ml-0">
+        <p class="t-0 mb-0 tb ml-0">&copy; 2025 Ok-Corrals LLC 🐔</p>
+    </footer>
+</body>
+</html>
