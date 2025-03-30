@@ -4,107 +4,432 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Shop high-quality equestrian shade structures with integrated stalls at Ok-Corrals. Protect your horses from the Arizona sun while providing comfortable and secure stalls.">
-    <title>Equestrian Shade with Stalls - Ok-Corrals</title>
+    <title>Equestrian Shade with Stalls - Ok-Corrals | Arizona's Premier Horse Shelter Solutions</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rye&family=Walter+Turncoat&display=swap">
     <style>
+        :root {
+            --primary: #8B4513; /* SaddleBrown */
+            --secondary: #CD853F; /* Peru */
+            --accent: #D2B48C; /* Tan */
+            --text: #5C4033; /* Dark Brown */
+            --light: #F5DEB3; /* Wheat */
+            --highlight: #FFD700; /* Gold */
+        }
+        
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Walter Turncoat', cursive;
             line-height: 1.6;
             margin: 0;
             padding: 0;
-            background-color: #ffffff;
-            color: #000000;
+            background-color: var(--light);
+            color: var(--text);
+            background-image: url('../pictures/western-background.jpg');
+            background-attachment: fixed;
+            background-size: cover;
         }
-        header, section, footer {
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
             padding: 20px;
-            margin: 10px;
+            background-color: rgba(255, 255, 255, 0.9);
+            border-left: 3px solid var(--primary);
+            border-right: 3px solid var(--primary);
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
         }
-        h1, h2 {
-            color: #008000;
+        
+        header {
+            background-image: url('../pictures/Randi-Mare-Motel.jpg');
+            background-size: cover;
+            background-position: center;
+            padding: 60px 20px;
+            text-align: center;
+            border-bottom: 5px dashed var(--primary);
+            position: relative;
         }
+        
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.4);
+        }
+        
+        header h1, header p {
+            position: relative;
+            color: white;
+            text-shadow: 2px 2px 4px #000;
+        }
+        
+        header h1 {
+            font-family: 'Rye', cursive;
+            font-size: 3rem;
+            margin-bottom: 10px;
+            color: var(--highlight);
+        }
+        
+        section {
+            padding: 30px;
+            margin: 20px 0;
+            background-color: white;
+            border: 1px solid var(--secondary);
+            border-radius: 5px;
+            box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
+        }
+        
+        h1, h2, h3 {
+            font-family: 'Rye', cursive;
+            color: var(--primary);
+        }
+        
+        h2 {
+            border-bottom: 2px dashed var(--secondary);
+            padding-bottom: 10px;
+            margin-top: 30px;
+        }
+        
         a {
-            color: #0000ff;
+            color: var(--primary);
             text-decoration: none;
-        }
-        a:hover {
-            text-decoration: underline;
-        }
-        .highlight {
-            background-color: #ffff00;
-            padding: 5px;
             font-weight: bold;
         }
+        
+        a:hover {
+            color: var(--secondary);
+            text-decoration: underline;
+        }
+        
+        .highlight {
+            background-color: var(--accent);
+            padding: 5px 10px;
+            border-left: 4px solid var(--primary);
+            font-weight: bold;
+        }
+        
         .contact-button {
-            background-color: #A0522D;
-            color: #ffff00;
-            padding: 10px 20px;
+            background-color: var(--primary);
+            color: var(--highlight);
+            padding: 12px 25px;
             text-align: center;
             display: inline-block;
-            margin: 10px 0;
+            margin: 15px 0;
+            border-radius: 30px;
+            font-family: 'Rye', cursive;
+            font-size: 1.2rem;
+            border: 2px solid var(--highlight);
+            transition: all 0.3s ease;
+            box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3);
+        }
+        
+        .contact-button:hover {
+            background-color: var(--secondary);
+            transform: scale(1.05);
+            text-decoration: none;
+        }
+        
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+        
+        .gallery img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border: 5px solid var(--accent);
+            border-radius: 5px;
+            transition: transform 0.3s ease;
+        }
+        
+        .gallery img:hover {
+            transform: scale(1.05);
+        }
+        
+        .testimonial {
+            background-color: var(--accent);
+            padding: 20px;
+            border-radius: 5px;
+            margin: 20px 0;
+            position: relative;
+            border-left: 5px solid var(--primary);
+        }
+        
+        .testimonial::before {
+            content: '"';
+            font-size: 4rem;
+            color: var(--primary);
+            opacity: 0.2;
+            position: absolute;
+            top: 10px;
+            left: 10px;
+        }
+        
+        .testimonial-author {
+            font-weight: bold;
+            text-align: right;
+            font-style: italic;
+            color: var(--primary);
+        }
+        
+        .feature-box {
+            display: flex;
+            align-items: center;
+            margin: 20px 0;
+            padding: 15px;
+            background-color: var(--light);
             border-radius: 5px;
         }
-        .contact-button:hover {
-            background-color: #8B4513;
+        
+        .feature-box img {
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            margin-right: 20px;
+            border: 3px solid var(--primary);
+            border-radius: 5px;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 30px;
+            background-color: var(--primary);
+            color: white;
+            margin-top: 40px;
+            border-top: 5px dashed var(--highlight);
+        }
+        
+        footer a {
+            color: var(--highlight);
+        }
+        
+        .badge {
+            display: inline-block;
+            background-color: var(--primary);
+            color: var(--highlight);
+            padding: 5px 10px;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            margin-right: 10px;
+            margin-bottom: 10px;
+        }
+        
+        @media (max-width: 768px) {
+            .feature-box {
+                flex-direction: column;
+            }
+            
+            .feature-box img {
+                margin-right: 0;
+                margin-bottom: 15px;
+            }
+            
+            header h1 {
+                font-size: 2rem;
+            }
         }
     </style>
 </head>
 <body>
+    <div class="container">
+        <header>
+            <h1>Equestrian Shade with Stalls</h1>
+            <p>Premium Protection for Your Prized Horses in the Arizona Wilderness</p>
+        </header>
 
-<header>
-    <h1>Equestrian Shade with Stalls</h1>
-    <p>Protect your horses from the Arizona sun while providing comfortable and secure stalls.</p>
-</header>
+        <section>
+            <h2>Why Your Horses Need Specialized Shade & Stalls</h2>
+            <p>In Arizona's unforgiving frontier, where the sun beats down like a blacksmith's hammer, your horses need more than just basic shelter. Our <strong>equestrian shade structures with integrated stalls</strong> are designed by seasoned ranch hands who understand what horses truly need to thrive in the Southwest.</p>
+            
+            <div class="gallery">
+                <img src="https://theokcorrals.com/pictures/shade-stall-1.jpg" alt="Custom horse shade with stalls">
+                <img src="https://theokcorrals.com/pictures/shade-stall-2.jpg" alt="Spacious horse stall under shade">
+                <img src="https://theokcorrals.com/pictures/shade-stall-3.jpg" alt="Horses resting in shaded stalls">
+            </div>
+            
+            <div class="feature-box">
+                <img src="https://theokcorrals.com/pictures/uv-protection.jpg" alt="UV protection diagram">
+                <div>
+                    <h3>Superior Sun Protection</h3>
+                    <p>Our shade structures block <strong>98% of harmful UV rays</strong>, preventing sunburn and heat stress. The specially designed roofing material reflects heat while allowing for proper airflow, keeping stalls up to <strong>20°F cooler</strong> than unshaded areas.</p>
+                    <p>Learn more about our <a href="./PhoenixHorseShadeInstallation.html">Phoenix horse shade installation</a> process.</p>
+                </div>
+            </div>
+            
+            <div class="feature-box">
+                <img src="https://theokcorrals.com/pictures/stall-design.jpg" alt="Stall design features">
+                <div>
+                    <h3>Thoughtful Stall Design</h3>
+                    <p>Each stall features:</p>
+                    <ul>
+                        <li><strong>12-gauge steel framing</strong> that can withstand even the most spirited horses</li>
+                        <li><strong>Rubber-matted floors</strong> for joint comfort and easy cleaning</li>
+                        <li><strong>Adjustable ventilation</strong> to accommodate seasonal changes</li>
+                        <li><strong>Removable partitions</strong> for flexible space configuration</li>
+                    </ul>
+                    <p>See our <a href="./HeavyweightPensandCorrals.html">heavyweight pens and corrals</a> for more durable options.</p>
+                </div>
+            </div>
+            
+            <div class="testimonial">
+                <p>"After installing Ok-Corrals' shade stalls, my horses are noticeably more comfortable during the day. Their coats look better, they're drinking more water, and I've seen a real improvement in their overall temperament. Best investment I've made for my ranch!"</p>
+                <p class="testimonial-author">- Jake Williams, Triple W Ranch, Tucson</p>
+            </div>
+        </section>
 
-<section>
-    <h2>Why Choose Equestrian Shade with Stalls?</h2>
-    <p>In Arizona's intense heat, providing shade and comfortable living conditions for your horses is essential. Our equestrian shade structures with integrated stalls offer the perfect solution, combining protection from the sun with secure and comfortable stalls for your horses.</p>
-    <ul>
-        <li><strong>Sun Protection:</strong> Shields horses from harmful UV rays and extreme heat.</li>
-        <li><strong>Comfortable Stalls:</strong> Spacious and well-ventilated stalls for your horses' comfort.</li>
-        <li><strong>Durability:</strong> Built to withstand Arizona's harsh weather conditions.</li>
-    </ul>
-</section>
+        <section>
+            <h2>Our Equestrian Shade & Stall Configurations</h2>
+            <p>Just like every horse has its own personality, every ranch has its own needs. We offer a variety of standard configurations with endless customization options to create the perfect solution for your spread.</p>
+            
+            <h3>Standard Packages</h3>
+            <div class="feature-box">
+                <img src="https://theokcorrals.com/pictures/single-stall.jpg" alt="Single stall shade">
+                <div>
+                    <h4>The Lone Ranger (Single Stall)</h4>
+                    <p>Perfect for:</p>
+                    <ul>
+                        <li>Individual prized horses</li>
+                        <li>Quarantine areas</li>
+                        <li>Small properties</li>
+                    </ul>
+                    <p><strong>Features:</strong> 12'x12' stall with 10'x12' shade cover, removable front gate, feed trough bracket</p>
+                    <span class="badge">Starting at $2,499</span>
+                </div>
+            </div>
+            
+            <div class="feature-box">
+                <img src="https://theokcorrals.com/pictures/double-stall.jpg" alt="Double stall shade">
+                <div>
+                    <h4>The Dynamic Duo (Double Stall)</h4>
+                    <p>Ideal for:</p>
+                    <ul>
+                        <li>Mare and foal pairs</li>
+                        <li>Training setups</li>
+                        <li>Bonded horses</li>
+                    </ul>
+                    <p><strong>Features:</strong> Two 12'x12' stalls with shared 20'x12' shade cover, removable partitions, dual feed troughs</p>
+                    <span class="badge">Starting at $3,999</span>
+                    <p>Check out our <a href="./MareMotelsInstalledPhoenix.html">Mare Motels</a> for specialized mare/foal accommodations.</p>
+                </div>
+            </div>
+            
+            <div class="feature-box">
+                <img src="https://theokcorrals.com/pictures/run-in-shed.jpg" alt="Run-in shed style">
+                <div>
+                    <h4>The Corral Classic (Run-In Shed)</h4>
+                    <p>Great for:</p>
+                    <ul>
+                        <li>Small herds</li>
+                        <li>Pasture shelters</li>
+                        <li>24/7 access</li>
+                    </ul>
+                    <p><strong>Features:</strong> 24'x12' open shelter with 3-sided protection, reinforced corners, optional stall dividers</p>
+                    <span class="badge">Starting at $4,499</span>
+                    <p>Pair with our <a href="./PortableHorseCorralsForSale.html">portable corrals</a> for a complete solution.</p>
+                </div>
+            </div>
+            
+            <h3>Custom Options</h3>
+            <p>Can't find exactly what you need in our standard offerings? We specialize in custom designs including:</p>
+            <ul>
+                <li><strong>Extended shade coverage</strong> for larger herds</li>
+                <li><strong>Integrated tack rooms</strong> for convenient gear storage</li>
+                <li><strong>Specialized flooring</strong> for horses with joint issues</li>
+                <li><strong>Predator-proof designs</strong> for foals and miniature horses</li>
+                <li><strong>Combination barn/shade structures</strong> for complete protection</li>
+            </ul>
+            <p>Browse our <a href="./services/steelbarn.html">steel barn options</a> for more permanent structures.</p>
+            
+            <div class="gallery">
+                <img src="https://theokcorrals.com/pictures/custom-1.jpg" alt="Custom shade stall project">
+                <img src="https://theokcorrals.com/pictures/custom-2.jpg" alt="Integrated tack room">
+                <img src="https://theokcorrals.com/pictures/custom-3.jpg" alt="Specialized flooring stall">
+            </div>
+        </section>
 
-<section>
-    <h2>Our Equestrian Shade with Stalls Options</h2>
-    <p>At Ok-Corrals, we offer a variety of equestrian shade structures with integrated stalls to meet your specific needs. Whether you need a small setup for a few horses or a larger structure for an entire herd, we have the expertise to deliver high-quality results.</p>
-    <h3>Available Options:</h3>
-    <ul>
-        <li><strong>Standard Shade Structures:</strong> Ideal for small herds and individual horses.</li>
-        <li><strong>Custom Designs:</strong> Tailored to your property's layout and your horses' needs.</li>
-        <li><strong>Additional Features:</strong> Options include feed troughs, waterers, and more.</li>
-    </ul>
-</section>
+        <section>
+            <h2>Why Arizona Ranchers Choose Ok-Corrals</h2>
+            <p>Since 2006, we've been building structures that stand up to Arizona's toughest conditions. Here's what sets us apart:</p>
+            
+            <div class="feature-box">
+                <img src="https://theokcorrals.com/pictures/quality-materials.jpg" alt="High quality materials">
+                <div>
+                    <h3>Top-Tier Materials</h3>
+                    <p>We use only <strong>American-made steel</strong> with a hot-dip galvanized coating that resists rust and corrosion. Our roofing materials are UV-stabilized for years of sun protection without becoming brittle.</p>
+                    <p>Learn about our <a href="./GalvanizedCorralPanels.html">galvanized corral panels</a> construction.</p>
+                </div>
+            </div>
+            
+            <div class="feature-box">
+                <img src="https://theokcorrals.com/pictures/expert-install.jpg" alt="Professional installation">
+                <div>
+                    <h3>Expert Installation</h3>
+                    <p>Our crew aren't just construction workers - they're horse people who understand how horses interact with their environment. We ensure:</p>
+                    <ul>
+                        <li><strong>No sharp edges</strong> that could injure your animals</li>
+                        <li><strong>Proper drainage</strong> to prevent standing water</li>
+                        <li><strong>Secure anchoring</strong> that withstands monsoon winds</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="feature-box">
+                <img src="https://theokcorrals.com/pictures/warranty.jpg" alt="Warranty information">
+                <div>
+                    <h3>Unmatched Warranty</h3>
+                    <p>We stand behind our work with a <strong>10-year structural warranty</strong> and <strong>5-year materials warranty</strong>. If anything isn't right, we'll make it right - no excuses.</p>
+                </div>
+            </div>
+            
+            <div class="testimonial">
+                <p>"I've had other shade structures fail after just a couple years. My Ok-Corrals setup has been through five Arizona summers and still looks and functions like new. These folks know how to build for our climate."</p>
+                <p class="testimonial-author">- Maria Gonzalez, Sundance Stables, Scottsdale</p>
+            </div>
+        </section>
 
-<section>
-    <h2>Benefits of Choosing Ok-Corrals</h2>
-    <p>When you choose Ok-Corrals for your equestrian shade with stalls, you’re choosing a company with decades of experience and a commitment to quality. Here’s why we stand out:</p>
-    <ul>
-        <li><strong>Local Expertise:</strong> We understand the unique challenges of Arizona's climate and terrain.</li>
-        <li><strong>Affordable Pricing:</strong> Competitive rates without compromising on quality.</li>
-        <li><strong>Customer Satisfaction:</strong> We work closely with you to ensure your needs are met.</li>
-        <li><strong>Warranty:</strong> All our shade structures come with a warranty for your peace of mind.</li>
-    </ul>
-</section>
+        <section>
+            <h2>Frequently Asked Questions</h2>
+            
+            <h3>1. How long does installation take?</h3>
+            <p>Most standard installations are completed in <strong>1-2 days</strong>. Custom projects may take longer depending on complexity. We work efficiently to minimize disruption to your daily ranch operations.</p>
+            
+            <h3>2. Can the structures be moved if needed?</h3>
+            <p>Many of our designs are <strong>semi-portable</strong> and can be relocated with proper equipment. We also offer fully portable options - ask about our <a href="./PipeCorrals.html">pipe corral systems</a>.</p>
+            
+            <h3>3. Do you service my area?</h3>
+            <p>We serve all of Southern Arizona including:</p>
+            <ul>
+                <li><strong>Phoenix metro</strong> (Scottsdale, Mesa, Chandler, Gilbert)</li>
+                <li><strong>Tucson and surrounding areas</strong></li>
+                <li><strong>Cave Creek, New River, and northern communities</strong></li>
+                <li><strong>Casa Grande and southern regions</strong></li>
+            </ul>
+            <p>Contact us to confirm service availability for your specific location.</p>
+            
+            <h3>4. What about permits?</h3>
+            <p>We handle all necessary permitting for your project and are familiar with the requirements throughout our service area. Most agricultural shade structures don't require permits, but we'll verify for your specific situation.</p>
+            
+            <h3>5. Can you match my existing structures?</h3>
+            <p>Absolutely! We can customize colors, materials, and design elements to complement your current barn, arena, or other outbuildings. Bring us photos or paint samples and we'll make it work.</p>
+        </section>
 
-<section>
-    <h2>Frequently Asked Questions</h2>
-    <h3>1. How long does installation take?</h3>
-    <p>Installation time depends on the size and complexity of the project. Most installations are completed within 1-2 days.</p>
-    <h3>2. Can I customize the shade structure and stalls?</h3>
-    <p>Yes! We offer fully customizable designs to match your property's layout and your horses' needs.</p>
-    <h3>3. Do you service other areas besides Phoenix?</h3>
-    <p>Yes, we serve the entire Phoenix metro area and surrounding regions. Contact us to see if we service your location.</p>
-</section>
+        <section style="text-align: center; background-color: var(--primary); color: white;">
+            <h2 style="color: var(--highlight);">Ready to Shelter Your Herd in Style?</h2>
+            <p style="font-size: 1.2rem;">Get a free, no-obligation quote today. One of our ranch specialists will visit your property to assess your needs and recommend the perfect solution.</p>
+            <p><a href="tel:5207307020" class="contact-button">Call Now: (520) 730-7020</a></p>
+            <p>Or <a href="./contact.html" style="color: var(--highlight);">send us a message online</a></p>
+            <p><small>Proudly serving Arizona's equestrian community since 2006</small></p>
+        </section>
+    </div>
 
-<section>
-    <h2>Get a Free Quote Today</h2>
-    <p>Ready to provide a safe and comfortable environment for your horses? Contact Ok-Corrals today for a free consultation and quote. Our team is here to answer your questions and help you find the perfect solution for your property.</p>
-    <p><a href="http://www.ok-corrals.com/contactUs.html" class="contact-button">Click Here to Contact Us</a></p>
-</section>
-
-<footer>
-    <p><center><font size="+1" color="#ffff00">An Arizona Owned Business Since 2006</font></center></p>
-</footer>
-
+    <footer>
+        <p><strong>Ok-Corrals LLC</strong> | Arizona's Premier Horse Shelter Specialists</p>
+        <p><a href="./about.html">About Us</a> | <a href="./services.html">All Services</a> | <a href="./contact.html">Contact</a></p>
+        <p>© 2025 Ok-Corrals LLC. All rights reserved.</p>
+    </footer>
 </body>
 </html>

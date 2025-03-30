@@ -37,7 +37,7 @@ header {
 }
 
 main {
-  padding: 2rem;
+  padding: 1rem;
 }
 
 footer {
@@ -58,6 +58,10 @@ footer {
   .ml-0 {
     margin-left: 0% !important;
   }
+  .pl-0 {
+    padding-left: 0% !important;
+  } 
+
   .l-0 {
     padding-left: 0% !important;
     margin-left: -25% !important;
@@ -192,6 +196,19 @@ nav ul li a {
 .notilt {
   transform: rotateZ(0deg) !important;
 }
+
+.pl-0 {
+  padding-left: 0% !important;
+}
+
+.z-twist {
+  transform: rotateZ(5deg) !important;
+}
+
+.lh-80 {
+  line-height: 99% !important;
+}
+
 nav ul li {
   color: #fff;
   text-decoration: none;
@@ -201,6 +218,15 @@ nav ul li {
   padding: 10px !important;
 }
 
+.w {
+  color: #fff !important;
+}
+.a {
+  position: absolute !important;
+}
+.b {
+  color: black;
+}
 //  end of mobile
 }
 

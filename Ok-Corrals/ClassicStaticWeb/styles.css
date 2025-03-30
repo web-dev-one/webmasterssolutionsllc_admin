@@ -88,6 +88,9 @@ a:hover{
 .xl{
     font-size: xx-large;
 }
+.s {
+    font-size: small !important;
+}
 .w-40{
     width: 40vw;
 }
