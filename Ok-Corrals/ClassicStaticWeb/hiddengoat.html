@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Hidden Goat</title>
+    <style>
+        body {
+            background-color: black;
+            text-align: center;
+            color: white;
+            font-family: Arial, sans-serif;
+        }
+        #goat {
+            display: none;
+            margin: 20px auto;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>Find the Hidden Goat!</h1>
+    <button onclick="revealGoat()">Click Me</button>
+    <div id="goat">
+        <pre><a href="./bethegoat.html">
+            (\___/)  
+            ( =⚪= )  
+            (")__(")  
+         A hidden goat!</a>
+        </pre>
+    </div>
+
+    <script>
+        function revealGoat() {
+            document.getElementById("goat").style.display = "block";
+        }
+    </script>
+</body>
+</html>

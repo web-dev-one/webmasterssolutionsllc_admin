@@ -3,108 +3,451 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Shop high-quality goat pens for sale at Ok-Corrals. Durable, customizable, and easy-to-assemble pens for goat owners in Arizona.">
-    <title>Goat Pens For Sale - Ok-Corrals</title>
+    <link rel="icon" type="image/x-icon" href="../pictures/favicon.ico">
+    <title>Premium Goat Pens for Sale | OK Corrals - Arizona's Trusted Livestock Experts</title>
+    <meta name="description" content="Custom-built, durable goat pens designed for Arizona's rugged terrain. Predator-proof enclosures with optional shade from Arizona's top livestock equipment provider.">
+    <meta name="keywords" content="goat pens for sale, Arizona goat enclosures, predator-proof goat pens, custom goat corrals, livestock fencing, goat shelters">
+    <meta name="author" content="OK Corrals">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rye&family=Walter+Turncoat&display=swap" rel="stylesheet">
     <style>
+        /* Santa Fe/Southwestern Theme */
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Walter Turncoat', cursive;
             line-height: 1.6;
             margin: 0;
             padding: 0;
-            background-color: #ffffff;
-            color: #000000;
+            background-color: #f5e7d3; /* Adobe beige */
+            color: #5a3e36; /* Terracotta */
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><rect width="100" height="100" fill="none" stroke="%23d4a76a" stroke-width="2"/></svg>');
+            background-size: 30px 30px;
         }
+
         header, section, footer {
             padding: 20px;
-            margin: 10px;
+            margin: 20px;
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            border: 2px solid #d4a76a; /* Southwestern gold */
         }
-        h1, h2 {
-            color: #008000;
+
+        h1, h2, h3 {
+            font-family: 'Rye', cursive;
+            color: #8b5e3c; /* Rustic red */
+            text-shadow: 1px 1px 2px #d4a76a;
         }
+
+        h1 {
+            font-size: 2.5rem;
+            border-bottom: 3px dashed #d4a76a;
+            padding-bottom: 10px;
+        }
+
+        h2 {
+            font-size: 2rem;
+            border-left: 5px solid #8b5e3c;
+            padding-left: 15px;
+        }
+
         a {
-            color: #0000ff;
+            color: #7d4a2e; /* Dark terracotta */
             text-decoration: none;
-        }
-        a:hover {
-            text-decoration: underline;
-        }
-        .highlight {
-            background-color: #ffff00;
-            padding: 5px;
             font-weight: bold;
         }
-        .contact-button {
-            background-color: #A0522D;
-            color: #ffff00;
-            padding: 10px 20px;
-            text-align: center;
-            display: inline-block;
-            margin: 10px 0;
+
+        a:hover {
+            color: #d4a76a;
+            text-decoration: underline;
+        }
+
+        .nav-bar {
+            background-color: #8b5e3c;
+            padding: 15px;
             border-radius: 5px;
         }
-        .contact-button:hover {
-            background-color: #8B4513;
+
+        .nav-bar ul {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            padding: 0;
         }
+
+        .nav-bar li {
+            list-style: none;
+            margin: 5px;
+        }
+
+        .nav-bar a {
+            color: #f5e7d3;
+            padding: 8px 15px;
+            border-radius: 20px;
+            transition: all 0.3s ease;
+        }
+
+        .nav-bar a:hover {
+            background-color: #d4a76a;
+            text-decoration: none;
+        }
+
+        .product-card {
+            background-color: #f9f1e4;
+            border: 1px solid #d4a76a;
+            border-radius: 8px;
+            padding: 15px;
+            margin: 15px 0;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .btn {
+            background-color: #8b5e3c;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 25px;
+            display: inline-block;
+            margin: 10px 0;
+            transition: all 0.3s ease;
+            border: none;
+            font-family: 'Rye', cursive;
+        }
+
+        .btn:hover {
+            background-color: #d4a76a;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+
+        .testimonial {
+            font-style: italic;
+            background-color: #f9f1e4;
+            padding: 15px;
+            border-left: 4px solid #d4a76a;
+            margin: 20px 0;
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+        }
+
+        .gallery img {
+            width: 100%;
+            border-radius: 8px;
+            border: 2px solid #d4a76a;
+            transition: transform 0.3s ease;
+        }
+
+        .gallery img:hover {
+            transform: scale(1.03);
+        }
+
+        .feature-list {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .feature-list li {
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="%238b5e3c"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>') no-repeat left center;
+            padding-left: 25px;
+            margin: 10px 0;
+        }
+
+        @media (max-width: 768px) {
+            .nav-bar ul {
+                flex-direction: column;
+            }
+            
+            h1 {
+                font-size: 1.8rem;
+            }
+            
+            h2 {
+                font-size: 1.5rem;
+            }
+        }
+
+       
+    /* Enhanced Premium Navigation Bar */
+    .nav-premium {
+        background: linear-gradient(135deg, #8b5e3c 0%, #5a3e36 100%);
+        padding: 0;
+        border-radius: 8px;
+        box-shadow: 0 4px 12px rgba(90, 62, 54, 0.4);
+        border: 1px solid #d4a76a;
+        margin-bottom: 30px;
+        position: relative;
+        overflow: hidden;
+    }
+    
+    .nav-premium:before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 3px;
+        background: linear-gradient(90deg, #d4a76a, #f5e7d3, #d4a76a);
+    }
+    
+    .nav-premium ul {
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        padding: 0;
+        margin: 0;
+        background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="40" viewBox="0 0 100 40"><path d="M0 20 Q25 30 50 20 T100 20" fill="none" stroke="%23d4a76a55" stroke-width="1"/></svg>');
+    }
+    
+    .nav-premium li {
+        list-style: none;
+        margin: 0;
+        position: relative;
+    }
+    
+    .nav-premium li:after {
+        content: "•";
+        position: absolute;
+        right: -5px;
+        top: 50%;
+        transform: translateY(-50%);
+        color: #d4a76a;
+        font-size: 18px;
+    }
+    
+    .nav-premium li:last-child:after {
+        display: none;
+    }
+    
+    .nav-premium a {
+        color: #f5e7d3;
+        padding: 18px 20px;
+        display: block;
+        font-family: 'Rye', cursive;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        font-size: 0.9rem;
+        position: relative;
+        transition: all 0.3s ease;
+        text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+    }
+    
+    .nav-premium a:before {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 0;
+        height: 3px;
+        background: #d4a76a;
+        transition: width 0.3s ease;
+    }
+    
+    .nav-premium a:hover {
+        color: white;
+        background: rgba(212, 167, 106, 0.2);
+    }
+    
+    .nav-premium a:hover:before {
+        width: 80%;
+    }
+    
+    .nav-premium .cta {
+        background: #d4a76a;
+        font-weight: bold;
+    }
+    
+    .nav-premium .cta:hover {
+        background: #c59b5a;
+        color: #5a3e36;
+    }
+    
+    .nav-premium .cta:before {
+        display: none;
+    }
+    
+    /* Badge for special offer */
+    .offer-badge {
+        position: absolute;
+        top: -10px;
+        right: 20px;
+        background: #c1272d;
+        color: white;
+        padding: 3px 10px;
+        border-radius: 20px;
+        font-size: 0.7rem;
+        font-weight: bold;
+        transform: rotate(5deg);
+        box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+        z-index: 1;
+        animation: pulse 2s infinite;
+    }
+    
+    @keyframes pulse {
+        0% { transform: rotate(5deg) scale(1); }
+        50% { transform: rotate(5deg) scale(1.05); }
+        100% { transform: rotate(5deg) scale(1); }
+    }
+    
+    @media (max-width: 768px) {
+        .nav-premium ul {
+            flex-direction: column;
+        }
+        
+        .nav-premium li {
+            border-bottom: 1px solid #5a3e36;
+        }
+        
+        .nav-premium li:after {
+            display: none;
+        }
+        
+        .offer-badge {
+            right: 50%;
+            transform: translateX(50%) rotate(5deg);
+        }
+    }
     </style>
 </head>
 <body>
+    <header>
+        <div class="nav-premium">
+            <div class="offer-badge">Free Installation This Month!</div>
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../about.html">Our Story</a></li>
+                <li><a href="../services.html">Products</a></li>
+                <li><a href="tel:5207307020" class="cta">Call Now</a></li>
+                <li><a href="../services/AlpacaRanchPens.html">Alpaca Pens</a></li>
+                <li><a href="../contact.html">Get Quote</a></li>
+            </ul>
+        </div>
+        <h1>Premium Goat Pens & Enclosures</h1>
+        <p>Custom-built, durable goat pens designed for Arizona's rugged terrain by OK Corrals - your trusted livestock experts since 2006.</p>
+    </header>
 
-<header>
-    <h1>Goat Pens For Sale</h1>
-    <p>Durable, customizable, and easy-to-assemble pens for goat owners in Arizona.</p>
-</header>
+    <section>
+        <div class="gallery">
+            <img src="../pictures/goat-pen-1.jpg" alt="Custom goat pen with shade structure">
+            <img src="../pictures/goat-pen-2.jpg" alt="Predator-proof goat enclosure">
+            <img src="../pictures/goat-pen-3.jpg" alt="Family of goats in sturdy pen">
+            <img src="../pictures/goat-pen-4.jpg" alt="Portable goat pen with feeding station">
+        </div>
+        
+        <h2>Why Choose Our Goat Pens?</h2>
+        <p>At OK Corrals, we understand that goats are clever, agile, and persistent animals that require specialized enclosures. Our goat pens are designed with these unique challenges in mind, offering:</p>
+        
+        <ul class="feature-list">
+            <li><strong>Predator-proof construction</strong> to protect against coyotes, dogs, and other threats</li>
+            <li><strong>Heavy-duty materials</strong> that withstand chewing, rubbing, and head-butting</li>
+            <li><strong>Custom configurations</strong> for dairy goats, meat goats, or pet goats</li>
+            <li><strong>Optional shade structures</strong> to protect from Arizona's intense sun</li>
+            <li><strong>Secure gates and latches</strong> that goats can't manipulate</li>
+            <li><strong>Easy cleaning designs</strong> with removable panels or sloped floors</li>
+        </ul>
+        
+        <div class="testimonial">
+            <p>"Our OK Corrals goat pen has kept our Nubians safe for 5 years through monsoons, dust storms, and curious coyotes. The quality is unmatched!" - The Henderson Ranch, Tucson</p>
+        </div>
+    </section>
 
-<section>
-    <h2>Why Choose Goat Pens from Ok-Corrals?</h2>
-    <p>Goat pens are essential for keeping your goats safe, secure, and comfortable. At Ok-Corrals, we offer high-quality goat pens designed to meet the needs of both small-scale and large-scale goat owners. Our pens are built to last and provide a safe environment for your goats.</p>
-    <ul>
-        <li><strong>Safety:</strong> Keeps your goats protected from predators and harsh weather.</li>
-        <li><strong>Durability:</strong> Made from high-quality materials to withstand daily wear and tear.</li>
-        <li><strong>Customizable:</strong> Available in various sizes and configurations to suit your specific needs.</li>
-    </ul>
-</section>
+    <section>
+        <h2>Our Goat Pen Options</h2>
+        
+        <div class="product-card">
+            <h3>Basic Goat Corral</h3>
+            <p>Our standard 4-rail galvanized steel panels perfect for temporary enclosures or rotational grazing systems.</p>
+            <p><strong>Features:</strong> 10' or 12' panels, 48" height, easy assembly</p>
+            <a href="../services/GalvanizedCorralPanels.html" class="btn">View Galvanized Panels</a>
+        </div>
+        
+        <div class="product-card">
+            <h3>Deluxe Goat Pen with Shade</h3>
+            <p>Complete enclosure with attached shade structure, perfect for Arizona summers.</p>
+            <p><strong>Features:</strong> 12'x24' footprint, 6' shade roof, feeding station</p>
+            <a href="../services/shade.html" class="btn">Explore Shade Options</a>
+        </div>
+        
+        <div class="product-card">
+            <h3>Custom Breeding Pen</h3>
+            <p>Specialized design for breeding operations with separate kidding areas.</p>
+            <p><strong>Features:</strong> Partition gates, heat lamps, kid-safe spacing</p>
+            <a href="../contact.html" class="btn">Request Custom Design</a>
+        </div>
+        
+        <div class="product-card">
+            <h3>Portable Goat Pen System</h3>
+            <p>Lightweight yet sturdy panels for rotational grazing across your property.</p>
+            <p><strong>Features:</strong> 8' panels, easy transport, quick setup</p>
+            <a href="../services/PortableHorseCorralsForSale.html" class="btn">View Portable Options</a>
+        </div>
+    </section>
 
-<section>
-    <h2>Our Goat Pen Options</h2>
-    <p>At Ok-Corrals, we offer a wide range of goat pens designed for both small and large operations. Our pens are made from high-quality materials and are built to last.</p>
-    <h3>Available Options:</h3>
-    <ul>
-        <li><strong>Standard Goat Pens:</strong> Ideal for small herds and individual goats.</li>
-        <li><strong>Heavy-Duty Pens:</strong> Designed for larger herds and more demanding environments.</li>
-        <li><strong>Custom Configurations:</strong> Tailored to your specific needs, including additional gates, panels, and accessories.</li>
-    </ul>
-</section>
+    <section>
+        <h2>Goat Pen Construction Details</h2>
+        <p>Our goat pens are built with the same quality materials we use for our <a href="../services/HeavyweightPensandCorrals.html">heavyweight horse corrals</a>, adapted for goat-specific needs:</p>
+        
+        <div class="gallery">
+            <img src="../pictures/goat-pen-construction-1.jpg" alt="Close-up of goat pen construction">
+            <img src="../pictures/goat-pen-construction-2.jpg" alt="Goat pen gate detail">
+            <img src="../pictures/goat-pen-construction-3.jpg" alt="Custom feeding station">
+        </div>
+        
+        <h3>Materials We Use:</h3>
+        <ul class="feature-list">
+            <li><strong>Galvanized steel panels</strong> - Rust-resistant and chew-proof</li>
+            <li><strong>Schedule 40 pipe frames</strong> - For permanent installations</li>
+            <li><strong>Goat-safe spacing</strong> - 4"x4" or 4"x6" mesh options</li>
+            <li><strong>Reinforced corners</strong> - Where goats tend to rub and push</li>
+            <li><strong>Commercial-grade hinges and latches</strong> - That stand up to daily use</li>
+        </ul>
+        
+        <p>We can incorporate elements from our <a href="../services/steelbarn.html">steel barn designs</a> for fully enclosed goat housing when needed.</p>
+    </section>
 
-<section>
-    <h2>Benefits of Choosing Ok-Corrals</h2>
-    <p>When you choose Ok-Corrals for your goat pens, you’re choosing a company with decades of experience and a commitment to quality. Here’s why we stand out:</p>
-    <ul>
-        <li><strong>Local Expertise:</strong> We understand the unique challenges of Arizona's climate and terrain.</li>
-        <li><strong>Affordable Pricing:</strong> Competitive rates without compromising on quality.</li>
-        <li><strong>Customer Satisfaction:</strong> We work closely with you to ensure your needs are met.</li>
-        <li><strong>Warranty:</strong> All our goat pens come with a warranty for your peace of mind.</li>
-    </ul>
-</section>
+    <section>
+        <h2>Frequently Asked Questions</h2>
+        
+        <h3>What size pen do I need for my goats?</h3>
+        <p>As a general rule, allow 15-25 square feet per goat in the pen, plus additional space for shelters and feeders. Dairy goats typically need more space than meat breeds. Our consultants can help you determine the ideal size during your <a href="../contact.html">free consultation</a>.</p>
+        
+        <h3>How do you predator-proof goat pens?</h3>
+        <p>We use several techniques learned from our <a href="../services/MareMotelsInstalledPhoenix.html">mare motel</a> designs: buried perimeter fencing, overhangs to prevent climbing, and small mesh sizes that prevent predators from reaching through. We can also install electric fence options.</p>
+        
+        <h3>Can you build goat pens on slopes?</h3>
+        <p>Absolutely! Arizona's terrain varies greatly, and we've installed pens on everything from flat desert to steep hillsides. We use terracing techniques and custom panel sizing to accommodate any slope.</p>
+        
+        <h3>Do you offer financing?</h3>
+        <p>Yes! We work with several agricultural lenders to help spread out payments for larger projects. Ask about our financing options when you <a href="tel:5207307020">call us</a>.</p>
+    </section>
 
-<section>
-    <h2>Frequently Asked Questions</h2>
-    <h3>1. How easy are the pens to assemble?</h3>
-    <p>Our goat pens are designed for easy assembly. Most models can be set up with minimal effort and basic tools.</p>
-    <h3>2. Can I customize the pens?</h3>
-    <p>Yes! We offer fully customizable designs to match your specific needs and preferences.</p>
-    <h3>3. Do you offer delivery and setup?</h3>
-    <p>Yes, we offer delivery and setup services for all our goat pens. Contact us for more details.</p>
-</section>
+    <section>
+        <h2>Ready to Order Your Goat Pen?</h2>
+        <p>Contact OK Corrals today for a free quote on your custom goat enclosure. We serve all of Southern Arizona including Phoenix, Tucson, Prescott, and surrounding areas.</p>
+        
+        <div style="text-align: center; margin: 30px 0;">
+            <a href="../contact.html" class="btn" style="font-size: 1.2rem; padding: 15px 30px;">Get Your Free Quote</a>
+            <p>or call us directly at <a href="tel:5207307020" style="font-size: 1.3rem;">(520) 730-7020</a></p>
+        </div>
+        
+        <p>While you're here, check out our other livestock solutions:</p>
+        <ul class="feature-list">
+            <li><a href="../services/AlpacaRanchPens.html">Alpaca Ranch Pens</a> - Specialized for these unique animals</li>
+            <li><a href="../services/ChickenCoops.html">Chicken Coop Corrals</a> - Protect your poultry</li>
+            <li><a href="../services/PipeCorrals.html">Pipe Corrals</a> - For larger livestock needs</li>
+            <li><a href="../services/EquestrianShadeWithStalls.html">Equestrian Facilities</a> - Complete barn solutions</li>
+        </ul>
+    </section>
 
-<section>
-    <h2>Get a Free Quote Today</h2>
-    <p>Ready to invest in high-quality goat pens? Contact Ok-Corrals today for a free consultation and quote. Our team is here to answer your questions and help you find the perfect solution for your property.</p>
-    <p><a href="http://www.ok-corrals.com/contactUs.html" class="contact-button">Click Here to Contact Us</a></p>
-</section>
-
-<footer>
-    <p><center><font size="+1" color="#ffff00">An Arizona Owned Business Since 2006</font></center></p>
-</footer>
-
+    <footer>
+        <p>&copy; 2025 OK Corrals LLC | <a href="../index.html">Home</a> | <a href="../about.html">About Us</a> | <a href="../services.html">Services</a> | <a href="../contact.html">Contact</a></p>
+        <p>Serving Arizona's livestock community since 2006</p>
+        <p><a href="../hiddengoat.html"><em>Find the hidden goat!</em></a></p>
+    </footer>
 </body>
 </html>
