@@ -169,6 +169,28 @@
             max-width: 400px;
         }
         
+        #backButton {
+            display: block;
+            margin: 10px auto;
+            padding: 10px 20px;
+            background-color: #5D4037;
+            color: white;
+            text-decoration: none;
+            border-radius: 20px;
+            font-weight: bold;
+            font-size: clamp(14px, 4vw, 18px);
+            border: 2px solid #3E2723;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            transition: all 0.3s ease;
+            flex-shrink: 0;
+        }
+        
+        #backButton:hover {
+            background-color: #3E2723;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.3);
+        }
+        
         @keyframes blink {
             0% { opacity: 1; }
             50% { opacity: 0.5; }
@@ -208,6 +230,13 @@
                 top: 10%;
                 font-size: clamp(14px, 4vw, 20px);
             }
+            
+            #backButton {
+                position: absolute;
+                bottom: 10px;
+                right: 10px;
+                margin: 0;
+            }
         }
     </style>
 </head>
@@ -229,7 +258,9 @@
     <div id="controls">
         Tap to jump | Drag to move | Arrow keys to move
     </div>
-
+    
+    <a href="https://theokcorrals.com" id="backButton">Back to theokcorrals.com</a>
+    
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             // Game elements
