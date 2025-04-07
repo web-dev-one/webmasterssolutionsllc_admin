@@ -1,0 +1,893 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custom Horse Shelters | Tailored Solutions for Your Equine Needs | Ok-Corrals</title>
+    <meta name="description" content="Premium custom horse shelters designed for Arizona's climate. Tailored solutions with additional gates, panels, and accessories to meet your specific needs.">
+    <meta name="keywords" content="custom horse shelters, Arizona horse shelters, horse shade structures, equine shelters, horse barns, mare motels">
+    <meta property="og:title" content="Custom Horse Shelters | Ok-Corrals">
+    <meta property="og:description" content="Premium custom horse shelters designed for Arizona's climate. Tailored solutions with additional gates, panels, and accessories.">
+    <meta property="og:image" content="https://theokcorrals.com/pictures/custom-horse-shelters.jpg">
+    <meta property="og:url" content="https://www.ok-corrals.com/custom-shelters">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* SCSS Variables */
+        :root {
+            --primary-color: #8b5e3c; /* Terracotta */
+            --secondary-color: #5a3e36; /* Dark terracotta */
+            --accent-color: #d4a373; /* Light terracotta */
+            --light-color: #f4e9d8; /* Sandy beige */
+            --dark-color: #3a2e26; /* Almost black */
+            --white: #ffffff;
+            --shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            --transition: all 0.3s ease;
+        }
+
+        /* Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--dark-color);
+            background-color: var(--light-color);
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Rye', cursive;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        p {
+            margin-bottom: 1.5rem;
+        }
+
+        a {
+            color: var(--secondary-color);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+        
+        .w {
+            color: white !important;
+        }
+
+        a:hover {
+            color: var(--primary-color);
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 24px;
+            background-color: var(--primary-color);
+            color: var(--light-color);
+            border-radius: 30px;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: var(--transition);
+            box-shadow: var(--shadow);
+            border: none;
+            cursor: pointer;
+            text-align: center;
+        }
+
+        .btn:hover {
+            background-color: var(--secondary-color);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            border: 2px solid var(--primary-color);
+            color: var(--primary-color);
+        }
+
+        .btn-outline:hover {
+            background-color: var(--primary-color);
+            color: var(--light-color);
+        }
+
+        .section {
+            padding: 60px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+            position: relative;
+        }
+
+        .section-title:after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background-color: var(--accent-color);
+            margin: 20px auto;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        /* Header Styles */
+        header {
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://theokcorrals.com/pictures/custom-horse-shelters-banner.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            color: var(--light-color);
+            padding: 100px 0;
+            text-align: center;
+            position: relative;
+        }
+
+        .header-content {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .header-content h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            color: var(--light-color);
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .header-content p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Navigation */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: var(--primary-color);
+            padding: 15px 0;
+            box-shadow: var(--shadow);
+            z-index: 1000;
+            transition: var(--transition);
+        }
+
+        .navbar-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Rye', cursive;
+            font-size: 1.5rem;
+            color: var(--light-color);
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-links li {
+            margin-left: 30px;
+        }
+
+        .nav-links a {
+            color: var(--light-color);
+            font-weight: 500;
+            position: relative;
+        }
+
+        .nav-links a:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            background-color: var(--light-color);
+            bottom: -5px;
+            left: 0;
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover:after {
+            width: 100%;
+        }
+
+        .hamburger {
+            display: none;
+            cursor: pointer;
+        }
+
+        .hamburger div {
+            width: 25px;
+            height: 3px;
+            background-color: var(--light-color);
+            margin: 5px;
+            transition: var(--transition);
+        }
+
+        /* Hero Section */
+        .hero {
+            background-color: var(--light-color);
+            padding: 80px 0;
+        }
+
+        .hero-content {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .hero-text {
+            flex: 1;
+            min-width: 300px;
+            padding: 20px;
+        }
+
+        .hero-image {
+            flex: 1;
+            min-width: 300px;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .hero-image img {
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .hero-image img:hover {
+            transform: scale(1.02);
+        }
+
+        /* Features Section */
+        .features {
+            background-color: var(--white);
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .feature-card {
+            background-color: var(--light-color);
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            text-align: center;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .feature-icon {
+            font-size: 3rem;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+
+        /* Gallery Section */
+        .gallery {
+            background-color: var(--light-color);
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+            height: 250px;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+
+        .gallery-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(0, 0, 0, 0.7));
+            color: var(--light-color);
+            padding: 20px;
+            transform: translateY(100%);
+            transition: var(--transition);
+        }
+
+        .gallery-item:hover .gallery-caption {
+            transform: translateY(0);
+        }
+
+        /* Testimonials */
+        .testimonials {
+            background-color: var(--white);
+        }
+
+        .testimonial-slider {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .testimonial {
+            background-color: var(--light-color);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+            margin: 20px;
+            text-align: center;
+        }
+
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 20px;
+        }
+
+        .testimonial-author {
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+
+        /* CTA Section */
+        .cta {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://theokcorrals.com/pictures/horse-shelter-cta.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: var(--light-color);
+            text-align: center;
+            padding: 100px 0;
+        }
+
+        .cta h2 {
+            color: var(--light-color);
+            margin-bottom: 30px;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--secondary-color);
+            color: var(--light-color);
+            padding: 60px 0 20px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .footer-column h3 {
+            color: var(--light-color);
+            margin-bottom: 20px;
+            position: relative;
+        }
+
+        .footer-column h3:after {
+            content: '';
+            position: absolute;
+            width: 50px;
+            height: 2px;
+            background-color: var(--accent-color);
+            bottom: -10px;
+            left: 0;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links a {
+            color: var(--light-color);
+            transition: var(--transition);
+        }
+
+        .footer-links a:hover {
+            color: var(--accent-color);
+            padding-left: 5px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .social-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: var(--light-color);
+            transition: var(--transition);
+        }
+
+        .social-links a:hover {
+            background-color: var(--accent-color);
+            transform: translateY(-5px);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* Share Buttons */
+        .share-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 30px;
+        }
+
+        .share-button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            color: var(--white);
+            transition: var(--transition);
+        }
+
+        .facebook { background-color: #3b5998; }
+        .twitter { background-color: #1da1f2; }
+        .pinterest { background-color: #bd081c; }
+        .linkedin { background-color: #0077b5; }
+
+        .share-button:hover {
+            transform: translateY(-3px) scale(1.1);
+        }
+
+        /* Mobile Styles */
+        @media (max-width: 768px) {
+            .header-content h1 {
+                font-size: 2.2rem;
+            }
+
+            .nav-links {
+                position: fixed;
+                top: 70px;
+                left: -100%;
+                width: 100%;
+                height: calc(100vh - 70px);
+                background-color: var(--primary-color);
+                flex-direction: column;
+                align-items: center;
+                justify-content: space-around;
+                transition: var(--transition);
+            }
+
+            .nav-links.active {
+                left: 0;
+            }
+
+            .nav-links li {
+                margin: 0;
+            }
+
+            .hamburger {
+                display: block;
+            }
+
+            .hamburger.active div:nth-child(1) {
+                transform: rotate(-45deg) translate(-5px, 6px);
+            }
+
+            .hamburger.active div:nth-child(2) {
+                opacity: 0;
+            }
+
+            .hamburger.active div:nth-child(3) {
+                transform: rotate(45deg) translate(-5px, -6px);
+            }
+
+            .hero-content {
+                flex-direction: column;
+            }
+
+            .section {
+                padding: 40px 0;
+            }
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .fade-in {
+            animation: fadeIn 1s ease forwards;
+        }
+
+        .delay-1 { animation-delay: 0.2s; }
+        .delay-2 { animation-delay: 0.4s; }
+        .delay-3 { animation-delay: 0.6s; }
+        .delay-4 { animation-delay: 0.8s; }
+    </style>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Rye&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container navbar-container">
+            <a href="../index.html" class="logo">Ok-Corrals</a>
+            <ul class="nav-links">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../about.html">About</a></li>
+                <li><a href="../services/services.html">Services</a></li>
+                <li><a href="../services/steelbarn.html">Barns</a></li>
+                <li><a href="../services/contact.html">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <header>
+        <div class="container header-content fade-in">
+            <h1>Custom Horse Shelters</h1>
+            <p>Tailored solutions designed specifically for your equine needs in Arizona's unique climate</p>
+            <a href="#contact" class="btn">Get Your Free Quote</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container hero-content">
+            <div class="hero-text fade-in">
+                <h2>Premium Custom Horse Shelters</h2>
+                <p>At Ok-Corrals, we understand that every horse owner has unique needs. Our custom horse shelters are designed to provide optimal protection from Arizona's harsh sun, wind, and rain while complementing your property's aesthetics.</p>
+                <p>Whether you need a simple run-in shed or a more elaborate shelter with additional gates, panels, and accessories, we can create the perfect solution for your horses.</p>
+                <div class="share-buttons">
+                    <a href="https://www.facebook.com/TheOkCorrals" class="share-button facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="share-button twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="share-button pinterest"><i class="fab fa-pinterest-p"></i></a>
+                    <a href="#" class="share-button linkedin"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+            <div class="hero-image fade-in delay-1">
+                <img src="../pictures/80FTX16FT-$14000ShedRow.jpg" alt="Custom Horse Shelter">
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features section">
+        <div class="container">
+            <h2 class="section-title">Why Choose Our Custom Shelters?</h2>
+            <div class="features-grid">
+                <div class="feature-card fade-in delay-1">
+                    <div class="feature-icon">
+                        <i class="fas fa-sun"></i>
+                    </div>
+                    <h3>Sun Protection</h3>
+                    <p>Our shelters provide essential shade to protect your horses from Arizona's intense sunlight, reducing heat stress and sunburn.</p>
+                </div>
+                <div class="feature-card fade-in delay-2">
+                    <div class="feature-icon">
+                        <i class="fas fa-umbrella"></i>
+                    </div>
+                    <h3>Weather Resistant</h3>
+                    <p>Built to withstand monsoon rains, dust storms, and strong winds while keeping your horses dry and comfortable.</p>
+                </div>
+                <div class="feature-card fade-in delay-3">
+                    <div class="feature-icon">
+                        <i class="fas fa-horse"></i>
+                    </div>
+                    <h3>Custom Configurations</h3>
+                    <p>Choose from various sizes, roof styles, and additional features like feeders, waterers, and partitions.</p>
+                </div>
+                <div class="feature-card fade-in delay-4">
+                    <div class="feature-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Durable Construction</h3>
+                    <p>Made with high-quality materials that resist chewing, kicking, and weathering for long-lasting performance.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="gallery section">
+        <div class="container">
+            <h2 class="section-title">Our Custom Shelter Designs</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item fade-in">
+                    <img src="../pictures/10FTX20FTShadeOverhang.jpg" alt="Custom Horse Shelter Design 1">
+                    <div class="gallery-caption">
+                        <h4 class="w">Standard Run-In Shed</h4>
+                    </div>
+                </div>
+                <div class="gallery-item fade-in delay-1">
+                    <img src="../pictures/10FTX60FTShade4FTwall.jpg" alt="Custom Horse Shelter Design 2">
+                    <div class="gallery-caption">
+                        <h4 class="w">Extended Shelter</h4>
+                    </div>
+                </div>
+                <div class="gallery-item fade-in delay-2">
+                    <img src="../pictures/shade-stall-1.jpg" alt="Custom Horse Shelter Design 3">
+                    <div class="gallery-caption">
+                        <h4 class="w">Multi-Horse Shelter</h4>
+                    </div>
+                </div>
+                <div class="gallery-item fade-in delay-3">
+                    <img src="../pictures/Horse-Shed-4.jpg" alt="Custom Horse Shelter Design 4">
+                    <div class="gallery-caption">
+                        <h4 class="w">Premium Shelter</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Customization Options -->
+    <section class="section" style="background-color: var(--white);">
+        <div class="container">
+            <h2 class="section-title">Customization Options</h2>
+            <div class="features-grid">
+                <div class="feature-card fade-in">
+                    <h3>Size Variations</h3>
+                    <ul>
+                        <li>10'x10' (Small Shade)</li>
+                        <li>20'x10' (Most Popular)</li>
+                        <li>Custom dimensions available</li>
+                    </ul>
+                </div>
+                <div class="feature-card fade-in delay-1">
+                    <h3>Roof Styles</h3>
+                    <ul>
+                        <li>Standard sloped roof</li>
+                        <li>C Panel</li>
+                        <li>R Panel</li>
+                        <li>Extended overhang options</li>
+                    </ul>
+                </div>
+                <div class="feature-card fade-in delay-2">
+                    <h3>Additional Features</h3>
+                    <ul>
+                        <li>Removable partitions</li>
+                        <li>Built-in feeders</li>
+                        <li>Automatic waterers</li>
+                        <li>Kickboards</li>
+                        <li>AC Systems</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="text-center fade-in delay-3" style="margin-top: 40px;">
+                <a href="#contact" class="btn">Request Custom Design</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <!-- <section class="testimonials section">
+        <div class="container">
+            <h2 class="section-title">What Our Clients Say</h2>
+            <div class="testimonial-slider">
+                <div class="testimonial fade-in">
+                    <p class="testimonial-text">"The custom shelter Ok-Corrals built for my horses is perfect! It keeps them cool in summer and dry during monsoon season. The quality is outstanding and it looks great on my property."</p>
+                    <p class="testimonial-author">- Sarah J., Queen Creek</p>
+                </div>
+                <div class="testimonial fade-in delay-1">
+                    <p class="testimonial-text">"I needed a special design to fit my unusual space and they delivered exactly what I wanted. The attention to detail and craftsmanship is impressive. My horses love their new shelter!"</p>
+                    <p class="testimonial-author">- Mike T., Gilbert</p>
+                </div>
+                <div class="testimonial fade-in delay-2">
+                    <p class="testimonial-text">"After comparing several companies, I chose Ok-Corrals for their expertise and fair pricing. The installation was quick and professional. Highly recommend their custom shelters!"</p>
+                    <p class="testimonial-author">- Linda R., Scottsdale</p>
+                </div>
+            </div>
+        </div>
+    </section> -->
+
+    <!-- CTA Section -->
+    <section class="cta section" id="contact">
+        <div class="container">
+            <h2 class="fade-in">Ready for Your Custom Horse Shelter?</h2>
+            <p class="fade-in delay-1">Contact us today for a free consultation and quote. Our team will work with you to design the perfect shelter for your horses.</p>
+            <div class="fade-in delay-2">
+                <a href="../services/contact.html" class="btn">Get Your Free Quote</a>
+                <a href="tel:+15207307020" class="btn btn-outline" style="margin-left: 15px;">Call Now: (520) 730-7020</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Ok-Corrals</h3>
+                    <p>Providing premium horse care solutions in Arizona since 2006. Quality craftsmanship you can trust.</p>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/TheOkCorrals"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.instagram.com/ok_corrals_llc/"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="../about.html">About Us</a></li>
+                        <li><a href="./services.html">Services</a></li>
+                        <li><a href="./steelbarn.html">Barns</a></li>
+                        <li><a href="../contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Services</h3>
+                    <ul class="footer-links">
+                        <li><a href="../services/horse-shade.html">Horse Shades</a></li>
+                        <li><a href="../services/maremotel.html">Mare Motels</a></li>
+                        <li><a href="../services/PipeCorrals.html">Pipe Corrals</a></li>
+                        <li><a href="../services/LightweightPortablePensandCorrals.html">Portable Corrals</a></li>
+                        <li><a href="../services/custom-shelters.html">Custom Shelters</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Contact</h3>
+                    <ul class="footer-links">
+                        <li><i class="fas fa-map-marker-alt"></i> Arizona, USA</li>
+                        <li><i class="fas fa-phone"></i> (520) 730-7020</li>
+                        <li><i class="fas fa-envelope"></i>information.okcorrals@gmail.com</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Ok-Corrals. All Rights Reserved. | Arizona Owned Business Since 2006</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        // Mobile Navigation
+        const hamburger = document.querySelector('.hamburger');
+        const navLinks = document.querySelector('.nav-links');
+
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            navLinks.classList.toggle('active');
+        });
+
+        // Close mobile menu when clicking a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('active');
+                navLinks.classList.remove('active');
+            });
+        });
+
+        // Sticky navbar on scroll
+        window.addEventListener('scroll', () => {
+            const navbar = document.querySelector('.navbar');
+            navbar.classList.toggle('sticky', window.scrollY > 0);
+        });
+
+        // Simple testimonial slider
+        let currentTestimonial = 0;
+        const testimonials = document.querySelectorAll('.testimonial');
+        
+        function showTestimonial(index) {
+            testimonials.forEach(testimonial => {
+                testimonial.style.display = 'none';
+            });
+            testimonials[index].style.display = 'block';
+        }
+
+        function nextTestimonial() {
+            currentTestimonial = (currentTestimonial + 1) % testimonials.length;
+            showTestimonial(currentTestimonial);
+        }
+
+        // Initialize
+        showTestimonial(0);
+        setInterval(nextTestimonial, 5000);
+
+        // Animation on scroll
+        const fadeElements = document.querySelectorAll('.fade-in');
+        
+        const fadeOptions = {
+            threshold: 0.1,
+            rootMargin: "0px 0px -50px 0px"
+        };
+
+        const fadeObserver = new IntersectionObserver((entries, fadeObserver) => {
+            entries.forEach(entry => {
+                if (!entry.isIntersecting) return;
+                entry.target.classList.add('appear');
+                fadeObserver.unobserve(entry.target);
+            });
+        }, fadeOptions);
+
+        fadeElements.forEach(element => {
+            fadeObserver.observe(element);
+        });
+
+        // Share buttons
+        document.querySelector('.facebook').addEventListener('click', (e) => {
+            e.preventDefault();
+            window.open('https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(window.location.href), 'facebook-share-dialog', 'width=800,height=600');
+        });
+
+        document.querySelector('.twitter').addEventListener('click', (e) => {
+            e.preventDefault();
+            window.open('https://twitter.com/intent/tweet?text=' + encodeURIComponent('Check out these amazing custom horse shelters from Ok-Corrals!') + '&url=' + encodeURIComponent(window.location.href), 'twitter-share-dialog', 'width=800,height=600');
+        });
+
+        document.querySelector('.pinterest').addEventListener('click', (e) => {
+            e.preventDefault();
+            window.open('https://pinterest.com/pin/create/button/?url=' + encodeURIComponent(window.location.href) + '&media=' + encodeURIComponent('https://theokcorrals.com/pictures/custom-horse-shelter-main.jpg') + '&description=' + encodeURIComponent('Custom Horse Shelters from Ok-Corrals'), 'pinterest-share-dialog', 'width=800,height=600');
+        });
+
+        document.querySelector('.linkedin').addEventListener('click', (e) => {
+            e.preventDefault();
+            window.open('https://www.linkedin.com/shareArticle?mini=true&url=' + encodeURIComponent(window.location.href) + '&title=' + encodeURIComponent('Custom Horse Shelters') + '&summary=' + encodeURIComponent('Premium custom horse shelters designed for Arizona climate by Ok-Corrals') + '&source=' + encodeURIComponent('Ok-Corrals'), 'linkedin-share-dialog', 'width=800,height=600');
+        });
+    </script>
+</body>
+</html>
