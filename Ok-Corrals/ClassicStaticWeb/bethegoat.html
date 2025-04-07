@@ -1,605 +1,1065 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Goat Ram Game</title>
+    <title>Goat Ram Challenge</title>
     <style>
+        * {
+            box-sizing: border-box;
+            touch-action: manipulation;
+        }
+        
         body {
             margin: 0;
             padding: 0;
             overflow: hidden;
-            background: #87CEEB;
-            font-family: Arial, sans-serif;
+            background: linear-gradient(to bottom, #87CEEB, #1E90FF);
+            font-family: 'Arial Rounded MT Bold', 'Arial', sans-serif;
             text-align: center;
-            touch-action: none;
             -webkit-touch-callout: none;
             -webkit-user-select: none;
             user-select: none;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
         }
+        
+        #header {
+            padding: 10px 5px;
+            background: rgba(255,255,255,0.8);
+            border-bottom: 3px solid #5D4037;
+            flex-shrink: 0;
+        }
+        
+        h1 {
+            font-size: clamp(18px, 6vw, 32px);
+            color: #5D4037;
+            text-shadow: 2px 2px 4px rgba(255,255,255,0.5);
+            margin: 5px 0;
+        }
+        
         #gameContainer {
             position: relative;
-            margin: 0 auto;
+            flex-grow: 1;
             width: 100%;
-            max-width: 800px;
+            max-width: 600px;
+            margin: 0 auto;
+            overflow: hidden;
         }
+        
         #gameCanvas {
-            background: #8B4513;
+            background: linear-gradient(to bottom, #8B4513, #A0522D);
             display: block;
             width: 100%;
-            border: 3px solid #000;
+            height: 100%;
+            border-left: none;
+            border-right: none;
+            border-bottom: 4px solid #5D4037;
+            border-top: 4px solid #5D4037;
         }
+        
         #score {
-            font-size: 24px;
-            margin: 10px;
+            font-size: clamp(18px, 5vw, 24px);
+            margin: 5px;
             font-weight: bold;
+            color: #FFF;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            background: rgba(139, 69, 19, 0.7);
+            padding: 6px 12px;
+            border-radius: 20px;
+            display: inline-block;
         }
+        
         #warning {
-            font-size: 20px;
-            color: red;
+            font-size: clamp(14px, 4vw, 20px);
+            color: #FF5252;
             font-weight: bold;
-            text-shadow: 2px 2px black;
+            text-shadow: 1px 1px 2px black;
             display: none;
             animation: blink 0.5s infinite;
+            background: rgba(0,0,0,0.7);
+            padding: 8px;
+            border-radius: 10px;
+            margin: 10px auto;
+            width: 90%;
         }
+        
         #sunTimer {
-            font-size: 18px;
-            color: darkorange;
+            font-size: clamp(14px, 4vw, 18px);
+            color: #FF9800;
             font-weight: bold;
             display: none;
+            background: rgba(0,0,0,0.7);
+            padding: 6px;
+            border-radius: 10px;
+            margin: 5px auto;
+            width: 80%;
         }
+        
         #controls {
-            font-size: 16px;
-            margin: 10px;
-            padding: 0 10px;
+            font-size: clamp(12px, 3.5vw, 16px);
+            margin: 5px;
+            padding: 6px;
+            color: #FFF;
+            text-shadow: 1px 1px 2px black;
+            background: rgba(93, 64, 55, 0.7);
+            border-radius: 10px;
+            flex-shrink: 0;
         }
+        
         #gameOver, #victory {
             position: absolute;
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            font-size: 36px;
+            font-size: clamp(20px, 6vw, 32px);
             font-weight: bold;
             text-align: center;
             display: none;
             z-index: 100;
             width: 90%;
+            padding: 15px;
+            border-radius: 15px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.7);
         }
+        
         #gameOver {
-            color: red;
-            text-shadow: 2px 2px black;
+            color: #FF5252;
+            background: rgba(0,0,0,0.8);
+            text-shadow: 2px 2px 4px black;
+            border: 3px solid #FF5252;
         }
+        
         #victory {
-            color: gold;
-            text-shadow: 2px 2px black;
+            color: #FFD700;
+            background: rgba(0,0,0,0.8);
+            text-shadow: 2px 2px 4px black;
+            border: 3px solid #FFD700;
         }
+        
         .confetti {
             position: absolute;
-            width: 10px;
-            height: 10px;
+            width: 12px;
+            height: 12px;
             background-color: #f00;
             border-radius: 50%;
             pointer-events: none;
+            z-index: 99;
         }
+        
+        #sunAlert {
+            position: absolute;
+            top: 20%;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: clamp(16px, 5vw, 24px);
+            color: #FF5252;
+            font-weight: bold;
+            text-shadow: 2px 2px 4px black;
+            background: rgba(0,0,0,0.7);
+            padding: 12px 20px;
+            border-radius: 10px;
+            border: 3px solid #FF5252;
+            display: none;
+            z-index: 10;
+            animation: pulseWarning 0.8s infinite alternate;
+            text-align: center;
+            width: 90%;
+            max-width: 400px;
+        }
+        
         @keyframes blink {
             0% { opacity: 1; }
             50% { opacity: 0.5; }
             100% { opacity: 1; }
         }
+        
+        @keyframes pulseWarning {
+            0% { transform: translateX(-50%) scale(1); }
+            100% { transform: translateX(-50%) scale(1.05); }
+        }
+        
+        /* Mobile landscape orientation */
+        @media (orientation: landscape) {
+            body {
+                flex-direction: row;
+            }
+            
+            #header {
+                width: 30%;
+                max-width: 200px;
+                border-bottom: none;
+                border-right: 3px solid #5D4037;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+            }
+            
+            #gameContainer {
+                height: 100vh;
+            }
+            
+            #controls {
+                display: none;
+            }
+            
+            #sunAlert {
+                top: 10%;
+                font-size: clamp(14px, 4vw, 20px);
+            }
+        }
     </style>
 </head>
 <body>
-    <h1>&#128016; Goat Ram Game &#x1F621;
-    </h1>
-    <div id="score">Score: 0</div>
-    <div id="warning">WARNING! SUN IS OUT! HIDE UNDER SHADE!</div>
-    <div id="sunTimer">🔥 Sun Exposure: 0s 🔥</div>
-    <div id="controls">Tap/Click to bounce | Drag or use Arrow Keys to move</div>
+    <div id="header">
+        <h1>🐐 Goat Ram Challenge 🐐</h1>
+        <div id="score">Score: 0</div>
+    </div>
     
     <div id="gameContainer">
-        <canvas id="gameCanvas" width="800" height="400"></canvas>
+        <canvas id="gameCanvas"></canvas>
+        <div id="sunAlert">☀️ SUN IS OUT! GET UNDER SHADE! ☀️</div>
+        <div id="warning">WARNING! SUN IS OUT! GET TO SHADE!</div>
+        <div id="sunTimer">🔥 Sun Exposure: 6s 🔥</div>
         <div id="gameOver">GAME OVER - TOASTED GOAT</div>
-        <div id="victory">🏆 WINNING GOAT! 🎉</div>
+        <div id="victory">🏆 CHAMPION RAM! 🎉</div>
+    </div>
+
+    <div id="controls">
+        Tap to jump | Drag to move | Arrow keys to move
     </div>
 
     <script>
-        // Initialize game elements
-        const canvas = document.getElementById('gameCanvas');
-        const ctx = canvas.getContext('2d');
-        
-        // Set proper canvas dimensions for high DPI displays
-        function resizeCanvas() {
-            const container = document.getElementById('gameContainer');
-            const rect = container.getBoundingClientRect();
-            canvas.width = rect.width;
-            canvas.height = rect.width * 0.5; // Maintain 2:1 aspect ratio
-        }
-        
-        window.addEventListener('load', () => {
-            resizeCanvas();
-            initGame();
-        });
-        window.addEventListener('resize', resizeCanvas);
+        document.addEventListener('DOMContentLoaded', function() {
+            // Game elements
+            const canvas = document.getElementById('gameCanvas');
+            const ctx = canvas.getContext('2d');
+            const sunAlert = document.getElementById('sunAlert');
+            
+            // Game state
+            let score = 0;
+            let sunActive = false;
+            let sunExposure = 6;
+            let gameActive = true;
+            let groundY = 0;
+            let lastSunActivation = 0;
+            let isMobile = /Mobi|Android/i.test(navigator.userAgent);
+            let sunFading = false;
+            let sunFadeProgress = 0;
+            let sunFadeStartTime = 0;
+            let wasUnderShade = false;
+            let sunPulse = 0;
+            
+            const shade = {
+                x: 0, y: 0, width: 0, height: 0,
+                color: "#5D4037",
+                roofColor: "#3E2723",
+                beamColor: "#4E342E",
+                leftBeamX: 0,
+                rightBeamX: 0,
+                beamWidth: 15
+            };
 
-        // Game state
-        let score = 0;
-        let sunActive = false;
-        let sunExposure = 0;
-        let gameActive = true;
-        
-        // Game elements
-        const groundY = canvas.height * 0.875;
-        const shade = {
-            x: canvas.width * 0.75,
-            y: canvas.height * 0.625,
-            width: canvas.width * 0.15,
-            height: canvas.height * 0.075
-        };
+            const goat = {
+                x: 0, y: 0, width: 0, height: 0,
+                speed: 8, direction: "right",
+                burned: false, isCool: false,
+                isBouncing: false, bouncePower: 30,
+                bounceVelocity: 0, gravity: 1.5,
+                squash: 1, isDragging: false,
+                dragStartX: 0, dragOffsetX: 0,
+                moveLeft: false, moveRight: false,
+                lastX: 0, // Track previous position for direction
+                bodyColor: "#8D6E63",
+                legColor: "#5D4037",
+                hornColor: "#4E342E",
+                beardColor: "#3E2723"
+            };
 
-        const goat = {
-            x: canvas.width * 0.125,
-            y: groundY - 80,
-            width: 80,
-            height: 80,
-            speed: 6,
-            direction: "right",
-            burned: false,
-            isCool: false,
-            isBouncing: false,
-            bouncePower: 25,
-            bounceVelocity: 0,
-            gravity: 1.2,
-            squash: 1,
-            isDragging: false,
-            dragStartX: 0,
-            moveLeft: false,
-            moveRight: false
-        };
+            const cactusTypes = [
+                { 
+                    name: "nopales", 
+                    width: 0, 
+                    height: 0, 
+                    points: 1, 
+                    color: "#2E7D32",
+                    spikeColor: "#1B5E20"
+                },
+                { 
+                    name: "sahuaro", 
+                    width: 0, 
+                    height: 0, 
+                    points: 100, 
+                    color: "#33691E",
+                    spikeColor: "#1B5E20"
+                }
+            ];
+            const cacti = [];
 
-        const cactusTypes = [
-            { name: "nopales", width: 40, height: 70, points: 1, color: "#2E8B57" },
-            { name: "sahuaro", width: 60, height: 120, points: 100, color: "#556B2F" }
-        ];
-        const cacti = [];
-
-        function initGame() {
-            generateCacti();
-            gameLoop();
-        }
-
-        function generateCacti() {
-            cacti.length = 0;
-            for (let i = 0; i < 8; i++) {
-                const type = Math.random() > 0.7 ? cactusTypes[1] : cactusTypes[0];
-                cacti.push({
-                    x: Math.random() * (canvas.width - 150) + 75,
-                    y: groundY - type.height,
-                    ...type
+            // Cloud variables
+            const clouds = [];
+            for (let i = 0; i < 5; i++) {
+                clouds.push({
+                    x: Math.random() * canvas.width,
+                    y: Math.random() * (canvas.height * 0.3),
+                    width: 80 + Math.random() * 60,
+                    speed: 0.5 + Math.random() * 0.5,
+                    opacity: 0.8
                 });
             }
-        }
 
-        function drawShade() {
-            ctx.fillStyle = "#7a7a7a";
-            ctx.fillRect(shade.x, shade.y, shade.width, shade.height);
-            
-            ctx.fillStyle = "#5a5a5a";
-            ctx.fillRect(shade.x + 10, shade.y + 30, 10, 100);
-            ctx.fillRect(shade.x + shade.width - 20, shade.y + 30, 10, 100);
-            
-            ctx.fillStyle = "#000";
-            ctx.font = "bold 16px Arial";
-            ctx.fillText("OK CORRAL SHADE", shade.x + 10, shade.y + 20);
-        }
-
-        function drawSun() {
-            if (!sunActive) return;
-            
-            ctx.fillStyle = "#FFD700";
-            ctx.beginPath();
-            ctx.arc(700, 50, 40, 0, Math.PI * 2);
-            ctx.fill();
-            
-            ctx.strokeStyle = "#FF4500";
-            ctx.lineWidth = 3;
-            ctx.beginPath();
-            ctx.moveTo(670, 60);
-            ctx.lineTo(690, 50);
-            ctx.moveTo(730, 50);
-            ctx.lineTo(750, 60);
-            ctx.stroke();
-            
-            ctx.beginPath();
-            ctx.arc(700, 90, 20, 0.2 * Math.PI, 0.8 * Math.PI);
-            ctx.stroke();
-            
-            ctx.strokeStyle = "#FF4500";
-            ctx.lineWidth = 3;
-            for (let i = 0; i < 8; i++) {
-                const angle = (i / 8) * Math.PI * 2;
-                ctx.beginPath();
-                ctx.moveTo(700 + Math.cos(angle) * 40, 50 + Math.sin(angle) * 40);
-                ctx.lineTo(700 + Math.cos(angle) * 70, 50 + Math.sin(angle) * 70);
-                ctx.stroke();
+            // Special clouds for sun coverage
+            const sunCoverClouds = [];
+            for (let i = 0; i < 4; i++) {
+                sunCoverClouds.push({
+                    x: 0,
+                    y: 0,
+                    width: 100 + Math.random() * 80,
+                    speed: 1 + Math.random(),
+                    opacity: 0,
+                    targetX: 0,
+                    targetY: 0
+                });
             }
-        }
 
-        function updateMovement() {
-            if (goat.moveLeft) {
-                goat.x -= goat.speed;
-                goat.direction = "left";
-            }
-            if (goat.moveRight) {
-                goat.x += goat.speed;
-                goat.direction = "right";
-            }
-            
-            goat.x = Math.max(0, Math.min(canvas.width - goat.width, goat.x));
-        }
-
-        function updateBounce() {
-            if (goat.isBouncing) {
-                goat.y -= goat.bounceVelocity;
-                goat.bounceVelocity -= goat.gravity;
-                goat.squash = 1 + Math.abs(goat.bounceVelocity) * 0.02;
+            function resizeCanvas() {
+                const container = document.getElementById('gameContainer');
+                canvas.width = container.clientWidth;
+                canvas.height = container.clientHeight;
                 
-                if (goat.y >= groundY - goat.height) {
-                    goat.y = groundY - goat.height;
-                    goat.bounceVelocity *= -0.6;
-                    
-                    if (Math.abs(goat.bounceVelocity) < 2) {
-                        goat.isBouncing = false;
-                        goat.squash = 1;
-                    }
+                // Calculate sizes based on canvas dimensions
+                const baseSize = Math.min(canvas.width, canvas.height);
+                
+                groundY = canvas.height * 0.85;
+                shade.x = canvas.width * 0.65;
+                shade.y = canvas.height * 0.55;
+                shade.width = canvas.width * 0.3;
+                shade.height = canvas.height * 0.15;
+                shade.leftBeamX = shade.x;
+                shade.rightBeamX = shade.x + shade.width - shade.beamWidth;
+                
+                // Responsive goat size
+                goat.width = baseSize * 0.14;
+                goat.height = baseSize * 0.14;
+                goat.x = canvas.width * 0.15;
+                goat.y = groundY - goat.height;
+                goat.bouncePower = baseSize * 0.05;
+                goat.lastX = goat.x; // Initialize lastX
+                
+                // Responsive cactus sizes
+                cactusTypes[0].width = baseSize * 0.09;
+                cactusTypes[0].height = baseSize * 0.16;
+                cactusTypes[1].width = baseSize * 0.14;
+                cactusTypes[1].height = baseSize * 0.28;
+                
+                // Adjust speed for smaller screens
+                goat.speed = baseSize * 0.016;
+            }
+
+            function initGame() {
+                resizeCanvas();
+                goat.lastX = goat.x; // Initialize lastX
+                if (cacti.length === 0) {
+                    generateCacti();
                 }
+                positionSunCoverClouds();
+                gameLoop();
             }
-        }
 
-        function drawGoat() {
-            ctx.fillStyle = goat.isCool ? "#FFD700" : 
-                           goat.burned ? (Date.now() % 200 < 100 ? "#FF4500" : "#FF0000") : 
-                           "#F5F5DC";
-            
-            if (goat.isCool) {
-                ctx.shadowColor = "#FF00FF";
-                ctx.shadowBlur = 15;
-            }
-            
-            ctx.save();
-            const squashCenterX = goat.x + goat.width/2;
-            const squashCenterY = goat.y + goat.height/2;
-            ctx.translate(squashCenterX, squashCenterY);
-            ctx.scale(1, 1/goat.squash);
-            ctx.translate(-squashCenterX, -squashCenterY);
-            
-            ctx.fillRect(goat.x, goat.y, goat.width, goat.height);
-            
-            const headSize = 40;
-            const headX = goat.direction === "right" ? goat.x + goat.width - 20 : goat.x;
-            ctx.fillRect(headX, goat.y - 10, headSize, headSize);
-            
-            ctx.strokeStyle = "#8B4513";
-            ctx.lineWidth = 8;
-            ctx.beginPath();
-            if (goat.direction === "right") {
-                ctx.moveTo(headX + headSize - 10, goat.y - 5);
-                ctx.lineTo(headX + headSize + 20, goat.y - 30);
-                ctx.moveTo(headX + headSize - 15, goat.y - 5);
-                ctx.lineTo(headX + headSize + 15, goat.y - 40);
-            } else {
-                ctx.moveTo(headX + 10, goat.y - 5);
-                ctx.lineTo(headX - 20, goat.y - 30);
-                ctx.moveTo(headX + 15, goat.y - 5);
-                ctx.lineTo(headX - 15, goat.y - 40);
-            }
-            ctx.stroke();
-            
-            ctx.fillStyle = "#000";
-            const eyeX = goat.direction === "right" ? headX + headSize - 10 : headX + 10;
-            ctx.fillRect(eyeX, goat.y + 5, 5, 5);
-            
-            ctx.fillStyle = "#F5F5DC";
-            ctx.fillRect(goat.x + 15, goat.y + goat.height, 10, 20);
-            ctx.fillRect(goat.x + goat.width - 25, goat.y + goat.height, 10, 20);
-            
-            ctx.restore();
-            ctx.shadowBlur = 0;
-        }
-
-        function drawCacti() {
-            cacti.forEach(cactus => {
-                ctx.fillStyle = cactus.color;
-                ctx.fillRect(cactus.x, cactus.y, cactus.width, cactus.height);
-                
-                ctx.strokeStyle = "#000";
-                ctx.lineWidth = 2;
-                ctx.beginPath();
-                ctx.moveTo(cactus.x + 10, cactus.y + 10);
-                ctx.lineTo(cactus.x + 15, cactus.y + 30);
-                ctx.lineTo(cactus.x + 5, cactus.y + 25);
-                ctx.stroke();
-                
-                ctx.fillStyle = "#000";
-                ctx.font = "bold 14px Arial";
-                ctx.fillText(cactus.name, cactus.x + 5, cactus.y - 5);
-            });
-        }
-
-        function isUnderShade() {
-            return (
-                goat.x + goat.width > shade.x &&
-                goat.x < shade.x + shade.width &&
-                goat.y < shade.y + shade.height
-            );
-        }
-
-        function checkCollision() {
-            for (let i = cacti.length - 1; i >= 0; i--) {
-                const cactus = cacti[i];
-                if (
-                    goat.x < cactus.x + cactus.width &&
-                    goat.x + goat.width > cactus.x &&
-                    goat.y + goat.height > cactus.y
-                ) {
-                    score += cactus.points;
-                    document.getElementById("score").textContent = `Score: ${score}`;
-                    cacti.splice(i, 1);
-                    
-                    const type = Math.random() > 0.7 ? cactusTypes[1] : cactusTypes[0];
+            function generateCacti() {
+                cacti.length = 0;
+                for (let i = 0; i < 8; i++) {
+                    const type = Math.random() > 0.8 ? cactusTypes[1] : cactusTypes[0];
                     cacti.push({
-                        x: Math.random() * (canvas.width - 150) + 75,
+                        x: Math.random() * (canvas.width - 200) + 100,
                         y: groundY - type.height,
                         ...type
                     });
-
-                    if (score % 100 === 0) {
-                        sunActive = true;
-                        sunExposure = 0;
-                        document.getElementById("warning").style.display = "block";
-                        document.getElementById("sunTimer").style.display = "block";
-                    }
-                    
-                    if (score >= 5000) {
-                        victory();
-                    }
                 }
             }
-        }
 
-        function updateSunTimer() {
-            if (!sunActive || !gameActive) return;
-            
-            if (isUnderShade()) {
-                sunExposure = 0;
-                goat.burned = false;
-                setTimeout(() => {
+            function positionSunCoverClouds() {
+                const sunX = canvas.width - Math.min(canvas.width, canvas.height) * 0.15;
+                const sunY = Math.min(canvas.width, canvas.height) * 0.15;
+                
+                sunCoverClouds.forEach(cloud => {
+                    cloud.x = Math.random() * canvas.width;
+                    cloud.y = Math.random() * (canvas.height * 0.4);
+                    cloud.targetX = sunX + (Math.random() * 100 - 50);
+                    cloud.targetY = sunY + (Math.random() * 40 - 20);
+                    cloud.opacity = 0;
+                });
+            }
+
+            function drawClouds() {
+                ctx.fillStyle = "rgba(255, 255, 255, 0.8)";
+                clouds.forEach(cloud => {
+                    // Update cloud position
+                    cloud.x += cloud.speed;
+                    if (cloud.x > canvas.width + cloud.width) {
+                        cloud.x = -cloud.width;
+                        cloud.y = Math.random() * (canvas.height * 0.3);
+                    }
+                    
+                    // Draw fluffy cloud
+                    ctx.globalAlpha = cloud.opacity;
+                    ctx.beginPath();
+                    ctx.arc(cloud.x, cloud.y, cloud.width * 0.3, 0, Math.PI * 2);
+                    ctx.arc(cloud.x + cloud.width * 0.25, cloud.y - cloud.width * 0.1, cloud.width * 0.25, 0, Math.PI * 2);
+                    ctx.arc(cloud.x + cloud.width * 0.5, cloud.y, cloud.width * 0.3, 0, Math.PI * 2);
+                    ctx.arc(cloud.x + cloud.width * 0.25, cloud.y + cloud.width * 0.1, cloud.width * 0.25, 0, Math.PI * 2);
+                    ctx.fill();
+                    ctx.globalAlpha = 1;
+                });
+            }
+
+            function drawSunCoverClouds() {
+                ctx.fillStyle = "rgba(255, 255, 255, 0.9)";
+                sunCoverClouds.forEach(cloud => {
+                    if (cloud.opacity > 0) {
+                        ctx.globalAlpha = cloud.opacity;
+                        ctx.beginPath();
+                        ctx.arc(cloud.x, cloud.y, cloud.width * 0.3, 0, Math.PI * 2);
+                        ctx.arc(cloud.x + cloud.width * 0.25, cloud.y - cloud.width * 0.1, cloud.width * 0.25, 0, Math.PI * 2);
+                        ctx.arc(cloud.x + cloud.width * 0.5, cloud.y, cloud.width * 0.3, 0, Math.PI * 2);
+                        ctx.arc(cloud.x + cloud.width * 0.25, cloud.y + cloud.width * 0.1, cloud.width * 0.25, 0, Math.PI * 2);
+                        ctx.fill();
+                        ctx.globalAlpha = 1;
+                    }
+                });
+            }
+
+            function updateSunCoverClouds() {
+                if (!sunFading) return;
+                
+                const fadeDuration = 3000; // 3 seconds
+                const elapsed = Date.now() - sunFadeStartTime;
+                sunFadeProgress = Math.min(1, elapsed / fadeDuration);
+                
+                // Move and fade in the special clouds
+                sunCoverClouds.forEach(cloud => {
+                    // Move clouds toward their target positions
+                    const dx = cloud.targetX - cloud.x;
+                    const dy = cloud.targetY - cloud.y;
+                    cloud.x += dx * 0.05;
+                    cloud.y += dy * 0.05;
+                    
+                    // Increase opacity based on progress
+                    cloud.opacity = Math.min(0.9, sunFadeProgress * 0.9);
+                });
+                
+                // When fade is complete
+                if (sunFadeProgress >= 1) {
+                    sunFading = false;
                     sunActive = false;
                     document.getElementById("warning").style.display = "none";
                     document.getElementById("sunTimer").style.display = "none";
-                }, 3000);
-            } else {
-                sunExposure += 0.1;
-                goat.burned = true;
-                document.getElementById("sunTimer").textContent = `🔥 Sun Exposure: ${Math.floor(sunExposure)}s 🔥`;
-                
-                if (sunExposure >= 7) {
-                    gameOver();
+                    sunAlert.style.display = "none";
+                    
+                    // Reset cloud positions for next time
+                    positionSunCoverClouds();
                 }
             }
-        }
 
-        function gameOver() {
-            gameActive = false;
-            document.getElementById("gameOver").style.display = "block";
-        }
-
-        function victory() {
-            gameActive = false;
-            goat.isCool = true;
-            document.getElementById("victory").style.display = "block";
-            createConfetti();
-        }
-
-        function createConfetti() {
-            const colors = ['#f00', '#0f0', '#00f', '#ff0', '#f0f', '#0ff', '#FFF'];
-            for (let i = 0; i < 150; i++) {
-                const confetti = document.createElement("div");
-                confetti.className = "confetti";
-                confetti.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
-                confetti.style.left = Math.random() * window.innerWidth + "px";
-                confetti.style.top = -10 + "px";
-                confetti.style.transform = `rotate(${Math.random() * 360}deg)`;
-                confetti.style.width = `${Math.random() * 8 + 4}px`;
-                confetti.style.height = `${Math.random() * 8 + 4}px`;
+            function drawShade() {
+                // Shade structure
+                ctx.fillStyle = shade.color;
+                ctx.fillRect(shade.x, shade.y, shade.width, shade.height);
                 
-                const anim = confetti.animate([
-                    { top: -10 + "px", left: Math.random() * window.innerWidth + "px", opacity: 1 },
-                    { top: window.innerHeight + "px", left: Math.random() * window.innerWidth + "px", opacity: 0 }
-                ], {
-                    duration: 2000 + Math.random() * 2000,
-                    iterations: 1
+                // Roof with wooden texture
+                ctx.fillStyle = shade.roofColor;
+                ctx.fillRect(shade.x - 15, shade.y - 15, shade.width + 30, 15);
+                
+                // Wooden beams
+                ctx.fillStyle = shade.beamColor;
+                ctx.fillRect(shade.leftBeamX, shade.y + shade.height, shade.beamWidth, canvas.height - (shade.y + shade.height));
+                ctx.fillRect(shade.rightBeamX, shade.y + shade.height, shade.beamWidth, canvas.height - (shade.y + shade.height));
+                
+                // Sign with western style
+                ctx.fillStyle = "#D32F2F";
+                ctx.fillRect(shade.x + shade.width * 0.1, shade.y - 40, shade.width * 0.8, 25);
+                
+                ctx.fillStyle = "#FFEB3B";
+                ctx.font = `bold ${Math.min(20, shade.width * 0.1)}px 'Arial Rounded MT Bold', Arial`;
+                ctx.textAlign = "center";
+                ctx.fillText("OK-CORRAL'S SHADE", shade.x + shade.width/2, shade.y - 20);
+                
+                // Safe zone glow
+                ctx.fillStyle = "rgba(0, 200, 0, 0.15)";
+                ctx.fillRect(shade.x, shade.y, shade.width, shade.height);
+            }
+
+            function drawGoat() {
+                ctx.save();
+                const squashCenterX = goat.x + goat.width/2;
+                const squashCenterY = goat.y + goat.height/2;
+                ctx.translate(squashCenterX, squashCenterY);
+                ctx.scale(1, 1/goat.squash);
+                ctx.translate(-squashCenterX, -squashCenterY);
+                
+                // Body (square-ish but with rounded corners)
+                ctx.fillStyle = goat.burned ? "#FF5722" : goat.isCool ? "#CFD8DC" : goat.bodyColor;
+                ctx.beginPath();
+                ctx.roundRect(goat.x, goat.y + goat.height * 0.1, goat.width, goat.height * 0.8, 15);
+                ctx.fill();
+                
+                // Head
+                const headWidth = goat.width * 0.6;
+                const headHeight = goat.height * 0.5;
+                const headX = goat.direction === "right" ? 
+                            goat.x + goat.width - headWidth * 0.8 : 
+                            goat.x - headWidth * 0.2;
+                ctx.beginPath();
+                ctx.roundRect(headX, goat.y, headWidth, headHeight, 10);
+                ctx.fill();
+                
+                // Horns - more realistic curve
+                ctx.strokeStyle = goat.hornColor;
+                ctx.lineWidth = 8;
+                ctx.lineCap = "round";
+                
+                if (goat.direction === "right") {
+                    // Right horns
+                    ctx.beginPath();
+                    ctx.moveTo(headX + headWidth * 0.8, goat.y + headHeight * 0.2);
+                    ctx.bezierCurveTo(
+                        headX + headWidth * 1.2, goat.y - headHeight * 0.5,
+                        headX + headWidth * 1.1, goat.y + headHeight * 0.8,
+                        headX + headWidth * 0.7, goat.y + headHeight * 0.6
+                    );
+                    ctx.stroke();
+                } else {
+                    // Left horns
+                    ctx.beginPath();
+                    ctx.moveTo(headX + headWidth * 0.2, goat.y + headHeight * 0.2);
+                    ctx.bezierCurveTo(
+                        headX - headWidth * 0.4, goat.y - headHeight * 0.5,
+                        headX - headWidth * 0.3, goat.y + headHeight * 0.8,
+                        headX + headWidth * 0.3, goat.y + headHeight * 0.6
+                    );
+                    ctx.stroke();
+                }
+                
+                // Face details
+                ctx.fillStyle = "#000";
+                const eyeX = goat.direction === "right" ? headX + headWidth * 0.7 : headX + headWidth * 0.3;
+                ctx.beginPath();
+                ctx.arc(eyeX, goat.y + headHeight * 0.4, 4, 0, Math.PI * 2);
+                ctx.fill();
+                
+                // Nose/mouth
+                ctx.beginPath();
+                ctx.arc(eyeX + (goat.direction === "right" ? 12 : -12), 
+                        goat.y + headHeight * 0.7, 6, 0, Math.PI * 2);
+                ctx.fill();
+                
+                // Beard
+                ctx.fillStyle = goat.beardColor;
+                ctx.beginPath();
+                ctx.ellipse(
+                    eyeX + (goat.direction === "right" ? 15 : -15),
+                    goat.y + headHeight * 0.9,
+                    10, 15, 0, 0, Math.PI * 2
+                );
+                ctx.fill();
+                
+                // Four legs with slight bend
+                ctx.fillStyle = goat.legColor;
+                const legWidth = 10;
+                const legHeight = 35;
+                
+                // Front legs
+                ctx.fillRect(goat.x + goat.width * 0.2 - legWidth/2, goat.y + goat.height * 0.8, legWidth, legHeight);
+                ctx.fillRect(goat.x + goat.width * 0.4 - legWidth/2, goat.y + goat.height * 0.8, legWidth, legHeight);
+                // Back legs
+                ctx.fillRect(goat.x + goat.width * 0.6 - legWidth/2, goat.y + goat.height * 0.8, legWidth, legHeight);
+                ctx.fillRect(goat.x + goat.width * 0.8 - legWidth/2, goat.y + goat.height * 0.8, legWidth, legHeight);
+                
+                // Tail
+                ctx.beginPath();
+                ctx.moveTo(goat.x + goat.width - 5, goat.y + goat.height * 0.5);
+                ctx.quadraticCurveTo(
+                    goat.x + goat.width + 20, goat.y + goat.height * 0.3,
+                    goat.x + goat.width - 5, goat.y + goat.height * 0.1
+                );
+                ctx.fill();
+                
+                ctx.restore();
+            }
+
+            function drawSun() {
+                if (!sunActive && !sunFading) return;
+                
+                const sunSize = Math.min(canvas.width, canvas.height) * 0.1;
+                const sunX = canvas.width - sunSize * 1.5;
+                const sunY = sunSize * 1.5;
+                
+                // Apply fade effect if active
+                if (sunFading) {
+                    ctx.globalAlpha = 1 - sunFadeProgress;
+                }
+                
+                // Pulsing effect when sun is active and dangerous
+                if (sunActive && !sunFading) {
+                    sunPulse += 0.05;
+                    const pulseScale = 1 + Math.sin(sunPulse) * 0.1;
+                    ctx.save();
+                    ctx.translate(sunX, sunY);
+                    ctx.scale(pulseScale, pulseScale);
+                    ctx.translate(-sunX, -sunY);
+                }
+                
+                // Sun with gradient
+                const gradient = ctx.createRadialGradient(
+                    sunX, sunY, sunSize * 0.4,
+                    sunX, sunY, sunSize
+                );
+                gradient.addColorStop(0, "#FFEB3B");
+                gradient.addColorStop(1, "#FF9800");
+                
+                ctx.fillStyle = gradient;
+                ctx.beginPath();
+                ctx.arc(sunX, sunY, sunSize, 0, Math.PI * 2);
+                ctx.fill();
+                
+                // Sun rays
+                ctx.strokeStyle = "#FFC107";
+                ctx.lineWidth = 4;
+                for (let i = 0; i < 12; i++) {
+                    const angle = (i / 12) * Math.PI * 2;
+                    ctx.beginPath();
+                    ctx.moveTo(
+                        sunX + Math.cos(angle) * sunSize, 
+                        sunY + Math.sin(angle) * sunSize
+                    );
+                    ctx.lineTo(
+                        sunX + Math.cos(angle) * sunSize * 1.6, 
+                        sunY + Math.sin(angle) * sunSize * 1.6
+                    );
+                    ctx.stroke();
+                }
+                
+                // Angry sun face
+                ctx.fillStyle = "#000";
+                // Eyes
+                ctx.beginPath();
+                ctx.arc(sunX - sunSize * 0.3, sunY - sunSize * 0.2, sunSize * 0.1, 0, Math.PI * 2);
+                ctx.arc(sunX + sunSize * 0.3, sunY - sunSize * 0.2, sunSize * 0.1, 0, Math.PI * 2);
+                ctx.fill();
+                // Mouth
+                ctx.beginPath();
+                ctx.arc(sunX, sunY + sunSize * 0.4, sunSize * 0.3, 0.2 * Math.PI, 0.8 * Math.PI);
+                ctx.lineWidth = 3;
+                ctx.stroke();
+                
+                // Reset transforms and alpha
+                if (sunActive && !sunFading) {
+                    ctx.restore();
+                }
+                if (sunFading) {
+                    ctx.globalAlpha = 1;
+                }
+            }
+
+            function drawCacti() {
+                cacti.forEach(cactus => {
+                    // Cactus body
+                    ctx.fillStyle = cactus.color;
+                    ctx.beginPath();
+                    ctx.roundRect(cactus.x, cactus.y, cactus.width, cactus.height, 10);
+                    ctx.fill();
+                    
+                    // Cactus arms (for sahuaro)
+                    if (cactus.points === 100) {
+                        ctx.beginPath();
+                        ctx.roundRect(cactus.x - cactus.width * 0.3, cactus.y + cactus.height * 0.3, 
+                                     cactus.width * 0.3, cactus.height * 0.4, 10);
+                        ctx.roundRect(cactus.x + cactus.width, cactus.y + cactus.height * 0.4, 
+                                     cactus.width * 0.3, cactus.height * 0.3, 10);
+                        ctx.fill();
+                    }
+                    
+                    // Spikes
+                    ctx.strokeStyle = cactus.spikeColor;
+                    ctx.lineWidth = 2;
+                    for (let i = 0; i < 5; i++) {
+                        const yPos = cactus.y + 10 + i * (cactus.height - 20) / 4;
+                        ctx.beginPath();
+                        ctx.moveTo(cactus.x + 5, yPos);
+                        ctx.lineTo(cactus.x + 15, yPos - 10);
+                        ctx.moveTo(cactus.x + cactus.width - 5, yPos);
+                        ctx.lineTo(cactus.x + cactus.width - 15, yPos - 10);
+                        ctx.stroke();
+                    }
+                    
+                    // Name tag
+                    ctx.fillStyle = "#000";
+                    ctx.font = `bold ${Math.min(14, cactus.width * 0.3)}px Arial`;
+                    ctx.textAlign = "center";
+                    ctx.fillText(cactus.name, cactus.x + cactus.width/2, cactus.y - 10);
                 });
+            }
+
+            function updateMovement() {
+                if (goat.moveLeft) {
+                    goat.x -= goat.speed;
+                    goat.direction = "left";
+                }
+                if (goat.moveRight) {
+                    goat.x += goat.speed;
+                    goat.direction = "right";
+                }
                 
-                document.body.appendChild(confetti);
-                anim.onfinish = () => confetti.remove();
+                // Keep goat within canvas bounds
+                goat.x = Math.max(0, Math.min(canvas.width - goat.width, goat.x));
+                goat.lastX = goat.x; // Update last position
             }
-        }
 
-        function gameLoop() {
-            if (!gameActive) return;
-            
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
-            
-            ctx.fillStyle = "#D2B48C";
-            ctx.fillRect(0, groundY, canvas.width, canvas.height - groundY);
-            
-            updateMovement();
-            updateBounce();
-            drawShade();
-            drawSun();
-            drawCacti();
-            drawGoat();
-            checkCollision();
-            updateSunTimer();
-            
-            requestAnimationFrame(gameLoop);
-        }
-
-        // Touch controls
-        let touchStartX = 0;
-        let touchStartTime = 0;
-
-        canvas.addEventListener('touchstart', (e) => {
-            if (!gameActive) return;
-            e.preventDefault();
-            
-            const touch = e.touches[0];
-            const rect = canvas.getBoundingClientRect();
-            const touchX = touch.clientX - rect.left;
-            const touchY = touch.clientY - rect.top;
-            
-            if (touchX >= goat.x && touchX <= goat.x + goat.width &&
-                touchY >= goat.y && touchY <= goat.y + goat.height) {
-                goat.isDragging = true;
-                goat.dragStartX = goat.x;
-                touchStartX = touchX;
-                touchStartTime = Date.now();
+            function updateBounce() {
+                if (goat.isBouncing) {
+                    goat.y -= goat.bounceVelocity;
+                    goat.bounceVelocity -= goat.gravity;
+                    goat.squash = 1 + Math.abs(goat.bounceVelocity) * 0.02;
+                    
+                    if (goat.y >= groundY - goat.height) {
+                        goat.y = groundY - goat.height;
+                        goat.bounceVelocity *= -0.6;
+                        if (Math.abs(goat.bounceVelocity) < 2) {
+                            goat.isBouncing = false;
+                            goat.squash = 1;
+                        }
+                    }
+                }
             }
-            
-            if (!goat.isBouncing && goat.y >= groundY - goat.height) {
-                goat.isBouncing = true;
-                goat.bounceVelocity = goat.bouncePower;
+
+            function checkCollision() {
+                for (let i = cacti.length - 1; i >= 0; i--) {
+                    const cactus = cacti[i];
+                    if (goat.x < cactus.x + cactus.width &&
+                        goat.x + goat.width > cactus.x &&
+                        goat.y + goat.height > cactus.y) {
+                        score += cactus.points;
+                        document.getElementById("score").textContent = `Score: ${score}`;
+                        cacti.splice(i, 1);
+                        
+                        const type = Math.random() > 0.85 ? cactusTypes[1] : cactusTypes[0];
+                        cacti.push({
+                            x: Math.random() * (canvas.width - 200) + 100,
+                            y: groundY - type.height,
+                            ...type
+                        });
+
+                        if (score % 100 === 0) {
+                            sunActive = true;
+                            sunExposure = 6;
+                            lastSunActivation = Date.now();
+                            document.getElementById("warning").style.display = "block";
+                            document.getElementById("sunTimer").style.display = "block";
+                            sunAlert.style.display = "block";
+                        }
+                        
+                        if (score >= 5000) {
+                            victory();
+                        }
+                    }
+                }
             }
-        });
 
-        canvas.addEventListener('touchmove', (e) => {
-            if (!gameActive || !goat.isDragging) return;
-            e.preventDefault();
-            
-            const touch = e.touches[0];
-            const rect = canvas.getBoundingClientRect();
-            const touchX = touch.clientX - rect.left;
-            
-            const dragDistance = touchX - touchStartX;
-            goat.x = Math.max(0, Math.min(canvas.width - goat.width, goat.dragStartX + dragDistance));
-            goat.direction = dragDistance > 0 ? "right" : "left";
-        });
+            function isUnderShade() {
+                // Check if goat is under the roof area
+                const underRoof = (
+                    goat.x + goat.width > shade.x &&
+                    goat.x < shade.x + shade.width &&
+                    goat.y + goat.height > shade.y &&
+                    goat.y < shade.y + shade.height
+                );
+                
+                // Check if goat is between the legs (safe zone)
+                const betweenLegs = (
+                    goat.x + goat.width > shade.leftBeamX + shade.beamWidth &&
+                    goat.x < shade.rightBeamX &&
+                    goat.y + goat.height > shade.y + shade.height
+                );
+                
+                return underRoof || betweenLegs;
+            }
 
-        canvas.addEventListener('touchend', (e) => {
-            if (!gameActive) return;
-            e.preventDefault();
-            
-            if (goat.isDragging) {
-                const touch = e.changedTouches[0];
+            function updateSunTimer() {
+                if (!sunActive && !sunFading) return;
+                
+                const currentUnderShade = isUnderShade();
+                
+                // Show/hide sun alert
+                if (sunActive && !sunFading) {
+                    sunAlert.style.display = "block";
+                } else {
+                    sunAlert.style.display = "none";
+                }
+                
+                // If we were under shade but now left, cancel the fade
+                if (wasUnderShade && !currentUnderShade && sunFading) {
+                    sunFading = false;
+                    sunActive = true;
+                    positionSunCoverClouds();
+                    sunAlert.style.display = "block";
+                }
+                
+                wasUnderShade = currentUnderShade;
+                
+                if (sunFading) {
+                    updateSunCoverClouds();
+                    return;
+                }
+                
+                // Calculate time passed since sun activation
+                const timePassed = (Date.now() - lastSunActivation) / 1000;
+                sunExposure = Math.max(0, 6 - timePassed);
+                
+                if (currentUnderShade) {
+                    // Goat is safe in shade or between legs - start fading sun
+                    if (!sunFading) {
+                        sunFading = true;
+                        sunFadeStartTime = Date.now();
+                        goat.burned = false;
+                        sunAlert.style.display = "none";
+                    }
+                } else {
+                    // Goat is exposed to sun
+                    goat.burned = true;
+                    document.getElementById("sunTimer").textContent = `🔥 Sun Exposure: ${Math.floor(sunExposure)}s 🔥`;
+                    
+                    if (sunExposure <= 0) {
+                        gameOver();
+                    }
+                }
+            }
+
+            function gameOver() {
+                if (isUnderShade()) return; // Don't game over if in shade or between legs
+                gameActive = false;
+                document.getElementById("gameOver").style.display = "block";
+                sunAlert.style.display = "none";
+            }
+
+            function victory() {
+                gameActive = false;
+                goat.isCool = true;
+                document.getElementById("victory").style.display = "block";
+                sunAlert.style.display = "none";
+                createConfetti();
+            }
+
+            function createConfetti() {
+                const colors = ['#f44336', '#E91E63', '#9C27B0', '#673AB7', '#3F51B5', '#2196F3', '#03A9F4', '#00BCD4', '#009688', '#4CAF50', '#8BC34A', '#CDDC39', '#FFEB3B', '#FFC107', '#FF9800', '#FF5722'];
+                for (let i = 0; i < 200; i++) {
+                    const confetti = document.createElement("div");
+                    confetti.className = "confetti";
+                    confetti.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+                    confetti.style.left = Math.random() * window.innerWidth + "px";
+                    confetti.style.top = -10 + "px";
+                    confetti.style.width = Math.random() * 10 + 5 + "px";
+                    confetti.style.height = Math.random() * 10 + 5 + "px";
+                    confetti.style.borderRadius = Math.random() > 0.5 ? "50%" : "0";
+                    confetti.style.transform = `rotate(${Math.random() * 360}deg)`;
+                    
+                    const anim = confetti.animate([
+                        { 
+                            top: -10 + "px", 
+                            left: Math.random() * window.innerWidth + "px", 
+                            opacity: 1,
+                            transform: `rotate(0deg)`
+                        },
+                        { 
+                            top: window.innerHeight + "px", 
+                            left: Math.random() * window.innerWidth + "px", 
+                            opacity: 0,
+                            transform: `rotate(${Math.random() * 360}deg)`
+                        }
+                    ], {
+                        duration: 2000 + Math.random() * 3000,
+                        iterations: 1,
+                        easing: "cubic-bezier(0.1, 0.8, 0.9, 1)"
+                    });
+                    
+                    document.body.appendChild(confetti);
+                    anim.onfinish = () => confetti.remove();
+                }
+            }
+
+            function gameLoop() {
+                if (!gameActive) return;
+                
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                
+                // Draw background
+                drawClouds();
+                
+                // Draw ground with texture
+                ctx.fillStyle = "#8D6E63";
+                ctx.fillRect(0, groundY, canvas.width, canvas.height - groundY);
+                
+                // Draw ground texture
+                ctx.fillStyle = "#A1887F";
+                for (let i = 0; i < 50; i++) {
+                    const x = Math.random() * canvas.width;
+                    const y = groundY + Math.random() * (canvas.height - groundY);
+                    const size = Math.random() * 3 + 1;
+                    ctx.fillRect(x, y, size, size);
+                }
+                
+                // Update and draw game elements
+                updateMovement();
+                updateBounce();
+                drawShade();
+                drawSun();
+                drawSunCoverClouds();
+                drawCacti();
+                drawGoat();
+                checkCollision();
+                updateSunTimer();
+                
+                requestAnimationFrame(gameLoop);
+            }
+
+            // Improved touch handlers for precise dragging
+            function handleTouchStart(e) {
+                if (!gameActive) return;
+                e.preventDefault();
+                const touch = e.touches[0];
                 const rect = canvas.getBoundingClientRect();
                 const touchX = touch.clientX - rect.left;
-                const touchTime = Date.now() - touchStartTime;
+                const touchY = touch.clientY - rect.top;
                 
-                if (touchTime < 200 && Math.abs(touchX - touchStartX) > 20) {
-                    if (!goat.isBouncing && goat.y >= groundY - goat.height) {
-                        goat.isBouncing = true;
-                        goat.bounceVelocity = goat.bouncePower * 1.5;
-                    }
+                if (touchX >= goat.x && touchX <= goat.x + goat.width &&
+                    touchY >= goat.y && touchY <= goat.y + goat.height) {
+                    goat.isDragging = true;
+                    goat.dragOffsetX = touchX - goat.x; // Store offset from left edge
+                }
+                
+                if (!goat.isBouncing && goat.y >= groundY - goat.height) {
+                    goat.isBouncing = true;
+                    goat.bounceVelocity = goat.bouncePower;
                 }
             }
-            
-            goat.isDragging = false;
-        });
 
-        // Mouse controls
-        canvas.addEventListener('mousedown', (e) => {
-            if (!gameActive) return;
-            e.preventDefault();
-            
-            const rect = canvas.getBoundingClientRect();
-            const mouseX = e.clientX - rect.left;
-            const mouseY = e.clientY - rect.top;
-            
-            if (mouseX >= goat.x && mouseX <= goat.x + goat.width &&
-                mouseY >= goat.y && mouseY <= goat.y + goat.height) {
-                goat.isDragging = true;
-                goat.dragStartX = goat.x;
-                touchStartX = mouseX;
-                touchStartTime = Date.now();
+            function handleTouchMove(e) {
+                if (!gameActive || !goat.isDragging) return;
+                e.preventDefault();
+                const touch = e.touches[0];
+                const rect = canvas.getBoundingClientRect();
+                const touchX = touch.clientX - rect.left;
+                
+                // Calculate new position based on touch position minus initial offset
+                const newX = Math.max(0, Math.min(canvas.width - goat.width, touchX - goat.dragOffsetX));
+                
+                // Update direction based on movement
+                if (newX !== goat.x) {
+                    goat.direction = newX > goat.lastX ? "right" : "left";
+                }
+                
+                goat.lastX = goat.x; // Store current position before updating
+                goat.x = newX;
             }
-            
-            if (!goat.isBouncing && goat.y >= groundY - goat.height) {
-                goat.isBouncing = true;
-                goat.bounceVelocity = goat.bouncePower;
+
+            function handleTouchEnd() {
+                if (!gameActive) return;
+                goat.isDragging = false;
             }
-        });
 
-        canvas.addEventListener('mousemove', (e) => {
-            if (!gameActive || !goat.isDragging) return;
-            e.preventDefault();
-            
-            const rect = canvas.getBoundingClientRect();
-            const mouseX = e.clientX - rect.left;
-            
-            const dragDistance = mouseX - touchStartX;
-            goat.x = Math.max(0, Math.min(canvas.width - goat.width, goat.dragStartX + dragDistance));
-            goat.direction = dragDistance > 0 ? "right" : "left";
-        });
-
-        canvas.addEventListener('mouseup', (e) => {
-            if (!gameActive) return;
-            e.preventDefault();
-            
-            if (goat.isDragging) {
+            // Improved mouse handlers for precise dragging
+            function handleMouseDown(e) {
+                if (!gameActive) return;
+                e.preventDefault();
                 const rect = canvas.getBoundingClientRect();
                 const mouseX = e.clientX - rect.left;
-                const touchTime = Date.now() - touchStartTime;
+                const mouseY = e.clientY - rect.top;
                 
-                if (touchTime < 200 && Math.abs(mouseX - touchStartX) > 20) {
-                    if (!goat.isBouncing && goat.y >= groundY - goat.height) {
-                        goat.isBouncing = true;
-                        goat.bounceVelocity = goat.bouncePower * 1.5;
-                    }
+                if (mouseX >= goat.x && mouseX <= goat.x + goat.width &&
+                    mouseY >= goat.y && mouseY <= goat.y + goat.height) {
+                    goat.isDragging = true;
+                    goat.dragOffsetX = mouseX - goat.x; // Store offset from left edge
+                }
+                
+                if (!goat.isBouncing && goat.y >= groundY - goat.height) {
+                    goat.isBouncing = true;
+                    goat.bounceVelocity = goat.bouncePower;
                 }
             }
-            
-            goat.isDragging = false;
-        });
 
-        canvas.addEventListener('mouseleave', (e) => {
-            if (!gameActive) return;
-            goat.isDragging = false;
-        });
-
-        // Keyboard controls
-        document.addEventListener('keydown', (e) => {
-            if (!gameActive) return;
-            
-            switch (e.key) {
-                case "ArrowLeft":
-                    goat.moveLeft = true;
-                    goat.direction = "left";
-                    break;
-                case "ArrowRight":
-                    goat.moveRight = true;
-                    goat.direction = "right";
-                    break;
-                case "ArrowUp":
-                    if (!goat.isBouncing && goat.y >= groundY - goat.height) {
-                        goat.isBouncing = true;
-                        goat.bounceVelocity = goat.bouncePower;
-                    }
-                    break;
+            function handleMouseMove(e) {
+                if (!gameActive || !goat.isDragging) return;
+                e.preventDefault();
+                const rect = canvas.getBoundingClientRect();
+                const mouseX = e.clientX - rect.left;
+                
+                // Calculate new position based on mouse position minus initial offset
+                const newX = Math.max(0, Math.min(canvas.width - goat.width, mouseX - goat.dragOffsetX));
+                
+                // Update direction based on movement
+                if (newX !== goat.x) {
+                    goat.direction = newX > goat.lastX ? "right" : "left";
+                }
+                
+                goat.lastX = goat.x; // Store current position before updating
+                goat.x = newX;
             }
-        });
 
-        document.addEventListener('keyup', (e) => {
-            switch (e.key) {
-                case "ArrowLeft":
-                    goat.moveLeft = false;
-                    break;
-                case "ArrowRight":
-                    goat.moveRight = false;
-                    break;
+            function handleMouseUp() {
+                if (!gameActive) return;
+                goat.isDragging = false;
             }
-        });
 
-        // Start the game
-        initGame();
+            function handleKeyDown(e) {
+                if (!gameActive) return;
+                switch (e.key) {
+                    case "ArrowLeft":
+                        goat.moveLeft = true;
+                        goat.direction = "left";
+                        break;
+                    case "ArrowRight":
+                        goat.moveRight = true;
+                        goat.direction = "right";
+                        break;
+                    case "ArrowUp":
+                    case " ":
+                        if (!goat.isBouncing && goat.y >= groundY - goat.height) {
+                            goat.isBouncing = true;
+                            goat.bounceVelocity = goat.bouncePower;
+                        }
+                        break;
+                }
+            }
+
+            function handleKeyUp(e) {
+                switch (e.key) {
+                    case "ArrowLeft":
+                        goat.moveLeft = false;
+                        break;
+                    case "ArrowRight":
+                        goat.moveRight = false;
+                        break;
+                }
+            }
+
+            // Set up event listeners
+            canvas.addEventListener('touchstart', handleTouchStart, {passive: false});
+            canvas.addEventListener('touchmove', handleTouchMove, {passive: false});
+            canvas.addEventListener('touchend', handleTouchEnd);
+            canvas.addEventListener('mousedown', handleMouseDown);
+            canvas.addEventListener('mousemove', handleMouseMove);
+            canvas.addEventListener('mouseup', handleMouseUp);
+            document.addEventListener('keydown', handleKeyDown);
+            document.addEventListener('keyup', handleKeyUp);
+            window.addEventListener('resize', function() {
+                resizeCanvas();
+                // Regenerate cacti to fit new screen size
+                generateCacti();
+            });
+
+            // Start the game
+            initGame();
+        });
     </script>
 </body>
 </html>
