@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="./pictures/favicon.ico">
+    <title>OK Corrals - High-Quality Barns, Mare Motels & Horse Shades</title>
+    <meta name="description" content="OK Corrals provides top-quality, predator-proof horse corrals and shade solutions designed for durability and safety. Keep your horses protected with our premium enclosures.">
+    <meta name="keywords" content="horse corrals, predator-proof enclosures, equine shelters, horse shade, durable horse pens, OK Corrals, horse safety, equestrian fencing">
+    <meta name="author" content="OK Corrals">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="OK Corrals | Premium Horse Corrals & Shade Solutions">
+    <meta property="og:description" content="Discover OK Corrals' premium horse enclosures and shade solutions. Built to last, designed for maximum safety and comfort.">
+    <meta property="og:image" content="https://theokcorrals.com/pictures/favicon.ico">
+    <meta property="og:url" content="https://theokcorrals.com">
+    <meta property="og:type" content="website">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./styles.css">
+    <link rel="stylesheet" href="./style.scss">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,700;1,700&family=Rye&display=swap" rel="stylesheet">
+    <style>
+        /* General Styles */
+        body {
+            font-family: 'Rye', cursive;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f4e9d8; /* Sandy beige background */
+            color: #5a3e36; /* Dark terracotta text */
+        }
+
+        header, section, footer {
+            padding: 20px;
+            margin: 20px;
+            background-color: #ffffff; /* White */
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Subtle shadow */
+            transition: box-shadow 0.3s ease;
+        }
+
+        footer {
+            flex-shrink: 1 !important;
+            width: 100vw;
+        }
+        header:hover, section:hover, footer:hover {
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5); /* Enhanced shadow on hover */
+        }
+
+        h1, h2 {
+            color: #8b5e3c; /* Terracotta */
+            font-family: 'Rye', cursive;
+            text-align: center;
+        }
+
+        a {
+            color: #5a3e36; /* Dark terracotta */
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .highlight {
+            background-color: #8b5e3c; /* Terracotta */
+            color: #f4e9d8; /* Sandy beige */
+            padding: 5px;
+            font-weight: bold;
+            border-radius: 4px;
+        }
+
+        .contact-button {
+            background-color: #5a3e36; /* Dark terracotta */
+            color: #f4e9d8; /* Sandy beige */
+            padding: 12px 24px;
+            text-align: center;
+            display: inline-block;
+            margin: 10px 0;
+            border-radius: 25px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+
+        }
+
+        .contact-button:hover {
+            background-color: #4a2e26; /* Darker terracotta */
+            transform: translateY(-3px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Navigation Bar Styles */
+        header.fixed {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: #ffffff; /* White */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        ul li {
+            background-color: #d0bb9b; /* Sandy beige */
+            margin: 10px 0;
+            padding: 10px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        .pl-0 {
+            padding-left: 0% !important;
+        }
+        .w-30 {
+            width: 30%;
+        }
+
+        .center {
+            text-align: center;
+        }
+
+        .left {
+           justify-content: left !important;
+        }
+
+        .mx-a {
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .flex-r {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+        }
+
+        .flex-c {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .m-b10 {
+            margin-bottom: 10px;
+        }
+
+        .pb-10 {
+            padding-bottom: 10px;
+        }
+
+        .m-t10 {
+            margin-top: 10px;
+        }
+
+        .mb-25 {
+            margin-bottom: 25px;
+        }
+
+        .p-b10 {
+            padding-bottom: 10px;
+        }
+
+        .t-0 {
+            margin-top: 0;
+        }
+
+        .tb {
+            text-align: center;
+        }
+
+        .rr {
+            font-family: 'Rye', cursive;
+        }
+
+        .xl {
+            font-size: 2.5rem;
+        }
+
+        .md {
+            font-size: 1.2rem;
+        }
+
+        .nowrap {
+            white-space: nowrap;
+        }
+
+        .notilt {
+            transform: none !important;
+        }
+
+        .speech-bubble {
+            background-color: #00aabb;
+            border: 2px solid #8b5e3c;
+            border-radius: 12px;
+            padding: 15px;
+            position: relative;
+            margin: 20px auto;
+            max-width: 300px;
+        }
+
+        .speech-bubble::after {
+            content: '';
+            position: absolute;
+            bottom: -20px;
+            left: 50%;
+            border-width: 10px;
+            border-style: solid;
+            border-color: #8b5e3c transparent transparent transparent;
+        }
+
+        .quote {
+            font-style: italic;
+            font-size: large;
+            color: #5a3e36;
+        }
+
+        .main {
+            text-align: center;
+        }
+
+        .mobile-wide {
+            width: 100%;
+        }
+        
+        /* =========================================================
+           STALLION STEELWORKS BADGE - PREMIUM STYLING
+           ========================================================= */
+        .stallion-badge {
+            position: relative;
+            display: inline-flex;
+            align-items: center;
+            background: linear-gradient(135deg, #1e1e1e 0%, #2d2d2d 50%, #1e1e1e 100%);
+            border: 3px solid #f4b942;
+            border-radius: 60px;
+            padding: 12px 24px 12px 18px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5), 0 0 20px rgba(244, 185, 66, 0.4), 0 0 40px rgba(255, 94, 0, 0.2);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            cursor: pointer;
+            text-decoration: none;
+            gap: 15px;
+            max-width: 100%;
+            backdrop-filter: blur(2px);
+            margin: 10px auto;
+            z-index: 10;
+        }
+
+        .stallion-badge:hover {
+            transform: translateY(-5px) scale(1.02);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6), 0 0 30px rgba(244, 185, 66, 0.6), 0 0 60px rgba(255, 94, 0, 0.4);
+            border-color: #ff5e00;
+        }
+
+        .stallion-badge::before {
+            content: '';
+            position: absolute;
+            inset: -2px;
+            border-radius: 62px;
+            padding: 2px;
+            background: linear-gradient(135deg, #f4b942, #ff5e00, #00ffc8, #f4b942);
+            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            mask-composite: exclude;
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
+        .stallion-badge:hover::before {
+            opacity: 1;
+        }
+
+        .stallion-logo {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: #ffffff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 0 20px rgba(244, 185, 66, 0.8);
+            overflow: hidden;
+            border: 2px solid #f4b942;
+        }
+
+        .stallion-logo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .stallion-text {
+            display: flex;
+            flex-direction: column;
+            text-align: left;
+        }
+
+        .stallion-powered {
+            font-family: 'Rye', cursive;
+            font-size: 0.9rem;
+            color: #f4b942;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            line-height: 1.2;
+        }
+
+        .stallion-name {
+            font-family: 'Rye', cursive;
+            font-size: 1.4rem;
+            font-weight: bold;
+            background: linear-gradient(135deg, #f4b942, #ff5e00, #00ffc8);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            line-height: 1.2;
+            text-shadow: 0 2px 10px rgba(0, 255, 200, 0.3);
+        }
+
+        .stallion-roc {
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            margin-top: 2px;
+        }
+
+        .stallion-roc-badge {
+            background: rgba(244, 185, 66, 0.2);
+            border: 1px solid #ff5e00;
+            border-radius: 30px;
+            padding: 3px 10px;
+            font-size: 0.8rem;
+            color: #f4b942;
+            font-weight: bold;
+            box-shadow: 0 0 10px rgba(255, 94, 0, 0.3);
+        }
+
+        .stallion-roc-badge .number {
+            color: #00ffc8;
+            font-size: 1rem;
+            margin-left: 4px;
+        }
+
+        /* Badge container positioning */
+        .badge-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 20px 0 10px;
+            width: 100%;
+        }
+
+        .badge-container.left-align {
+            justify-content: flex-start;
+            margin-left: 20px;
+        }
+
+        .badge-container.right-align {
+            justify-content: flex-end;
+            margin-right: 20px;
+        }
+
+        /* Header adjustment for fixed positioning */
+        header.fixed {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+        }
+
+        /* Add padding to body to account for fixed header */
+        body {
+            padding-top: 100px;
+        }
+
+        @media (max-width: 768px) {
+            .flex-r {
+                flex-direction: column;
+            }
+
+            .w-30 {
+                width: 80%;
+            }
+
+            .speech-bubble {
+                max-width: 80%;
+            }
+            ul li {
+                width: 90%; /* Adjust for smaller screens */
+            }
+            
+            .stallion-badge {
+                padding: 8px 16px 8px 12px;
+                gap: 10px;
+            }
+            
+            .stallion-logo {
+                width: 40px;
+                height: 40px;
+            }
+            
+            .stallion-name {
+                font-size: 1.1rem;
+            }
+            
+            .stallion-powered {
+                font-size: 0.7rem;
+            }
+            
+            .badge-container.left-align,
+            .badge-container.right-align {
+                justify-content: center;
+                margin-left: 0;
+                margin-right: 0;
+            }
+        }
+
+        @media only screen and (min-width: 250px) and (max-width: 950px) {
+            .sm {
+                font-size: small !important;
+            }
+        }
+
+        /* ROC badge in footer */
+        .roc-footer-badge {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 15px;
+            flex-wrap: wrap;
+            margin-top: 20px;
+            padding-top: 15px;
+            border-top: 2px solid #8b5e3c;
+        }
+        
+        .roc-footer-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: #5a3e36;
+            font-size: 0.9rem;
+        }
+        
+        .roc-footer-item strong {
+            color: #8b5e3c;
+            font-size: 1.1rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="fixed mt-0 ml-0">
+        <nav>
+            <ul>
+                <li><a class="sm" href="about.html">About</a></li>
+                <li><a class="sm" href="contact.html">Contact</a></li>
+                <li><a class="sm" href="services/shade.html">Shade</a></li>
+                <li><a class="sm" href="services/steelbarn.html">Barns</a></li>
+                <li><a style="text-wrap: nowrap;" class="smr" href="services/maremotel.html">Mare Motels</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section>
+            <div class="main flex-c center">
+             <h1 class="rr xl">Ok Corrals LLC</h1>
+             <img class="w-60 center mx-a" src="./pictures/OK-CORRALS.jpg" alt="the ok corrals llc" />
+             <p class="xl">Your trusted source for high-quality structures, barns, and shade.</p>
+             
+             <!-- STALLION STEELWORKS BADGE - Prominently placed below the main message -->
+             <div class="badge-container">
+                 <a href="https://stallionsteelworks.com" target="_blank" class="stallion-badge" title="Powered by ROC Licensed Stallion SteelWorks">
+                     <div class="stallion-logo">
+                         <!-- If you have the actual Stallion SteelWorks logo, replace this div with an img tag -->
+                         <img src="./pictures/Stallions.png" alt="Stallion SteelWorks" onerror="this.style.display='none'; this.parentElement.innerHTML='⚡'; this.parentElement.style.fontSize='30px'; this.parentElement.style.color='#f4b942';">
+                     </div>
+                     <div class="stallion-text">
+                         <span class="stallion-powered">POWERED BY</span>
+                         <span class="stallion-name">STALLION STEELWORKS</span>
+                         <div class="stallion-roc">
+                             <span class="stallion-roc-badge">ROC #<span class="number">339863</span></span>
+                             <span style="color: #f4b942; font-size: 0.8rem;">⚡ Licensed & Bonded</span>
+                         </div>
+                     </div>
+                 </a>
+             </div>
+            </div>
+        </section>
+    </main>
+    <div class="desktop-small" style="margin: auto; display: flex; flex-direction: column; justify-content: center;">
+    <section class="flex-c">
+        <div class="main flex-c left">
+        <hgroup class="speech-bubble w-30 IIId wider">
+         <h5 class="xl quote left mx-a nowrap ml-0 pl-0 s z-twist lh-80">"Your shade looks bullet proof!"</h5>
+         <h6 class="xl quote left mx-a nowrap ml-0 pl-0">- real customer testimonial</h6>
+        </hgroup>
+         <img class="m-t10" 
+         height="200px"
+         width="200px"
+         style="display:block; margin-right: auto; margin-left: auto;text-align: center;"
+         src="./pictures/Bullet Proof Shade.jpg" alt="the ok corrals llc" />
+          <div class="mx-a">
+          <p class="md w-50">Ok-Corrals provides durable and reliable horse shade structures, mare motels, and barns, ensuring your horses stay safe, comfortable, and protected in any environment.</p>
+          </div>
+        </div>
+    </section>
+</div>
+    <section>
+        <div class="flex-c center  mb-25 p-b10">
+            <span class="center mx-a"><img style="margin-top: 10px !important;" class="mx-a wider"
+                src="./pictures/AZ-Steel-Buildings 008.jpg" alt="Horse Shade, Steel Barns, Mare Motels" /></span>
+                <p class="rr mx-a">Free Consultations</p>
+                <button 
+                    class="rr w-30 mx-a pt-5 pb-10"
+                    onclick="window.location.href='tel:5207307020'" style="background-color: #28a745; color: white; border: none; padding: 10px 20px; font-size: 16px; border-radius: 5px; cursor: pointer;">
+                    Call Now
+                  </button>
+        </div>
+                </section>
+                  &nbsp;
+                  <section id="products">
+                    <div class="mobile-wide " style="display: flex; flex-direction: column; justify-content: center;">
+                    <div class="flex-c center">
+                    <h2 class="mx-a center nowrap mb-0 mt-10 pt-10">Our Products &</h2>
+                    <h2 class="mx-a center nowrap mt-0">Services</h2>
+                    <ul class="w-30 mx-a center notilt">
+                        <li class="notilt"><a href="./services/PhoenixHorseShadeInstallation.html">Phoenix Horse Shade Installation</a></li>
+                        <li class="notilt"><a href="./services/MareMotelsInstalledPhoenix.html">Mare Motels Installed in Phoenix</a></li>
+                        <li class="notilt"><a href="./services/PortableHorseCorralsForSale.html">Phoenix Horse Corrals For Sale</a></li>
+                        <li class="notilt"><a href="./services/HeavyweightPensandCorrals.html">Strongest Pens and Corrals</a></li>
+                        <li class="notilt"><a href="./services/EquestrianShadeWithStalls.html">Equestrian Shade with Stalls</a></li>
+                        <li class="notilt"><a href="./services/GoatPensForSale.html">Goat Pens</a></li>
+                        <li class="notilt"><a href="./services/PipeCorrals.html">Pipe Corrals</a></li>
+                        <li class="notilt"><a href="./services/AlpacaRanchPens.html">Alpaca Ranch Pens</a></li>
+                        <li class="notilt"><a href="./services/GalvanizedCorralPanels.html">Galvanized Corral Panels</a></li>
+                        <li class="notilt"><a href="./services/ChickenCoops.html">Chicken Coop Corral</a></li>
+
+                    </ul>
+                </div>
+            </div>
+                
+           
+            
+    </section>
+   &nbsp;
+   &nbsp;
+    <section id="welcome" class="flex-c center mb-25">
+        <div class="mx-a"
+            style="display: flex; flex-direction: column; align-content: center; justify-content: center;">
+        <h2 class="mb-0" style="margin-left: 10px !important;">Welcome to Ok-Corrals – Your Trusted Source for Quality Livestock Solutions</h2>
+        <p style="margin-left: 10px !important;">Since 2006, Ok-Corrals has been a leading provider of <strong>high-quality livestock equipment and enclosures</strong> in Arizona. Whether you're a rancher, horse owner, or livestock enthusiast, we offer a wide range of products and services designed to meet your needs. From <strong>galvanized corral panels</strong> and <strong>schedule 40 horse corrals</strong> to <strong>custom-built steel structures</strong>, we are committed to delivering durable, premium, and customizable solutions for your farm or ranch.</p>
+    
+        <h3 class="mx-a m-t10">Our Products and Services</h3>
+        <p style="margin-left: 10px !important;">At Ok-Corrals, we specialize in designing, building, and installing a variety of livestock enclosures and farm equipment. Here's what we offer:</p>
+        <div class="flex-c">
+        <ul class="flex-c">
+            <li class="notilt"><strong>Galvanized Corral Panels:</strong> Durable, rust-resistant panels available in 10-foot, 12-foot, and 16-foot lengths with 4 or 5 rails.</li>
+            <li class="notilt"><strong>Schedule 40 Horse Corrals:</strong> STRONG corrals perfect for trail riding, events, and enclosures.</li>
+            <li class="notilt"><strong>Custom Steel Structures:</strong> Tailored solutions including horse shade, mare motels, steel barns, and riding arenas.</li>
+            <li class="notilt"><strong>Livestock Corrals:</strong> High-quality fencing options for horses, cattle, alpacas, goats, and more.</li>
+            <li class="notilt"><strong>Welding and Repair Services:</strong> Expert welding services to repair or customize your existing corrals, gates, and enclosures.</li>
+        </ul>
+        </div>
+    
+        <h3 class="mx-a m-t10">Why Choose Ok-Corrals?</h3>
+        <p><center><a href="https://www.bbb.org/us/az/phoenix/profile/pet-kennels/ok-corrals-llc-1126-1000064438"><font color="#0000FF" size="+3"><b>A+ Rating with Better Business Bureau</b></font></a></center>
+ 
+        <p  class="mx-a" style="margin-left: 10px !important;">When you choose Ok-Corrals, you're choosing a company with decades of experience and a commitment to quality. Here's why we stand out:</p>
+        <ul class="mx-a">
+            <li class="notilt"><strong>Local Expertise:</strong> We understand the unique challenges of Arizona's climate and terrain.</li>
+            <li class="notilt"><strong>Premium Pricing:</strong> Competitive rates on the best quality.</li>
+            <li class="notilt"><strong>Customizable Solutions:</strong> We work closely with you to design and build products that meet your specific needs.</li>
+            <li class="notilt"><strong>Free Delivery with Installation:</strong> We deliver and install our products throughout Southern Arizona.</li>
+        </ul>
+    
+        <!-- Second Stallion SteelWorks Badge - Integrated into the "Why Choose Us" section -->
+        <div class="badge-container" style="margin: 30px auto;">
+            <a href="https://stallionsteelworks.com" target="_blank" class="stallion-badge" title="Powered by ROC Licensed Stallion SteelWorks">
+                <div class="stallion-logo">
+                    <img src="./pictures/Stallions.png" alt="Stallion SteelWorks" onerror="this.style.display='none'; this.parentElement.innerHTML='⚡'; this.parentElement.style.fontSize='30px'; this.parentElement.style.color='#f4b942';">
+                </div>
+                <div class="stallion-text">
+                    <span class="stallion-powered">POWERED BY</span>
+                    <span class="stallion-name">STALLION STEELWORKS</span>
+                    <div class="stallion-roc">
+                        <span class="stallion-roc-badge">ROC #<span class="number">339863</span></span>
+                        <span style="color: #f4b942; font-size: 0.8rem;">⚡ Licensed & Bonded</span>
+                    </div>
+                </div>
+            </a>
+        </div>
+    
+        <h3 class="w-50  mx-a">Our Commitment to Quality</h3>
+        <p  class="mx-a" style="margin-left: 10px !important;">At Ok-Corrals, we take pride in using only the <strong>highest-quality materials</strong> and <strong>skilled craftsmanship</strong> to ensure our products stand the test of time. Whether you need a simple corral panel or a complex custom structure, we guarantee exceptional quality and value.</p>
+    
+        <h3 class="mx-a">Areas We Serve</h3>
+        <p  class="mx-a ml-10" >We proudly serve the entire Southern Arizona region, including:</p>
+        <ul class="mx-a">
+            <li class="notilt"><strong>Phoenix</strong></li>
+            <li class="notilt"><strong>Tucson</strong></li>
+            <li class="notilt"><strong>Scottsdale</strong></li>
+            <li class="notilt"><strong>Paradise Valley</strong></li>
+            <li class="notilt"><strong>Cave Creek</strong></li>
+            <li class="notilt"><strong>New River</strong></li>
+            <li class="notilt"><strong>Mesa</strong></li>
+            <li class="notilt"><strong>Chandler</strong></li>
+            <li class="notilt"><strong>Gilbert</strong></li>
+            <li class="notilt"><strong>Casa Grande</strong></li>
+            <li class="notilt"><strong>And more!</strong></li>
+        </ul>
+    
+        <h3 class="mx-a ml-10" >Frequently Asked Questions</h3>
+        <h4 class="mx-a ml-10" >1. What types of corral panels do you offer?</h4>
+        <p  class="mx-a ml-10"  >We offer galvanized and schedule 40 black pipe corral panels in various sizes and configurations to suit your needs.</p>
+        <h4 class="mx-a ml-10" >2. Can you customize products?</h4>
+        <p  class="mx-a ml-10"  >Yes! We specialize in custom designs, including size, rail configuration, and additional features like gates and shade.</p>
+        <h4 class="mx-a ml-10" >3. Do you offer delivery and installation?</h4>
+        <p  class="mx-a ml-10"  >Yes, we provide free delivery with installation and professional installation services throughout Southern Arizona.</p>
+    
+        <h3 class="mx-a" style="margin-left: 10px !important;">Get Started Today</h3>
+        <p class="mx-a" style="margin-left: 10px !important;">Ready to enhance your farm or ranch with high-quality livestock solutions? Contact Ok-Corrals today for a <strong>free consultation and quote</strong>. Our team is here to answer your questions and help you find the perfect products for your property.</p>
+        <p class="mx-a" style="margin-left: 10px !important;"><a href="./services/contact.html" class="contact-button">Click Here to Contact Us</a></p>
+        <p class="mx-a" style="margin-left: 10px !important;"><strong>Call Us: (520) 730-7020</strong></p>
+    </div>
+    
+    </section>
+     
+    <footer class="ml-0">
+        <p class="t-0 mb-0 tb ml-0">&copy; 2025 Ok-Corrals LLC 🐴</p>
+        
+        <!-- ROC Footer Compliance with Stallion SteelWorks -->
+        <div class="roc-footer-badge">
+            <div class="roc-footer-item">
+                <span>AZ ROC #<strong>339863</strong></span>
+            </div>
+            <div class="roc-footer-item">
+                <span>Powered by <strong>Stallion SteelWorks</strong></span>
+            </div>
+            <div class="roc-footer-item">
+                <span>Licensed • Bonded • Insured</span>
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+        // Add any necessary JavaScript here
+    </script>
+</body>
+</html>
